@@ -2,41 +2,47 @@
 
 ## Project
 Website for Imbra.soft (imbra.co) — a boutique software and industrial engineering consultancy based in Varna, Bulgaria.
-Deployed to GitHub Pages at https://imbra-ltd.github.io via GitHub Actions on push to `main`.
+
+- Owner: Branimir Georgiev
+- GitHub org: https://github.com/Imbra-Ltd
+- Contact: contact@imbra-soft.com
+- LinkedIn: https://linkedin.com/in/branimir-georgiev
+- Deployed to GitHub Pages at https://imbra-ltd.github.io via GitHub Actions on push to `main`
 
 ## Stack
-- Astro (static site generator)
-- TypeScript for interactive components (React islands)
-- Plain CSS (no Tailwind, no CSS-in-JS)
+- Astro (static site generator, output: static / GitHub Pages)
+- TypeScript for interactive React island components
+- Plain CSS in `src/styles/global.css` (no Tailwind, no CSS-in-JS)
 - Content driven by JSON files in `src/data/`
+- Deployed via GitHub Actions on push to `main`
 
 ## Design
 - Aesthetic: Swiss precision, clean, minimal, clinical
 - Background: `#FFFFFF` and `#F8F9FA` alternating sections
 - Accent: steel blue `#1B4F8A`
-- Typography: IBM Plex Sans (300, 400, 500, 600) + IBM Plex Mono (400, 500)
-- All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic values
-- Responsive breakpoints: 1024px (tablet), 768px (mobile), 480px (small mobile)
-- Mobile nav uses a hamburger menu
+- Typography: IBM Plex Sans (300, 400, 500, 600) + IBM Plex Mono (400, 500) loaded from Google Fonts
+- All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic/computed values
+- Responsive breakpoints:
+  - Tablet: max-width 1024px
+  - Mobile: max-width 768px (hamburger menu replaces nav links)
+  - Small mobile: max-width 480px
 
 ## Brand voice
 - Tagline: "Complex inside. Simple outside."
-- Tone: precise, direct, no marketing fluff
-- Use "Imbra.soft" — not "Imbra Ltd", not "IMBRA.SOFT" (except the logo mark)
-- Contact email: contact@imbra.soft
-- GitHub: https://github.com/Imbra-Ltd
-- LinkedIn: https://linkedin.com/in/branimir-georgiev
+- Tone: precise, direct, no marketing fluff, no adjective inflation
+- Use "Imbra.soft" in body copy — not "Imbra Ltd", not "IMBRA.SOFT"
+- Logo renders as: `IMBRA<span>.</span>SOFT` in IBM Plex Mono
 
 ## Content
-All editable content lives in `src/data/` as JSON. Never hardcode content that a non-developer might want to change.
+All editable content lives in `src/data/` as JSON. Never hardcode content that a non-developer might want to change. Non-developers edit only `src/data/` — no JS/TS knowledge required.
 
-| File                         | Controls                                      |
-|------------------------------|-----------------------------------------------|
+| File                         | Controls                                       |
+|------------------------------|------------------------------------------------|
 | `src/data/site.json`         | Nav links, hero stats, contact section, footer |
-| `src/data/products.json`     | Portfolio cards and detail panels             |
-| `src/data/services.json`     | Services accordion items                      |
-| `src/data/expertise.json`    | Domain expertise cards                        |
-| `src/data/publications.json` | Research publications                         |
+| `src/data/products.json`     | Portfolio cards and detail panels              |
+| `src/data/services.json`     | Services accordion items                       |
+| `src/data/expertise.json`    | Domain expertise cards                         |
+| `src/data/publications.json` | Research publications with DOI links           |
 
 Note: `src/content/` is intentionally avoided — Astro reserves that path for Content Collections.
 
@@ -60,27 +66,29 @@ src/components/
 
 **Rule:** default to `.astro`. Only reach for React (`.tsx`) when client-side state is required.
 
-## Sections (in order)
-1. Nav — logo + links + hamburger on mobile
-2. Hero — headline, sub-text, stat strip (4 cards)
-3. Portfolio — 3 product cards, expandable
-4. Services — 10 service cards in 2-column grid, expandable
-5. Expertise — 4 domain cards
-6. Research & Credentials — 3 publication cards
-7. Contact CTA — dark section
-8. Footer — legal links, social icons, address, about text
+## Page sections (in order)
+1. Nav — logo (links to `/`), section links, hamburger on mobile
+2. Hero — eyebrow, headline, sub-text, CTA buttons, stat strip (4 cards)
+3. Portfolio — 3 product cards in a grid, expandable with detail panel
+4. Services — 10 service cards in 2-column grid, each expandable inline
+5. Expertise — 4 domain expertise cards
+6. Research & Credentials — 3 publication cards with DOI links
+7. Contact CTA — dark (`#111318`) section with headline and email
+8. Footer — top bar (legal links + social icons), body (address + about), bottom bar (copyright)
 
 ## Reveal animations
 `.reveal` → `.reveal.visible` transition handled by a single `IntersectionObserver` script in `src/layouts/Base.astro`. Do not add per-component reveal scripts.
 
-## Conventions
-- Branch naming: `feature/description`
-- Static output only — no SSR, no server endpoints
+## Git conventions
+- Always work on a branch — never commit directly to `main`
+- Branch naming: `feature/description` or `fix/description`
+- PRs should be small and focused — one concern per PR
+- Always test with `npm run dev` before committing
 - Do not commit `dist/` or `node_modules/`
 
 ## Commands
 ```
-npm run dev      # dev server at localhost:4321
-npm run build    # production build to dist/
-npm run preview  # preview production build locally
+npm run dev      # develop — hot reload at localhost:4321
+npm run build    # compile — production build to dist/
+npm run preview  # verify — preview the production build locally
 ```
