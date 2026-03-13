@@ -1,6 +1,11 @@
 ---
 import HamburgerMenu from "./interactive/HamburgerMenu.tsx";
-const { links, cta } = Astro.props;
+
+interface Link { label: string; target: string; href?: string; }
+interface Cta  { label: string; target: string; }
+interface Props { links: Link[]; cta: Cta; }
+
+const { links, cta } = Astro.props as Props;
 ---
 <nav>
   <a class="nav-logo" href="/" aria-label="Imbra.Soft — home">

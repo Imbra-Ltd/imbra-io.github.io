@@ -169,9 +169,7 @@
       ]
     }
   ],
-  "terms": [
-    "All agreements are governed by Bulgarian law. Full terms are included in each engagement contract."
-  ],
+  "legalNote": "All agreements are governed by Bulgarian law. Full terms are included in each engagement contract.",
   "cta": {
     "heading": "Not sure which model fits?",
     "sub": "Describe your situation and we will recommend the right engagement type.",

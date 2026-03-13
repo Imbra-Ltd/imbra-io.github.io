@@ -1,5 +1,9 @@
 ---
-const { process } = Astro.props;
+interface Step    { index: string; title: string; desc: string; }
+interface Process { label: string; heading: string; sub: string; steps: Step[]; }
+interface Props   { process: Process; }
+
+const { process } = Astro.props as Props;
 ---
 <section id="process" class="reveal">
   <div class="section-label">{process.label}</div>
@@ -7,7 +11,7 @@ const { process } = Astro.props;
   <p class="section-sub">{process.sub}</p>
 
   <div class="process-steps">
-    {process.steps.map((step: { index: string; title: string; desc: string }) => (
+    {process.steps.map((step) => (
       <div class="process-step">
         <div class="process-step-index mono">{step.index}</div>
         <div class="process-step-connector" />
