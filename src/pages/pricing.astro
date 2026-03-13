@@ -5,11 +5,9 @@ import site from "../data/site.json";
 import pricing from "../data/pricing.json";
 
 const pricingLinks = [
-  { label: "L3 Support", target: "l3" },
-  { label: "Hotfix", target: "hotfix" },
+  { label: "Retainer", target: "retainer" },
+  { label: "Hourly", target: "hourly" },
   { label: "Project", target: "project" },
-  { label: "Exploration", target: "exploration" },
-  { label: "Payment Terms", target: "terms" },
 ];
 ---
 
@@ -25,7 +23,6 @@ const pricingLinks = [
       <p class="pricing-sub">{pricing.intro.sub}</p>
     </div>
 
-    <!-- Sections -->
     {pricing.categories.map((cat) => (
       <section class="pricing-section" id={cat.id}>
         <div class="pricing-section-header">
@@ -39,88 +36,95 @@ const pricingLinks = [
         <p class="pricing-desc">{cat.desc}</p>
         {cat.excludes && <p class="pricing-excludes">{cat.excludes}</p>}
 
-        <!-- L3 tiers -->
-        {cat.tiers && (
-          <div class="pricing-tiers">
-            {cat.tiers.map((tier) => (
-              <div class={`pricing-tier${tier.highlight ? ' pricing-tier--highlight' : ''}`}>
-                <div class="pricing-tier-name mono">{tier.name}</div>
-                <div class="pricing-tier-price">{tier.price}</div>
-                <div class="pricing-tier-period">{tier.period}</div>
-                <ul class="pricing-tier-features">
-                  <li>{tier.hours}</li>
-                  <li>{tier.response}</li>
-                  <li>{tier.channel}</li>
-                  <li>{tier.reporting ? 'Monthly summary report' : 'No monthly report'}</li>
-                  <li>{tier.review ? 'Quarterly business review' : 'No quarterly review'}</li>
-                  <li>Excess hours at €100/h</li>
-                </ul>
-              </div>
-            ))}
-          </div>
-        )}
+        <!-- Subtypes: Retainer (Legacy + New) and Hourly (Hotfix + Exploration) -->
+        {cat.subtypes && cat.subtypes.map((sub) => (
+          <div class="pricing-subtype" id={sub.id}>
+            <h3 class="pricing-subtype-title">{sub.title}</h3>
+            <p class="pricing-subtype-desc">{sub.desc}</p>
+            {sub.excludes && <p class="pricing-excludes">{sub.excludes}</p>}
 
-        <!-- L3 SLA table -->
-        {cat.sla && (
-          <div class="pricing-table-wrap">
-            <div class="pricing-table-label mono">Response times</div>
-            <table class="pricing-table">
-              <thead>
-                <tr>
-                  <th>Severity</th>
-                  <th>Definition</th>
-                  <th>Basic</th>
-                  <th>Standard</th>
-                  <th>Premium</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cat.sla.map((row) => (
-                  <tr>
-                    <td class="mono">{row.severity}</td>
-                    <td>{row.definition}</td>
-                    <td class="mono">{row.basic}</td>
-                    <td class="mono">{row.standard}</td>
-                    <td class="mono">{row.premium}</td>
-                  </tr>
+            {sub.tiers && (
+              <div class="pricing-tiers">
+                {sub.tiers.map((tier) => (
+                  <div class={`pricing-tier${tier.highlight ? ' pricing-tier--highlight' : ''}`}>
+                    <div class="pricing-tier-name mono">{tier.name}</div>
+                    <div class="pricing-tier-price">{tier.price}</div>
+                    <div class="pricing-tier-period">{tier.period}</div>
+                    <ul class="pricing-tier-features">
+                      <li>{tier.hours}</li>
+                      <li>{tier.response}</li>
+                      <li>{tier.channel}</li>
+                      <li>{tier.reporting ? 'Monthly summary report' : 'No monthly report'}</li>
+                      <li>{tier.review ? 'Quarterly business review' : 'No quarterly review'}</li>
+                      <li>Excess hours at €150/h</li>
+                    </ul>
+                  </div>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        <!-- L3 notes -->
-        {cat.notes && (
-          <ul class="pricing-notes">
-            {cat.notes.map((n) => <li>{n}</li>)}
-          </ul>
-        )}
-
-        <!-- Hotfix rates -->
-        {cat.rate && (
-          <div class="pricing-rates">
-            <div class="pricing-rate-row">
-              <span class="pricing-rate-label">Standard rate</span>
-              <span class="pricing-rate-value mono">{cat.rate}</span>
-            </div>
-            <div class="pricing-rate-row">
-              <span class="pricing-rate-label">Minimum</span>
-              <span class="pricing-rate-value mono">{cat.minimum}</span>
-            </div>
-            {cat.outofhours && (
-              <div class="pricing-rate-row">
-                <span class="pricing-rate-label">Out-of-hours</span>
-                <span class="pricing-rate-value mono">{cat.outofhours}</span>
               </div>
             )}
-            {cat.expenses && (
-              <div class="pricing-rate-row">
-                <span class="pricing-rate-label">Expenses</span>
-                <span class="pricing-rate-value">{cat.expenses}</span>
+
+            {sub.sla && (
+              <div class="pricing-table-wrap">
+                <div class="pricing-table-label mono">Response times</div>
+                <table class="pricing-table">
+                  <thead>
+                    <tr>
+                      <th>Severity</th>
+                      <th>Definition</th>
+                      <th>Basic</th>
+                      <th>Standard</th>
+                      <th>Premium</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sub.sla.map((row) => (
+                      <tr>
+                        <td class="mono">{row.severity}</td>
+                        <td>{row.definition}</td>
+                        <td class="mono">{row.basic}</td>
+                        <td class="mono">{row.standard}</td>
+                        <td class="mono">{row.premium}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {sub.notes && (
+              <ul class="pricing-notes">
+                {sub.notes.map((n) => <li>{n}</li>)}
+              </ul>
+            )}
+
+            {sub.rate && (
+              <div class="pricing-rates">
+                <div class="pricing-rate-row">
+                  <span class="pricing-rate-label">Standard rate</span>
+                  <span class="pricing-rate-value mono">{sub.rate}</span>
+                </div>
+                {sub.minimum && (
+                  <div class="pricing-rate-row">
+                    <span class="pricing-rate-label">Minimum</span>
+                    <span class="pricing-rate-value mono">{sub.minimum}</span>
+                  </div>
+                )}
+                {sub.outofhours && (
+                  <div class="pricing-rate-row">
+                    <span class="pricing-rate-label">Out-of-hours</span>
+                    <span class="pricing-rate-value mono">{sub.outofhours}</span>
+                  </div>
+                )}
+                {sub.expenses && (
+                  <div class="pricing-rate-row">
+                    <span class="pricing-rate-label">Expenses</span>
+                    <span class="pricing-rate-value">{sub.expenses}</span>
+                  </div>
+                )}
               </div>
             )}
           </div>
-        )}
+        ))}
 
         <!-- Project models -->
         {cat.models && (
@@ -137,13 +141,8 @@ const pricingLinks = [
       </section>
     ))}
 
-    <!-- Payment terms -->
-    <section class="pricing-terms" id="terms">
-      <div class="pricing-label mono">Payment Terms</div>
-      <ul class="pricing-terms-list">
-        {pricing.terms.map((t) => <li>{t}</li>)}
-      </ul>
-    </section>
+    <!-- Legal note -->
+    <p class="pricing-legal-note">{pricing.terms[0]}</p>
 
     <!-- CTA -->
     <section class="pricing-cta">

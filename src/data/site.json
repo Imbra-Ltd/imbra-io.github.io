@@ -7,6 +7,7 @@
     "links": [
       { "label": "Portfolio",  "target": "portfolio" },
       { "label": "Services",   "target": "services" },
+      { "label": "Process",    "target": "process" },
       { "label": "Expertise",  "target": "expertise" },
       { "label": "Research",   "target": "publications" },
       { "label": "Pricing",    "target": "pricing", "href": "/pricing/" }
