@@ -72,14 +72,11 @@ export default function ProductExpand({ products }: Props) {
       {products.map(p => (
         <React.Fragment key={p.id}>
           <div
-            key={p.id}
             className={`product-card ${activeId === p.id ? "active" : ""}`}
             onClick={() => toggle(p)}
           >
             <div className="product-index mono">
-              <span style={{ color: "#1B4F8A", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                {p.role}
-              </span>
+              <span className="product-role">{p.role}</span>
             </div>
             <div className="product-name">
               {p.name}
