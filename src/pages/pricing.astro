@@ -1,0 +1,140 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+import pricing from "../data/pricing.json";
+---
+
+<Base title={`${pricing.meta.title} — ${site.meta.title}`} description={pricing.meta.description}>
+  <main class="pricing-page">
+    <a href="/" class="pricing-back">← Back</a>
+
+    <div class="pricing-header">
+      <div class="pricing-label mono">{pricing.intro.label}</div>
+      <h1 class="pricing-heading">{pricing.intro.heading}</h1>
+      <p class="pricing-sub">{pricing.intro.sub}</p>
+    </div>
+
+    <!-- L3 Support -->
+    {pricing.categories.map((cat) => (
+      <section class="pricing-section" id={cat.id}>
+        <div class="pricing-section-header">
+          <span class="pricing-index mono">{cat.index}</span>
+          <div>
+            <h2 class="pricing-section-title">{cat.title}</h2>
+            <div class="pricing-model mono">{cat.model}</div>
+          </div>
+        </div>
+
+        <p class="pricing-desc">{cat.desc}</p>
+        {cat.excludes && <p class="pricing-excludes">{cat.excludes}</p>}
+
+        <!-- L3 tiers -->
+        {cat.tiers && (
+          <div class="pricing-tiers">
+            {cat.tiers.map((tier) => (
+              <div class={`pricing-tier${tier.highlight ? ' pricing-tier--highlight' : ''}`}>
+                <div class="pricing-tier-name mono">{tier.name}</div>
+                <div class="pricing-tier-price">{tier.price}</div>
+                <div class="pricing-tier-period">{tier.period}</div>
+                <ul class="pricing-tier-features">
+                  <li>{tier.hours}</li>
+                  <li>{tier.response}</li>
+                  <li>{tier.channel}</li>
+                  <li>{tier.reporting ? 'Monthly summary report' : 'No monthly report'}</li>
+                  <li>{tier.review ? 'Quarterly business review' : 'No quarterly review'}</li>
+                  <li>Excess hours at €150/h</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <!-- L3 SLA table -->
+        {cat.sla && (
+          <div class="pricing-table-wrap">
+            <div class="pricing-table-label mono">Response times</div>
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Severity</th>
+                  <th>Definition</th>
+                  <th>Basic</th>
+                  <th>Standard</th>
+                  <th>Premium</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cat.sla.map((row) => (
+                  <tr>
+                    <td class="mono">{row.severity}</td>
+                    <td>{row.definition}</td>
+                    <td class="mono">{row.basic}</td>
+                    <td class="mono">{row.standard}</td>
+                    <td class="mono">{row.premium}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        <!-- L3 notes -->
+        {cat.notes && (
+          <ul class="pricing-notes">
+            {cat.notes.map((n) => <li>{n}</li>)}
+          </ul>
+        )}
+
+        <!-- Hotfix rates -->
+        {cat.rate && (
+          <div class="pricing-rates">
+            <div class="pricing-rate-row">
+              <span class="pricing-rate-label">Standard rate</span>
+              <span class="pricing-rate-value mono">{cat.rate}</span>
+            </div>
+            <div class="pricing-rate-row">
+              <span class="pricing-rate-label">Minimum</span>
+              <span class="pricing-rate-value mono">{cat.minimum}</span>
+            </div>
+            <div class="pricing-rate-row">
+              <span class="pricing-rate-label">Out-of-hours</span>
+              <span class="pricing-rate-value mono">{cat.outofhours}</span>
+            </div>
+            <div class="pricing-rate-row">
+              <span class="pricing-rate-label">Expenses</span>
+              <span class="pricing-rate-value">{cat.expenses}</span>
+            </div>
+          </div>
+        )}
+
+        <!-- Project models -->
+        {cat.models && (
+          <div class="pricing-project-models">
+            {cat.models.map((m) => (
+              <div class="pricing-project-model">
+                <div class="pricing-project-model-name mono">{m.name}</div>
+                <p class="pricing-project-model-desc">{m.desc}</p>
+                <div class="pricing-project-model-rate">{m.rate}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    ))}
+
+    <!-- Payment terms -->
+    <section class="pricing-terms">
+      <div class="pricing-label mono">Payment Terms</div>
+      <ul class="pricing-terms-list">
+        {pricing.terms.map((t) => <li>{t}</li>)}
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="pricing-cta">
+      <h2 class="pricing-cta-heading">{pricing.cta.heading}</h2>
+      <p class="pricing-cta-sub">{pricing.cta.sub}</p>
+      <a href={`mailto:${pricing.cta.email}`} class="btn-primary">{pricing.cta.label}</a>
+    </section>
+  </main>
+</Base>

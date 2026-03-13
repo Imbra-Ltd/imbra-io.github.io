@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "title": "Pricing",
+    "description": "Transparent pricing for L3 support, hotfix, and project engagements."
+  },
+  "intro": {
+    "label": "Pricing",
+    "heading": "Transparent by design.",
+    "sub": "Three engagement models. No hidden fees. All prices are exclusive of VAT — EU reverse charge applies for cross-border B2B transactions."
+  },
+  "categories": [
+    {
+      "id": "l3",
+      "index": "01",
+      "title": "L3 Support",
+      "model": "Annual flat fee · per legacy instance",
+      "desc": "Third-level escalation for legacy industrial software systems. Covers incident investigation, root cause analysis, workaround guidance, documentation, and remote consultation — across all covered instances.",
+      "excludes": "Deployment to production systems, on-site visits, and new feature development are excluded and governed separately.",
+      "tiers": [
+        {
+          "name": "Basic",
+          "price": "€800",
+          "period": "per instance / year",
+          "hours": "6 h included / instance / year",
+          "response": "48 h critical response",
+          "channel": "Email",
+          "reporting": false,
+          "review": false
+        },
+        {
+          "name": "Standard",
+          "price": "€1,200",
+          "period": "per instance / year",
+          "hours": "10 h included / instance / year",
+          "response": "8 h critical response",
+          "channel": "Email + video call",
+          "reporting": true,
+          "review": false,
+          "highlight": true
+        },
+        {
+          "name": "Premium",
+          "price": "€2,000",
+          "period": "per instance / year",
+          "hours": "16 h included / instance / year",
+          "response": "4 h critical response",
+          "channel": "Email + video + on-call",
+          "reporting": true,
+          "review": true
+        }
+      ],
+      "notes": [
+        "Included hours are pooled across all instances within a tier — a quiet instance offsets a busy one.",
+        "Excess hours beyond the annual pool are billed at €150/hour with prior written approval.",
+        "Instances may be on different tiers within the same agreement.",
+        "Business hours: Mon–Fri 09:00–18:00 CET, excluding Bulgarian and EU public holidays."
+      ],
+      "sla": [
+        { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "48 h", "standard": "8 h", "premium": "4 h" },
+        { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "3 days", "standard": "1 day", "premium": "8 h" },
+        { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "5 days", "standard": "2 days", "premium": "1 day" },
+        { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "10 days", "standard": "5 days", "premium": "2 days" }
+      ]
+    },
+    {
+      "id": "hotfix",
+      "index": "02",
+      "title": "Hotfix & Emergency",
+      "model": "Hourly · minimum 2 hours",
+      "desc": "Analysis, preparation, and delivery of patches, configuration corrections, or emergency fixes as tested artifacts. Delivered to the client for their own deployment and validation.",
+      "excludes": "Deployment responsibility remains with the client. No liability is accepted for outages resulting from client-initiated deployments.",
+      "rate": "€175 / hour",
+      "minimum": "2-hour minimum per incident",
+      "outofhours": "1.5× multiplier — evenings after 18:00 CET, weekends, public holidays",
+      "expenses": "Travel, tooling, and third-party licences billed at cost with prior written approval"
+    },
+    {
+      "id": "project",
+      "index": "03",
+      "title": "Project Work",
+      "model": "Fixed price or Time & Materials",
+      "desc": "Refactoring, new features, migrations, and integrations. Each project is governed by a Statement of Work agreed in writing before commencement, defining scope, deliverables, timeline, and acceptance criteria.",
+      "models": [
+        {
+          "name": "Fixed Price",
+          "desc": "Applied when scope is clearly defined. Scope changes require a written Change Request.",
+          "rate": "Quoted per project"
+        },
+        {
+          "name": "Time & Materials",
+          "desc": "Applied for exploratory or refactoring work where the full scope cannot be determined in advance. Weekly timesheets provided for client approval.",
+          "rate": "€1,000 / day (8 hours)"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    "L3 Support invoiced quarterly in advance.",
+    "Hotfix invoices issued upon delivery, payable within 14 days.",
+    "Project invoices follow the schedule in the relevant Statement of Work.",
+    "Late payments beyond 30 days accrue interest at 1.5% per month.",
+    "All intellectual property transfers to the client upon full payment."
+  ],
+  "cta": {
+    "heading": "Not sure which model fits?",
+    "sub": "Describe your situation and we will recommend the right engagement type.",
+    "label": "Get in touch",
+    "email": "contact@imbra-soft.com"
+  }
+}
