@@ -82,6 +82,13 @@ src/components/
 ## Reveal animations
 `.reveal` → `.reveal.visible` transition handled by a single `IntersectionObserver` script in `src/layouts/Base.astro`. Do not add per-component reveal scripts.
 
+## Third-party services
+
+| Service | Purpose | Config |
+|---------|---------|--------|
+| [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
+| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies) | Script tag in `src/layouts/Base.astro` |
+
 ## Documentation rule
 Before every commit, update all relevant documentation:
 - **`CLAUDE.md`** — update if component architecture, stack, design rules, or conventions change
