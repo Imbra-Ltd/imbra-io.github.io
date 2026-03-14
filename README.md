@@ -28,7 +28,7 @@ npm run preview   # verify — preview the production build locally
 ## Stack
 
 - [Astro](https://astro.build) — static site generator
-- React — interactive islands only (hamburger menu, product expand, services accordion)
+- React — interactive islands only (hamburger menu, product expand, services accordion, contact form)
 - Plain CSS — no Tailwind, no CSS-in-JS
 - JSON — all content in `src/data/`, no hardcoded copy in components
 
@@ -48,7 +48,8 @@ src/
 │   ├── interactive/       # React islands (client-side JS)
 │   │   ├── HamburgerMenu.tsx
 │   │   ├── ProductExpand.tsx
-│   │   └── ServiceExpand.tsx
+│   │   ├── ServiceExpand.tsx
+│   │   └── ContactForm.tsx
 │   └── *.astro            # Static section components
 ├── layouts/
 │   └── Base.astro         # HTML shell, global CSS, reveal script
@@ -67,7 +68,7 @@ All site content lives in `src/data/` as JSON files. No component knowledge requ
 
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
-| `src/data/site.json`         | Nav links, hero stats, contact section, footer |
+| `src/data/site.json`         | Nav links, hero stats, contact section (incl. Formspree endpoint), footer |
 | `src/data/products.json`     | Portfolio cards and detail panels              |
 | `src/data/services.json`     | Services accordion items                       |
 | `src/data/expertise.json`    | Domain expertise cards                         |

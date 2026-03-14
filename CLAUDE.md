@@ -53,14 +53,15 @@ src/components/
 ├── interactive/          # React islands — only components that need JS
 │   ├── HamburgerMenu.tsx # Mobile nav toggle
 │   ├── ProductExpand.tsx # Portfolio card expand/collapse
-│   └── ServiceExpand.tsx # Services accordion
+│   ├── ServiceExpand.tsx # Services accordion
+│   └── ContactForm.tsx   # Contact form — POST to Formspree endpoint
 ├── Nav.astro             # Static nav shell — mounts HamburgerMenu island
 ├── Hero.astro
 ├── Portfolio.astro       # Static section header — mounts ProductExpand island
 ├── Services.astro        # Static section header — mounts ServiceExpand island
 ├── Expertise.astro
 ├── Publications.astro
-├── Contact.astro
+├── Contact.astro         # Dark CTA section — mounts ContactForm island
 └── Footer.astro
 ```
 
