@@ -1,13 +1,13 @@
 # Imbra.Soft Website — Claude Code Instructions
 
 ## Project
-Website for Imbra.Soft (imbra-soft.com) — a boutique software and industrial engineering consultancy based in Varna, Bulgaria.
+Website for Imbra.Soft (imbra.io) — a boutique software and industrial engineering consultancy based in Varna, Bulgaria.
 
 - Owner: Branimir Georgiev
 - GitHub org: https://github.com/Imbra-Ltd
-- Contact: contact@imbra-soft.com
+- Contact: contact@imbra.io
 - LinkedIn: https://linkedin.com/in/branimir-georgiev
-- Deployed to GitHub Pages at https://imbra-ltd.github.io via GitHub Actions on push to `main`
+- Deployed to GitHub Pages at https://imbra.io via GitHub Actions on push to `main`
 
 ## Stack
 - Astro (static site generator, output: static / GitHub Pages)
