@@ -38,11 +38,13 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
-| `src/data/site.json`         | Nav links, hero stats, contact section, footer |
+| `src/data/site.json`         | Nav links, hero stats, contact section (incl. Formspree endpoint), footer |
 | `src/data/products.json`     | Portfolio cards and detail panels              |
 | `src/data/services.json`     | Services accordion items                       |
 | `src/data/expertise.json`    | Domain expertise cards                         |
 | `src/data/publications.json` | Research publications with DOI links           |
+| `src/data/process.json`      | How We Work section steps                      |
+| `src/data/pricing.json`      | Pricing page — all engagement models           |
 
 Note: `src/content/` is intentionally avoided — Astro reserves that path for Content Collections.
 
@@ -61,7 +63,7 @@ src/components/
 ├── Services.astro        # Static section header — mounts ServiceExpand island
 ├── Expertise.astro
 ├── Publications.astro
-├── Contact.astro         # Dark CTA section — mounts ContactForm island
+├── Contact.astro         # Dark CTA section — email link + ContactForm island
 └── Footer.astro
 ```
 
@@ -74,14 +76,21 @@ src/components/
 4. Services — 10 service cards in 2-column grid, each expandable inline
 5. Expertise — 4 domain expertise cards
 6. Research & Credentials — 3 publication cards with DOI links
-7. Contact CTA — dark (`#111318`) section with headline and email
+7. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
 8. Footer — top bar (legal links + social icons), body (address + about), bottom bar (copyright)
 
 ## Reveal animations
 `.reveal` → `.reveal.visible` transition handled by a single `IntersectionObserver` script in `src/layouts/Base.astro`. Do not add per-component reveal scripts.
 
+## Documentation rule
+Before every commit, update all relevant documentation:
+- **`CLAUDE.md`** — update if component architecture, stack, design rules, or conventions change
+- **`README.md`** — update if project structure, stack, or onboarding steps change
+- **`docs/PLAYBOOK.md`** — update if commands, git workflow, third-party services, or release process change
+
 ## Git conventions
 - Always work on a branch — never commit directly to `main`
+- Exception: documentation-only changes (`docs/`, `README.md`, `CLAUDE.md`) may go directly to `main`
 - Branch naming: `feature/description` or `fix/description`
 - PRs should be small and focused — one concern per PR
 - Always test with `npm run dev` before committing
