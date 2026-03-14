@@ -49,7 +49,8 @@
     "headlineStrong": "ours to solve.",
     "sub": "Project engagements · Plugin services · Maintenance contracts",
     "cta": "Get in touch",
-    "email": "contact@imbra.io"
+    "email": "contact@imbra.io",
+    "formEndpoint": "https://formspree.io/f/mzdjvyly"
   },
   "footer": {
     "legal": [
