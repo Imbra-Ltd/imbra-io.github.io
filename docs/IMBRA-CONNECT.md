@@ -224,6 +224,41 @@ Positioning: *"The only open Python framework for industrial protocol packet cra
 
 ---
 
+## Licensing strategy
+
+### Imbra Connect (Python) — own license
+
+**Decision pending.** Options:
+
+| License | Commercial use by others | Paid port obligation | Recommended for |
+|---------|--------------------------|---------------------|-----------------|
+| MIT | Free, unrestricted | None | Maximum adoption, no friction |
+| LGPL | Free if used as dependency | None if not modifying | Slight friction for bundling |
+| AGPL | Must open source network-facing derivatives | Strong copyleft | Forces commercial users to pay or comply |
+
+**Recommendation:** start with **MIT** to maximise adoption and community trust. The paid Go/Rust ports derive value from language, performance, and support — not from restricting the Python version.
+
+### Third-party dependencies — license compatibility
+
+Imbra Connect wraps or depends on existing libraries. All confirmed safe as optional dependencies:
+
+| Library | License | Integration pattern | Notes |
+|---------|---------|---------------------|-------|
+| `paho-mqtt` | EPL 2.0 + EDL 1.0 (BSD-like) | Optional dependency | Safe for open source and commercial use |
+| `pymodbus` | BSD 3-Clause | Optional dependency | Permissive, no restrictions |
+| `python-can` | LGPL 3.0 | Optional dependency | Safe to import; do not modify and redistribute |
+| `canopen` | MIT | Optional dependency | Fully permissive |
+| `asyncua` | LGPL 3.0 | Optional dependency | Safe to import; do not modify and redistribute |
+
+### Rules for the paid ports (Go, Rust, TypeScript)
+
+- **Do not translate LGPL library code** into Go/Rust — reimplement from the protocol specification
+- **Do not bundle GPL code** under any circumstances
+- Protocol implementations for unserved protocols (DeviceNet, Profibus, HART) are entirely original — no licensing concerns
+- Keep a record of which implementations are original vs spec-derived
+
+---
+
 ## Open questions
 
 - [ ] Final license for the Python open source version (MIT vs LGPL vs AGPL)
