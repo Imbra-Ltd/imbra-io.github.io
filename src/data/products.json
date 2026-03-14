@@ -30,7 +30,7 @@
     "problem": "Most industrial historians are expensive, closed, and sized for enterprise. ImBrain is built on an open hourglass architecture — like TCP/IP, it defines a minimal, well-specified core with open contracts on both sides: plant-facing agents connect any data source below, and application plugins consume the data above. The core and agents are open source. Engineers are encouraged to install, explore, and run it at no cost. Value is delivered through plugins that work with the data, plus optional installation and maintenance services for teams that need them.",
     "tech": ["TimescaleDB", "PostgreSQL", "OPC-UA", "Python", "Go", "REST API", "gRPC", "Docker"],
     "audience": "Engineers and operations teams at small and medium-sized industrial plants looking for a capable historian without enterprise licensing costs.",
-    "status": "Prototype"
+    "status": "Concept"
   },
   {
     "id": "04",
@@ -42,6 +42,6 @@
     "tech": ["Udemy", "YouTube", "Python", "Siemens TIA Portal", "OPC-UA", "Modbus"],
     "audience": "Automation engineers, embedded developers, and software engineers stepping into OT environments — or IT engineers navigating their first industrial project.",
     "url": "https://www.codewithbranko.com",
-    "status": "Concept"
+    "status": "Prototype"
   }
 ]
