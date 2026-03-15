@@ -348,7 +348,92 @@ security:
 - [ ] Plugin distribution — private registry, GitHub releases, or marketplace?
 - [ ] Fine-tuning strategy for local models — plant-specific terminology and tag names
 - [x] Security model — see below.
-- [ ] On-premise hardware reference spec — minimum and recommended
+- [x] Deployment model — see below.
+- [x] On-premise hardware reference spec — see below.
+
+---
+
+## Deployment model
+
+### Self-contained installer
+
+One package, everything included, works fully air-gapped:
+
+```
+imbrain-installer-v1.0.0-linux-x86.tar.gz
+├── podman/                 # bundled Podman runtime
+├── images/
+│   ├── imbrain.tar         # ImBrain image (pre-loaded)
+│   ├── timescaledb.tar     # TimescaleDB image
+│   └── mosquitto.tar       # MQTT broker image
+├── config/
+│   └── default.yml         # default configuration
+├── install.sh              # installs everything, registers services
+└── README.txt
+```
+
+**Installation:**
+1. Customer downloads one package (or receives on USB for air-gapped)
+2. Runs `install.sh`
+3. Podman installed, images loaded locally, services registered as systemd units
+4. Done — no internet required at any point
+
+**Windows equivalent:** `.msi` installer bundles Podman for Windows + images + WinSW (Windows Service Wrapper) + config.
+
+### Why Podman over Docker
+
+- **Rootless** — runs without root privileges, acceptable where Docker is banned
+- **No daemon** — each container is a systemd unit, standard service management
+- **OCI-compatible** — same images as Docker, no repackaging needed
+- **`podman generate systemd`** — auto-generates systemd units from containers
+- **Default on RHEL/CentOS/Fedora** — already present on many industrial Linux systems
+
+### Updates (air-gapped)
+
+Only changed images are shipped — keeps update packages small:
+
+```
+imbrain-update-v1.0.1-linux-x86.tar.gz
+├── images/
+│   └── imbrain.tar     # only updated images
+└── update.sh           # loads new image, restarts service
+```
+
+Connected deployments (v2): auto-update mechanism via ImBrain update plugin.
+
+### Storage backends
+
+| Mode | Storage | Use case |
+|------|---------|----------|
+| Demo / evaluation | DuckDB (embedded) | Zero dependencies, single binary, no setup |
+| Production | TimescaleDB (bundled) | Full time-series performance, included in installer |
+| Cloud / managed | Timescale Cloud / Supabase | Zero local infrastructure, internet required |
+
+Same binary, different config. `--demo` flag switches to embedded DuckDB.
+
+### Plugin distribution
+
+- **v1:** GitHub Releases — customer downloads plugin package, runs `imbrain plugin install`
+- **v2:** Private registry — `imbrain plugin install report` pulls from registry automatically
+- Plugins ship as additional container images or mounted volumes
+- Air-gapped plugin install: include plugin image in update package
+
+---
+
+## Hardware reference
+
+Primary target: small industrial companies. Demo must run on minimal hardware.
+
+| Tier | Hardware | LLM | Tags | Use case |
+|------|----------|-----|------|----------|
+| Demo | Laptop or Raspberry Pi 5 | Claude API (cloud) | < 500 | Evaluation, proof of concept |
+| Small business | Industrial mini PC (Beelink, Minisforum) ~€400-800 | Claude API or CPU inference | < 5,000 | Single site, full feature set |
+| Medium business | Workstation + mid-range GPU (RTX 4060, 8GB VRAM) ~€2,000-4,000 | Ollama + Llama 3 8B | < 50,000 | Multi-site, air-gapped capable |
+| Large / Enterprise | Server-grade + GPU (A100) ~€10,000+ | Ollama + Llama 3 70B | Unlimited | Full mesh, high HA, air-gapped |
+
+**Key principle:** Tier 1 and 2 use Claude API — no GPU required, cheapest hardware. GPU only needed for air-gapped local inference.
+
+**Demo hardware target:** Raspberry Pi 5 (€80) or any laptop from the last 5 years. One installer, running in under 10 minutes.
 
 ---
 
