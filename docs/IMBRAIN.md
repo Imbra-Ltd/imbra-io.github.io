@@ -73,6 +73,57 @@ ImBrain ←——MQTT/Sparkplug B——→ ImBrain  (mesh)
 
 ---
 
+## Sparkplug B namespace design
+
+### Topic structure
+
+```
+spBv1.0 / {group_uuid} / {message_type} / {site_uuid} / {area_uuid}
+```
+
+All IDs in the topic are **auto-generated UUIDs**. Human-readable aliases are application-layer only.
+
+Example:
+```
+spBv1.0 / a3f7c2d1-... / NBIRTH / b8e4a109-... / c2d5f318-...
+```
+
+Resolves in the UI as:
+```
+Solvay Sodi / Varna Plant / Tank Farm Line 2
+```
+
+### Entity hierarchy
+
+```
+Group   (UUID + alias)  — customer or business unit, e.g. "Solvay Sodi"
+└── Site    (UUID + alias)  — physical plant location, e.g. "Varna Plant"
+    └── Area    (UUID + alias)  — process area / line / unit, e.g. "Tank Farm Line 2"
+        └── Tags (measurements)
+```
+
+### ID strategy
+
+| Entity | ID | Assigned by | Example alias |
+|--------|----|-------------|---------------|
+| Group | UUID v4 (auto) | ImBrain on first config | "Solvay Sodi" |
+| Site | UUID v4 (auto) | ImBrain on first config | "Varna Plant" |
+| Area | UUID v4 (auto) | ImBrain on first config | "Tank Farm Line 2" |
+
+- UUIDs are used on the wire — unique across the mesh without coordination
+- Aliases are stored in TimescaleDB — queryable, auditable, changeable without breaking topics
+- LLM queries use aliases (*"show me Varna Plant data"*) — translated to UUID internally
+- Single-site deployments use a default group (`local`)
+
+### Mesh discovery via Sparkplug B
+
+1. Each ImBrain publishes `NBIRTH` on startup — announces itself to the broker
+2. All historians subscribed to `spBv1.0/+/NBIRTH/#` discover it immediately
+3. `NDEATH` (last will message) handles graceful and ungraceful disconnects
+4. No central registry required — birth/death mechanism handles it
+
+---
+
 ## Mesh communication protocol
 
 **Primary: MQTT + Sparkplug B**
@@ -160,7 +211,7 @@ Air-gapped plants run all plugins locally. Connected plants can offload compute-
 ## Open questions
 
 - [x] Time-series store — **TimescaleDB** (PostgreSQL extension). Standard SQL, handles both time-series and relational metadata, natural fit for LLM-generated queries, production-grade.
-- [ ] Sparkplug B namespace design for the mesh — site / area / line / tag hierarchy
+- [x] Sparkplug B namespace design — see below.
 - [ ] Plugin distribution — private registry, GitHub releases, or marketplace?
 - [ ] Fine-tuning strategy for local models — plant-specific terminology and tag names
 - [ ] Security model for the mesh — mTLS on MQTT, per-site certificates
