@@ -259,13 +259,95 @@ Air-gapped plants run all plugins locally. Connected plants can offload compute-
 
 ---
 
+## Security model
+
+Designed around Azure security defense principles: Zero Trust, Defense in Depth, Least Privilege, Assume Breach, Microsegmentation, Encryption Everywhere, and Audit Everything.
+
+### Defense in depth layers
+
+```
+Layer 1 — Network       firewall, VLAN, OT/IT separation (customer responsibility)
+Layer 2 — Transport     mTLS — every connection encrypted and mutually authenticated
+Layer 3 — Identity      certificate-based — every historian has a unique identity
+Layer 4 — Authorization MQTT topic ACLs — least privilege per historian instance
+Layer 5 — Audit         all access logged in TimescaleDB — queryable and exportable
+```
+
+### Zero Trust principles applied
+
+- No implicit trust between historians, even within the same group
+- Every connection is authenticated via mTLS — no password-only access
+- Each historian publishes only to its own topics (least privilege ACLs)
+- Group isolation is a hard boundary — site in group A cannot see group B data
+- Assume breach: if one site is compromised, others are unaffected (microsegmentation)
+
+### Standalone operation (no central authority)
+
+ImBrain runs securely out of the box without a master or external CA:
+
+```
+First run:
+1. ImBrain generates key pair + self-signed certificate automatically
+2. mTLS enabled by default on the local broker
+3. Ready — no configuration required
+```
+
+To connect two standalone instances manually:
+- Exchange public certificates out-of-band (USB, secure file transfer)
+- Each instance explicitly trusts the other's certificate
+- No CA involved — full air-gap compatible
+
+### Certificate management options
+
+| Mode | How | Requires |
+|------|-----|---------|
+| Standalone (default) | Self-signed, auto-generated on first run | Nothing |
+| Manual rotation | Admin replaces certificate when needed | Nothing |
+| Rotation plugin (paid) | Auto-monitors expiry, renews and distributes | Rotation plugin installed |
+| Master CA | Auto-issued and rotated by master ImBrain | Master ImBrain running |
+| External PKI | ACME protocol or manual import | Customer PKI infrastructure |
+
+### Certificate rotation plugin (paid)
+
+- Monitors certificate expiry across all connected sites
+- Auto-generates and distributes renewed certificates before expiry
+- Admin notification on renewal and failure
+- Works with or without a master historian
+- Available as a standalone paid plugin — upgrades the default manual experience
+
+### Default configuration
+
+Secure by default — no configuration required to operate safely:
+
+```yaml
+security:
+  transport: mTLS                 # always on, not configurable off
+  certificate: self-signed        # auto-generated on first run
+  rotation: manual                # rotation plugin upgrades this
+  topic_acls: least-privilege     # each historian publishes own topics only
+  group_isolation: strict         # hard boundary between groups
+  audit_log: enabled              # all access logged to TimescaleDB
+```
+
+### Authorization model
+
+| Role | Scope | Permissions |
+|------|-------|-------------|
+| Site operator | Own site | Read own data, generate own reports |
+| Site admin | Own site | Full site configuration |
+| Group manager | Own group | Read all sites in group, cross-site reports |
+| Group admin | Own group | Full group configuration, approve site connections |
+| System admin | All groups | Full access — master ImBrain only |
+
+---
+
 ## Open questions
 
 - [x] Time-series store — **TimescaleDB** (PostgreSQL extension). Standard SQL, handles both time-series and relational metadata, natural fit for LLM-generated queries, production-grade.
 - [x] Sparkplug B namespace design — see below.
 - [ ] Plugin distribution — private registry, GitHub releases, or marketplace?
 - [ ] Fine-tuning strategy for local models — plant-specific terminology and tag names
-- [ ] Security model for the mesh — mTLS on MQTT, per-site certificates
+- [x] Security model — see below.
 - [ ] On-premise hardware reference spec — minimum and recommended
 
 ---
