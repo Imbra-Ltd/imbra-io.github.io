@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 interface Product {
   id: string;
@@ -11,6 +11,7 @@ interface Product {
   audience: string;
   status: string;
   url?: string;
+  whitepaper?: string;
 }
 
 interface Props {
@@ -23,7 +24,11 @@ function DetailPanel({ d }: { d: Product }) {
       <div className="detail-inner">
         <div className="detail-row">
           <div className="detail-col-label">Problem solved</div>
-          <div className="detail-col-text">{d.problem}</div>
+          <div className="detail-col-text">
+            {d.problem.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
         </div>
         <div className="detail-row">
           <div className="detail-col-label">Technology</div>
@@ -43,6 +48,14 @@ function DetailPanel({ d }: { d: Product }) {
             </div>
           </div>
         )}
+        {d.whitepaper && (
+          <div className="detail-row">
+            <div className="detail-col-label">White paper</div>
+            <div className="detail-col-text">
+              <a href={d.whitepaper} className="detail-link">Read white paper →</a>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -50,51 +63,40 @@ function DetailPanel({ d }: { d: Product }) {
 
 export default function ProductExpand({ products }: Props) {
   const [activeId, setActiveId] = useState<string | null>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = gridRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); obs.disconnect(); } },
-      { threshold: 0.1 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   function toggle(p: Product) {
     setActiveId(prev => prev === p.id ? null : p.id);
   }
 
+  const activeProduct = products.find(p => p.id === activeId) ?? null;
+
   return (
-    <div ref={gridRef} className="portfolio-grid reveal">
+    <div className="portfolio-grid reveal">
       {products.map(p => (
-        <React.Fragment key={p.id}>
-          <div
-            className={`product-card ${activeId === p.id ? "active" : ""}`}
-            onClick={() => toggle(p)}
-          >
-            <div className="product-index mono">
-              <span className="product-role">{p.role}</span>
-            </div>
-            <div className="product-name">
-              {p.name}
-              <span className={`product-status product-status--${p.status.toLowerCase().replace(/\s+/g, "-")}`}>{p.status}</span>
-            </div>
-            <div className="product-desc">{p.desc}</div>
-            <div className="tag-row">
-              {p.tags.map(t => <span key={t} className="tag">{t}</span>)}
-            </div>
-            <div className="expand-indicator">+</div>
+        <div
+          key={p.id}
+          className={`product-card ${activeId === p.id ? "active" : ""}`}
+          onClick={() => toggle(p)}
+        >
+          <div className="product-index mono">
+            <span className="product-role">{p.role}</span>
           </div>
-          {activeId === p.id && (
-            <div style={{ gridColumn: "1 / -1" }}>
-              <DetailPanel d={p} />
-            </div>
-          )}
-        </React.Fragment>
+          <div className="product-name">
+            {p.name}
+            <span className={`product-status product-status--${p.status.toLowerCase().replace(/\s+/g, "-")}`}>{p.status}</span>
+          </div>
+          <div className="product-desc">{p.desc}</div>
+          <div className="tag-row">
+            {p.tags.map(t => <span key={t} className="tag">{t}</span>)}
+          </div>
+          <div className="expand-indicator">+</div>
+        </div>
       ))}
+      {activeProduct && (
+        <div style={{ gridColumn: "1 / -1" }}>
+          <DetailPanel d={activeProduct} />
+        </div>
+      )}
     </div>
   );
 }

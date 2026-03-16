@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://imbra-ltd.github.io/sitemap-index.xml
+Sitemap: https://imbra.io/sitemap-index.xml

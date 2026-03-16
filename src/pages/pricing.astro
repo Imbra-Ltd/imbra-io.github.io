@@ -1,10 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
+import ContactForm from "../components/interactive/ContactForm.tsx";
 import site from "../data/site.json";
 import pricing from "../data/pricing.json";
 
 const pricingLinks = [
+  { label: "← Back", target: "", href: "/" },
   { label: "Retainer", target: "retainer" },
   { label: "Hourly", target: "hourly" },
   { label: "Project", target: "project" },
@@ -15,8 +17,6 @@ const pricingLinks = [
   <Nav links={pricingLinks} cta={site.nav.cta} />
 
   <main class="pricing-page">
-    <a href="/" class="pricing-back">← Back</a>
-
     <div class="pricing-header">
       <div class="pricing-label mono">{pricing.intro.label}</div>
       <h1 class="pricing-heading">{pricing.intro.heading}</h1>
@@ -59,7 +59,7 @@ const pricingLinks = [
                       <li>{tier.channel}</li>
                       <li>{tier.reporting ? 'Monthly summary report' : 'No monthly report'}</li>
                       <li>{tier.review ? 'Quarterly business review' : 'No quarterly review'}</li>
-                      <li>Excess hours at €150/h</li>
+                      <li>Excess hours at €200/h</li>
                     </ul>
                   </div>
                 ))}
@@ -94,12 +94,6 @@ const pricingLinks = [
               </div>
             )}
 
-            {sub.notes && (
-              <ul class="pricing-notes">
-                {sub.notes.map((n) => <li>{n}</li>)}
-              </ul>
-            )}
-
             {sub.rate && (
               <div class="pricing-rates">
                 <div class="pricing-rate-row">
@@ -126,6 +120,15 @@ const pricingLinks = [
                 )}
               </div>
             )}
+
+            {sub.notes && (
+              <div class="pricing-table-wrap">
+                <div class="pricing-table-label mono">Notes</div>
+                <ol class="pricing-notes">
+                  {sub.notes.map((n) => <li>{n}</li>)}
+                </ol>
+              </div>
+            )}
           </div>
         ))}
 
@@ -148,10 +151,10 @@ const pricingLinks = [
     <p class="pricing-legal-note">{pricing.legalNote}</p>
 
     <!-- CTA -->
-    <section class="pricing-cta">
+    <section class="pricing-cta" id="contact">
       <h2 class="pricing-cta-heading">{pricing.cta.heading}</h2>
       <p class="pricing-cta-sub">{pricing.cta.sub}</p>
-      <a href={`mailto:${pricing.cta.email}`} class="btn-primary">{pricing.cta.label}</a>
+      <ContactForm client:load endpoint={site.contact.formEndpoint} />
     </section>
   </main>
 </Base>

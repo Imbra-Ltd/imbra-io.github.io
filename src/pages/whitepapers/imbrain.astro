@@ -1,0 +1,72 @@
+---
+import Base from "../../layouts/Base.astro";
+import site from "../../data/site.json";
+
+const title = "ImBrain™ White Paper — An Open-Architecture Industrial Historian";
+const description = "An open-architecture industrial historian that stores time-series data, alarm events, lab results, and virtual tags — connects plants in a mesh — and lets operators query everything in plain language.";
+---
+
+<Base title={`${title} — ${site.meta.title}`} description={description}>
+  <main class="legal-page">
+    <a href="/" class="legal-back">← Back to imbra.io</a>
+    <div class="legal-label">White Paper</div>
+    <h1 class="legal-heading">ImBrain™</h1>
+
+    <div class="legal-grid">
+
+      <div class="legal-section">
+        <div class="legal-section-title">Subtitle</div>
+        <div class="legal-section-body">
+          <p>An Open-Architecture Industrial Historian for the Modern Plant</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Version</div>
+        <div class="legal-section-body">
+          <p>0.1 — Draft · March 2026</p>
+          <p>Author: Branimir Georgiev, Imbra.Soft</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Abstract</div>
+        <div class="legal-section-body">
+          <p>Industrial historians fall into two categories: enterprise platforms priced at six figures with multi-year implementation projects, and siloed SCADA databases that cannot be queried, aggregated, or reasoned over. Small and medium plants are left with spreadsheets, manual shift reports, and no cross-site visibility. Enterprise plants pay for capabilities they use at ten percent capacity, locked into vendor ecosystems with no migration path.</p>
+          <p>ImBrain is an open-architecture industrial historian that stores time-series data, alarm events, lab results, and virtual tags — connects plants in a mesh — and lets operators query everything in plain language. The core and agents are open source under AGPL. Analytics plugins are commercial. It runs air-gapped on a $500 industrial mini PC and scales without architectural changes to enterprise mesh deployments spanning hundreds of sites.</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Topics covered</div>
+        <div class="legal-section-body">
+          <p>1. The Historian Market Gap</p>
+          <p>2. Why Existing Solutions Fail</p>
+          <p>3. The Open Hourglass Architecture</p>
+          <p>4. Data Model</p>
+          <p>5. Plugin Ecosystem</p>
+          <p>6. Mesh Network</p>
+          <p>7. Deployment</p>
+          <p>8. Licensing</p>
+          <p>9. Use Cases</p>
+          <p>10. Conclusion</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Technology</div>
+        <div class="legal-section-body">
+          <p>TimescaleDB · PostgreSQL · MQTT · Sparkplug B · OPC-UA · gRPC · Go · Parquet · Vector Search</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Download</div>
+        <div class="legal-section-body">
+          <p><a href="/whitepapers/imbrain.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Base>

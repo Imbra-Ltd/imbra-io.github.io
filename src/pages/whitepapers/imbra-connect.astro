@@ -1,0 +1,71 @@
+---
+import Base from "../../layouts/Base.astro";
+import site from "../../data/site.json";
+
+const title = "Imbra Connect White Paper — A Unified SDK for Industrial Protocol Connectivity";
+const description = "A unified industrial protocol SDK that provides a single abstract interface across MQTT, Modbus, CAN, CANopen, DeviceNet, EtherNet/IP, OPC-UA, HART, and Profibus. Open source under MIT.";
+---
+
+<Base title={`${title} — ${site.meta.title}`} description={description}>
+  <main class="legal-page">
+    <a href="/" class="legal-back">← Back to imbra.io</a>
+    <div class="legal-label">White Paper</div>
+    <h1 class="legal-heading">Imbra Connect</h1>
+
+    <div class="legal-grid">
+
+      <div class="legal-section">
+        <div class="legal-section-title">Subtitle</div>
+        <div class="legal-section-body">
+          <p>A Unified SDK for Industrial Protocol Connectivity</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Version</div>
+        <div class="legal-section-body">
+          <p>0.1 — Draft · March 2026</p>
+          <p>Author: Branimir Georgiev, Imbra.Soft</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Abstract</div>
+        <div class="legal-section-body">
+          <p>Industrial devices speak dozens of incompatible protocols. Engineers building connectivity layers spend weeks assembling fragmented, undermaintained libraries — and still end up with gaps. DeviceNet has no open Python library. EtherNet/IP lost its only maintained project. HART and Profibus are effectively unserved. The result is that every industrial connectivity project starts from scratch, reinventing the same plumbing with different tools.</p>
+          <p>Imbra Connect is a unified industrial protocol SDK that provides a single abstract interface across MQTT, Modbus, CAN, CANopen, DeviceNet, EtherNet/IP, OPC-UA, HART, and Profibus. One API, consistent across all protocols. Packet crafting and test tooling are first-class — engineers can validate implementations without physical hardware. Python and Go are fully open source under MIT. A community registry allows engineers to publish and discover protocol agents, growing coverage without Imbra.Soft writing every driver.</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Topics covered</div>
+        <div class="legal-section-body">
+          <p>1. The Connectivity Problem</p>
+          <p>2. The State of the Python Ecosystem</p>
+          <p>3. Architecture</p>
+          <p>4. Protocol Coverage</p>
+          <p>5. Packet Crafting and Test Tooling</p>
+          <p>6. Open Source Model</p>
+          <p>7. Community Registry</p>
+          <p>8. Integration with ImBrain</p>
+          <p>9. Conclusion</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Technology</div>
+        <div class="legal-section-body">
+          <p>Modbus TCP/IP · Modbus RTU · DeviceNet · EtherNet/IP · CAN · CANopen · OPC-UA · MQTT · HART · Profibus</p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <div class="legal-section-title">Download</div>
+        <div class="legal-section-body">
+          <p><a href="/whitepapers/imbra-connect.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Base>

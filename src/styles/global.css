@@ -18,8 +18,10 @@ nav {
 .nav-links { display: flex; gap: 36px; align-items: center; }
 .nav-link { font-size: 13px; font-weight: 400; color: #6B7480; cursor: pointer; letter-spacing: 0.03em; transition: color 0.15s; background: none; border: none; padding: 0; text-decoration: none; }
 .nav-link:hover { color: #111318; }
+.nav-link:focus-visible { outline: 2px solid #1B4F8A; outline-offset: 3px; }
 .nav-cta { font-size: 13px; font-weight: 500; background: #1B4F8A; color: white; border: none; padding: 8px 20px; cursor: pointer; letter-spacing: 0.04em; transition: background 0.15s; text-decoration: none; }
 .nav-cta:hover { background: #163F6E; }
+.nav-cta:focus-visible { outline: 2px solid #1B4F8A; outline-offset: 3px; }
 
 /* ── Mobile nav ── */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
@@ -44,8 +46,10 @@ nav {
 .hero-actions { display: flex; gap: 16px; align-items: center; }
 .btn-primary { background: #1B4F8A; color: white; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 28px; border: none; cursor: pointer; letter-spacing: 0.04em; transition: background 0.15s; text-decoration: none; }
 .btn-primary:hover { background: #163F6E; }
+.btn-primary:focus-visible { outline: 2px solid #1B4F8A; outline-offset: 3px; }
 .btn-ghost { background: none; color: #111318; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 400; padding: 14px 0; border: none; border-bottom: 1px solid #111318; cursor: pointer; letter-spacing: 0.02em; display: flex; align-items: center; gap: 8px; transition: color 0.15s; text-decoration: none; }
 .btn-ghost:hover { color: #1B4F8A; border-color: #1B4F8A; }
+.btn-ghost:focus-visible { outline: 2px solid #1B4F8A; outline-offset: 3px; }
 .hero-right { border-top: 1px solid #DDE2EA; }
 .hero-stats { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; }
 .stat-cell { padding: 32px; border-right: 1px solid #DDE2EA; background: #F8F9FA; }
@@ -92,6 +96,8 @@ section { padding: 96px 48px; }
 .detail-row:last-child { border-bottom: none; }
 .detail-col-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); min-width: 140px; padding-top: 2px; }
 .detail-col-text { font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.9); flex: 1; }
+.detail-col-text p { margin: 0 0 0.85em; }
+.detail-col-text p:last-child { margin-bottom: 0; }
 .detail-link { color: rgba(255,255,255,0.9); border-bottom: 1px solid rgba(255,255,255,0.3); }
 .detail-tech-row { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
 .detail-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 3px 8px; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); letter-spacing: 0.05em; }
@@ -106,6 +112,7 @@ section { padding: 96px 48px; }
 .service-title { font-size: 16px; font-weight: 500; color: #111318; margin-bottom: 8px; letter-spacing: -0.01em; }
 .service-desc { font-size: 13px; color: #6B7480; line-height: 1.65; font-weight: 300; }
 .service-toggle { background: none; border: 1px solid #DDE2EA; cursor: pointer; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: #1B4F8A; font-weight: 300; line-height: 1; }
+.service-toggle:focus-visible { outline: 2px solid #1B4F8A; outline-offset: 2px; }
 .service-detail { margin-top: 20px; padding-top: 20px; border-top: 1px solid #DDE2EA; }
 .service-detail-text { font-size: 13px; color: #444B56; line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
 .service-detail-row { display: flex; gap: 24px; margin-bottom: 16px; }
@@ -152,6 +159,7 @@ section { padding: 96px 48px; }
 .cta-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
 .btn-white { background: white; color: #111318; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 32px; border: none; cursor: pointer; letter-spacing: 0.04em; transition: background 0.15s; white-space: nowrap; text-decoration: none; }
 .btn-white:hover { background: #EBF1F9; }
+.btn-white:focus-visible { outline: 2px solid white; outline-offset: 3px; }
 .cta-email { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 48px; }
 .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -203,8 +211,6 @@ footer { background: #111318; color: white; }
 
 /* ── Pricing page ── */
 .pricing-page { max-width: 900px; margin: 0 auto; padding: 100px 48px 96px; }
-.pricing-back { font-size: 13px; color: #6B7480; text-decoration: none; display: inline-block; margin-bottom: 48px; }
-.pricing-back:hover { color: #111318; }
 .pricing-header { margin-bottom: 72px; border-bottom: 1px solid #DDE2EA; padding-bottom: 48px; }
 .pricing-label { font-size: 11px; font-weight: 500; color: #1B4F8A; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; }
 .pricing-heading { font-size: clamp(32px, 4vw, 48px); font-weight: 300; color: #111318; letter-spacing: -0.02em; margin-bottom: 16px; }
@@ -236,9 +242,9 @@ footer { background: #111318; color: white; }
 .pricing-table th { text-align: left; font-weight: 500; font-size: 11px; color: #6B7480; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 16px; background: #F8F9FA; border-bottom: 1px solid #DDE2EA; }
 .pricing-table td { padding: 12px 16px; border-bottom: 1px solid #F0F2F5; color: #4A5568; vertical-align: top; }
 .pricing-table tr:last-child td { border-bottom: none; }
-.pricing-notes { margin: 24px 0 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.pricing-notes li { font-size: 13px; color: #9BA3AD; line-height: 1.6; padding-left: 16px; position: relative; }
-.pricing-notes li::before { content: '*'; position: absolute; left: 0; color: #DDE2EA; }
+.pricing-notes { margin: 0; list-style: none; counter-reset: pricing-note; display: flex; flex-direction: column; gap: 8px; padding-left: 0; }
+.pricing-notes li { font-size: 13px; color: #4A5568; line-height: 1.6; padding-left: 24px; position: relative; counter-increment: pricing-note; }
+.pricing-notes li::before { content: counter(pricing-note) '.'; position: absolute; left: 0; color: #9BA3AD; font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
 .pricing-rates { margin: 32px 0; display: flex; flex-direction: column; gap: 0; border: 1px solid #DDE2EA; }
 .pricing-rate-row { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 24px; border-bottom: 1px solid #DDE2EA; gap: 24px; }
 .pricing-rate-row:last-child { border-bottom: none; }
@@ -250,9 +256,15 @@ footer { background: #111318; color: white; }
 .pricing-project-model-desc { font-size: 14px; color: #4A5568; line-height: 1.6; margin-bottom: 20px; }
 .pricing-project-model-rate { font-size: 22px; font-weight: 300; color: #1B4F8A; letter-spacing: -0.01em; }
 .pricing-legal-note { font-size: 13px; color: #9BA3AD; line-height: 1.6; padding: 32px 0 48px; border-top: 1px solid #EEF1F5; }
-.pricing-cta { background: #111318; padding: 56px 48px; text-align: center; }
+.pricing-cta { background: #111318; padding: 56px 48px; }
 .pricing-cta-heading { font-size: 28px; font-weight: 300; color: #FFFFFF; margin-bottom: 12px; letter-spacing: -0.01em; }
-.pricing-cta-sub { font-size: 15px; color: #6B7480; margin-bottom: 32px; }
+.pricing-cta-sub { font-size: 15px; color: #6B7480; margin-bottom: 0; }
+
+/* ── Back to top ── */
+.back-to-top { position: fixed; bottom: 32px; right: 32px; background: #1B4F8A; color: white; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 50; }
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
+.back-to-top:hover { background: #163F6E; }
+.back-to-top:focus-visible { outline: 2px solid #1B4F8A; outline-offset: 3px; }
 
 /* ── Responsive: 1024px (tablet) ── */
 @media (max-width: 1024px) {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 interface Service {
   num: string;
@@ -16,18 +16,6 @@ interface Props {
 
 export default function ServiceExpand({ services }: Props) {
   const [activeNum, setActiveNum] = useState<string | null>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = gridRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); obs.disconnect(); } },
-      { threshold: 0.1 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   function toggle(e: React.MouseEvent, num: string) {
     e.stopPropagation();
@@ -35,7 +23,7 @@ export default function ServiceExpand({ services }: Props) {
   }
 
   return (
-    <div ref={gridRef} className="services-grid reveal">
+    <div className="services-grid reveal">
       {services.map(s => (
         <div key={s.num} className={`service-item ${activeNum === s.num ? "active" : ""}`}>
           <div className="service-header">
