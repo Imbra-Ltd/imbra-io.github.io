@@ -2,7 +2,7 @@
   {
     "id": "01",
     "name": "Honeywell Control Blocks for Siemens",
-    "role": "DCS parity for Siemens PLCs",
+    "role": "Honeywell semantics on Siemens hardware",
     "desc": "Honeywell DCS control blocks — PID, DEVCTL, AI/AO/DI/DO — ported to Siemens SCL for plants running Honeywell as the main DCS and Siemens PLCs as auxiliary units. Operators work with the same control semantics across both systems.",
     "tags": ["PLC Programming", "Honeywell DCS", "Control Blocks", "SCL", "TIA Portal", "Commercial"],
     "problem": "Plants running Honeywell DCS as the main system often use Siemens PLCs for auxiliary units — compressors, utilities, ancillary processes. Operators trained on Honeywell control semantics face a context switch every time they work on a Siemens unit: different block names, different parameter conventions, different behaviour under the same operating conditions.\n\nThis library ports the core Honeywell control modules to Siemens S7-300/1500 as native FC/FB blocks written in SCL and called from Ladder. PID, DEVCTL, and AI/AO/DI/DO behave the way Honeywell operators expect — same semantics, same tuning conventions, same alarm behaviour. No retraining. No dual documentation. One control philosophy across the plant.",
