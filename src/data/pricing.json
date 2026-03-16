@@ -13,7 +13,7 @@
       "id": "retainer",
       "index": "1",
       "title": "Support Retainer",
-      "model": "Annual flat fee · per system instance",
+      "model": "Annual flat fee · per server instance or per release branch (libraries and frameworks)",
       "desc": "Third-level escalation for industrial software systems. Covers incident investigation, root cause analysis, workaround guidance, documentation, and remote consultation — across all covered instances.",
       "excludes": "⚠️ Deployment to production systems, on-site visits, and new feature development are excluded and governed separately.",
       "subtypes": [
@@ -25,7 +25,62 @@
           "tiers": [
             {
               "name": "Basic",
-              "price": "€800",
+              "price": "€1,200",
+              "period": "per instance / year",
+              "hours": "6 h included / instance / year",
+              "response": "48 h critical response",
+              "channel": "Email",
+              "reporting": false,
+              "review": false
+            },
+            {
+              "name": "Standard",
+              "price": "€1,800",
+              "period": "per instance / year",
+              "hours": "10 h included / instance / year",
+              "response": "8 h critical response",
+              "channel": "Email + video call",
+              "reporting": true,
+              "review": false,
+              "highlight": true
+            },
+            {
+              "name": "Premium",
+              "price": "€3,000",
+              "period": "per instance / year",
+              "hours": "16 h included / instance / year",
+              "response": "4 h critical response",
+              "channel": "Email + video + on-call",
+              "reporting": true,
+              "review": true
+            }
+          ],
+          "sla": [
+            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "48 h", "standard": "8 h", "premium": "4 h" },
+            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "3 days", "standard": "1 day", "premium": "8 h" },
+            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "5 days", "standard": "2 days", "premium": "1 day" },
+            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "10 days", "standard": "5 days", "premium": "2 days" }
+          ],
+          "notes": [
+            "Included hours are pooled across all instances within a tier — a quiet instance offsets a busy one.",
+            "Excess hours beyond the annual pool are billed at €200/hour with prior written approval.",
+            "Instances may be on different tiers within the same agreement.",
+            "Total pooled hours across all instances and tiers cannot exceed 2,500 hours per year (10 hours/day × 250 working days) — the maximum annual capacity of one engineer.",
+            "Business hours: Mon–Fri 09:00–18:00 CET, excluding Bulgarian and EU public holidays.",
+            "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer Industrial, or Secomea.",
+            "SLA response timers start only when remote access to the site is available.",
+            "Unused hours expire at the end of the annual period and do not roll over."
+          ]
+        },
+        {
+          "id": "l3-new",
+          "index": "1.2",
+          "title": "Support of New Products",
+          "desc": "Applies only to systems delivered by Imbra.Soft and covered by full arc42 architecture documentation. Same service conditions as legacy support — lower rates reflect the structured codebase, modern tooling, and complete documentation available from day one.",
+          "tiers": [
+            {
+              "name": "Basic",
+              "price": "€750",
               "period": "per instance / year",
               "hours": "6 h included / instance / year",
               "response": "48 h critical response",
@@ -63,62 +118,13 @@
           ],
           "notes": [
             "Included hours are pooled across all instances within a tier — a quiet instance offsets a busy one.",
-            "Excess hours beyond the annual pool are billed at €150/hour with prior written approval.",
-            "Instances may be on different tiers within the same agreement.",
-            "Total pooled hours across all instances and tiers cannot exceed 2,500 hours per year (10 hours/day × 250 working days) — the maximum annual capacity of one engineer.",
-            "Business hours: Mon–Fri 09:00–18:00 CET, excluding Bulgarian and EU public holidays."
-          ]
-        },
-        {
-          "id": "l3-new",
-          "index": "1.2",
-          "title": "Support of New Products",
-          "desc": "Applies only to systems delivered by Imbra.Soft and covered by full arc42 architecture documentation. Same service conditions as legacy support — lower rates reflect the structured codebase, modern tooling, and complete documentation available from day one.",
-          "tiers": [
-            {
-              "name": "Basic",
-              "price": "€500",
-              "period": "per instance / year",
-              "hours": "6 h included / instance / year",
-              "response": "48 h critical response",
-              "channel": "Email",
-              "reporting": false,
-              "review": false
-            },
-            {
-              "name": "Standard",
-              "price": "€800",
-              "period": "per instance / year",
-              "hours": "10 h included / instance / year",
-              "response": "8 h critical response",
-              "channel": "Email + video call",
-              "reporting": true,
-              "review": false,
-              "highlight": true
-            },
-            {
-              "name": "Premium",
-              "price": "€1,400",
-              "period": "per instance / year",
-              "hours": "16 h included / instance / year",
-              "response": "4 h critical response",
-              "channel": "Email + video + on-call",
-              "reporting": true,
-              "review": true
-            }
-          ],
-          "sla": [
-            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "48 h", "standard": "8 h", "premium": "4 h" },
-            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "3 days", "standard": "1 day", "premium": "8 h" },
-            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "5 days", "standard": "2 days", "premium": "1 day" },
-            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "10 days", "standard": "5 days", "premium": "2 days" }
-          ],
-          "notes": [
-            "Included hours are pooled across all instances within a tier — a quiet instance offsets a busy one.",
-            "Excess hours beyond the annual pool are billed at €150/hour with prior written approval.",
+            "Excess hours beyond the annual pool are billed at €200/hour with prior written approval.",
             "Instances may be on different tiers within the same agreement.",
             "Total pooled hours across all instances and tiers cannot exceed 2,500 hours per year.",
-            "Business hours: Mon–Fri 09:00–18:00 CET, excluding Bulgarian and EU public holidays."
+            "Business hours: Mon–Fri 09:00–18:00 CET, excluding Bulgarian and EU public holidays.",
+            "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer Industrial, or Secomea.",
+            "SLA response timers start only when remote access to the site is available.",
+            "Unused hours expire at the end of the annual period and do not roll over."
           ]
         }
       ]
@@ -136,10 +142,15 @@
           "title": "Hotfix & Emergency",
           "desc": "Analysis, preparation, and delivery of patches, configuration corrections, or emergency fixes. All artifacts are tested in-house before delivery.",
           "excludes": "⚠️ Production deployment is carried out by the client.",
-          "rate": "€200 / hour",
+          "rate": "€250 / hour",
           "minimum": "4-hour minimum per incident",
           "outofhours": "1.5× multiplier — evenings after 18:00 CET, weekends, public holidays",
-          "expenses": "The hourly rate covers all standard expenses. Exceptional costs exceeding €1,000 (travel, third-party licences, specialised tooling) are borne by the client with prior written agreement."
+          "expenses": "The hourly rate covers all standard expenses. Exceptional costs exceeding €1,000 (travel, third-party licences, specialised tooling) are borne by the client with prior written agreement.",
+          "notes": [
+            "Client must provide remote access before work begins. Accepted methods include VPN, TeamViewer Industrial, or Secomea.",
+            "The 4-hour minimum billing starts from the moment access is confirmed and the engagement can commence — not from when the incident is reported.",
+            "A written summary of findings and delivered artifacts is provided at the end of each engagement."
+          ]
         },
         {
           "id": "exploration",
@@ -147,9 +158,13 @@
           "title": "Exploration & Spikes",
           "desc": "A Spike is a time-boxed investigation used to reduce technical uncertainty before committing to a full project. The outcome is a written finding — not production code. Common uses: feasibility assessment, architecture options analysis, protocol compatibility study, or vendor evaluation.",
           "excludes": "⚠\uFE0F A Spike does not produce deployable software. If the investigation leads to a project, a separate Statement of Work is required.",
-          "rate": "€100 / hour",
+          "rate": "€150 / hour",
           "minimum": "1-day minimum (8 hours)",
-          "expenses": "All expenses incurred during the engagement (travel, third-party licences, specialised tooling) are borne by the client."
+          "expenses": "All expenses incurred during the engagement (travel, third-party licences, specialised tooling) are borne by the client.",
+          "notes": [
+            "If access to client systems is required, client is responsible for providing it before the engagement begins.",
+            "The deliverable is a written report. No source code, prototypes, or deployable software is produced unless a separate Statement of Work is agreed."
+          ]
         }
       ]
     },

@@ -10,14 +10,122 @@ The core idea: clients program against one abstract interface. Hardware and prot
 
 ## Business model
 
-| Tier | Language | License | Distribution |
-|------|----------|---------|--------------|
-| Free | Python | Open source (TBD) | GitHub + PyPI |
-| Paid | Go | Commercial | Private repo / licensed |
-| Paid | Rust | Commercial | Private repo / licensed |
-| Paid | TypeScript | Commercial | Private repo / licensed |
+| Component | License | Distribution |
+|-----------|---------|--------------|
+| Python — full SDK | Open source (MIT) | GitHub + PyPI |
+| Go — full SDK | Open source (MIT) | GitHub |
+| Rust — port | **Commercial** | Private repo / licensed |
+| TypeScript — port | **Commercial** | Private repo / licensed |
+| Community agents | Open source (MIT, mandatory) | Agent registry |
 
-**License decision pending** — MIT gives maximum freedom but allows free commercial use. LGPL or AGPL adds friction for commercial use and nudges serious users toward the paid Go/Rust versions.
+**Python and Go are the open-source core.** Full SDK in both languages — protocol implementations, packet crafting, test tooling, agent scaffolding — all MIT. No paid tiers within Python or Go.
+
+**Rust and TypeScript are paid ports.** The value is the porting work and the language-specific optimisations, not feature restrictions. Customers who need Rust (embedded, safety-critical, bare-metal) or TypeScript (browser, Node.js, cloud functions) pay for the port. The Python and Go implementations remain the reference.
+
+**Revenue comes from ImBrain, not from Imbra Connect:**
+
+| Revenue source | Model |
+|----------------|-------|
+| ImBrain paid plugins | OEE, Golden Batch, Anomaly Detection, LLM, Forecast, etc. |
+| ImBrain support contracts | Installation, maintenance, incident response |
+| ImBrain managed cloud | Hosted ImBrain for customers who don't want on-premise |
+| Integration consulting | Custom agent development, site deployment, migration from legacy historians |
+
+Imbra Connect is the tool that creates the community. ImBrain is the product that generates revenue. A large, healthy Imbra Connect community means more agents, more protocol coverage, more engineers familiar with the stack — all of which drives ImBrain adoption.
+
+---
+
+## Development process
+
+**Prototype in Python. Ship in Go.**
+
+Python and Go serve distinct roles in the development lifecycle — not as competitors, but as sequential stages.
+
+Python is the prototyping and exploration language. New protocol implementations and agents are developed first in Python. It allows rapid iteration — interactive exploration, quick feedback, access to a broad ecosystem for testing against real hardware. The Python implementation defines the correct behaviour, the packet structure, and the API contract.
+
+Go is the product language. Once the Python prototype is validated and the API is stable, it is ported to Go for release. Go produces a single self-contained binary with no runtime dependencies — the right fit for air-gapped industrial plants, cross-platform deployment, and long-term maintenance. It is the more future-proof ecosystem for this domain: strong backwards compatibility, trivial cross-compilation, natural concurrency model for multi-protocol agents, and the dominant language direction for infrastructure tooling.
+
+**Maintenance boundary:** once the Go release ships, Imbra.Soft's engineering time moves entirely to Go. The Python version remains open source and available, but it is community-maintained from that point. Community contributions to Python are welcome and will be reviewed — Imbra.Soft does not proactively fix or extend it.
+
+| Stage | Language | Owner | Purpose |
+|-------|----------|-------|---------|
+| Prototype | Python | Imbra.Soft | Validate protocol behaviour, explore API design, test on real hardware |
+| Community agents | Python | Community | Production agents for the registry — legitimate releases, not just prototypes |
+| Product | Go | Imbra.Soft | Official release — single binary, air-gapped deployment, long-term maintenance |
+| Paid ports | Rust / TypeScript | Imbra.Soft | Language-specific targets for embedded or browser environments |
+
+---
+
+## Community agent registry
+
+### Goal
+
+Every industrial protocol and hardware vendor in the world eventually covered — not by Imbra.Soft alone, but by a community of engineers who have the hardware on the bench and want it to work with ImBrain.
+
+The model: engineer writes an agent for their Siemens S7-1500 / Yokogawa DCS / Mitsubishi MELSEC / custom serial device → submits to the registry → every other ImBrain user installs it with one command → Imbra reviews the best ones and promotes them to official status.
+
+This is how Home Assistant grew from 50 device integrations to 3,000+.
+
+### Structure
+
+Imbra Connect, agents, and the registry are three distinct things:
+
+| Component | What it is | Where it lives |
+|-----------|-----------|----------------|
+| Imbra Connect SDK | Protocol library (Python + Go) | `github.com/imbra-ltd/imbra-connect` |
+| Agent | Binary that uses the SDK — owns collection logic | Its own repo, one repo per agent |
+| Registry | Index of known agents — metadata, tiers, install pointers | `agents.imbra.io` (v2), GitHub index (v1) |
+
+Agents are not stored in the registry. The registry is a catalogue — it points to agent repos and records metadata (version, protocols supported, tier, install command). The code and binaries live in the agent's own repository.
+
+Official agent repos follow the naming convention `agent-<protocol>` under the `Imbra-Ltd` org:
+
+```
+github.com/imbra-ltd/agent-modbus
+github.com/imbra-ltd/agent-opcua
+github.com/imbra-ltd/agent-mqtt
+```
+
+Community agent repos are owned by their authors:
+
+```
+github.com/someengineer/agent-yokogawa
+github.com/acompany/agent-siemens-s7
+```
+
+### Submission rules
+
+- **Open source is mandatory** — MIT license, public GitHub repository
+- Agent must pass a basic automated compatibility test against the current Agent SDK version
+- No malware, no telemetry, no phone-home — enforced by Imbra review
+- Submitter retains copyright; Imbra may fork, improve, and incorporate into official agents with attribution
+
+### Registry tiers
+
+| Tier | How it gets there | Guarantee |
+|------|------------------|-----------|
+| **Community** | Submitted by anyone, passes automated checks | Reviewed for safety, not quality |
+| **Verified** | Imbra-reviewed, tested on real hardware | Works as documented |
+| **Official** | Maintained by Imbra.Soft, included in installer | Fully supported |
+
+### Installation
+
+```bash
+# Install an official agent (bundled in installer)
+imbrain agent install agent-modbus
+
+# Install a verified community agent
+imbrain agent install community/agent-yokogawa
+
+# Install any community agent directly by GitHub repo
+imbrain agent install github.com/someengineer/agent-yokogawa
+```
+
+### Registry roadmap
+
+- **v1** — GitHub-hosted index (`awesome-imbrain-agents`) + manual `imbrain agent install <github-url>`
+- **v2** — Hosted registry at `agents.imbra.io` — search, ratings, install counts, version pinning
+- **v3** — Automatic compatibility matrix — shows which agent versions work with which core versions
 
 ---
 
@@ -32,6 +140,7 @@ Existing implementations:
 Planned:
 - **EtherNet/IP** — CIP over TCP/UDP
 - **Modbus** — RTU and TCP variants
+- **OPC XML-DA (XDA)** — XML/SOAP over HTTP, no DCOM required
 - Others (Profibus, OPC-UA, FINS, etc.)
 
 ### Protocol hierarchy
@@ -51,7 +160,26 @@ MQTT
 Modbus
 ├── RTU (serial)
 └── TCP
+
+OPC (OLE for Process Control — legacy family)
+├── OPC DA     → not directly supported (DCOM — see wrapper strategy below)
+└── OPC XML-DA → supported via HTTP/SOAP adapter (no DCOM)
 ```
+
+### OPC DA and the DCOM constraint
+
+**OPC DA** (Data Access, 1996–2006) is the dominant legacy protocol in older industrial installations. It uses Microsoft DCOM as its transport — which means:
+
+- Requires Windows on both client and server
+- Network DCOM requires complex firewall and registry configuration
+- Completely incompatible with Linux containers (Podman/Docker)
+- Many IT departments prohibit DCOM across network boundaries
+
+Imbra Connect does **not** implement OPC DA directly. The recommended integration path is a **DA→UA wrapper** — a Windows service (existing tool or the Imbra DA→UA Bridge) that reads OPC DA via local COM and exposes a standard OPC UA endpoint. ImBrain's OpcUaPlugin then connects to the UA endpoint as it would to any native OPC UA server.
+
+This is preferred over an MQTT bridge because it preserves the full OPC DA address space (hierarchy, data types, engineering units), works with any OPC UA client in the plant — not just ImBrain — and provides a genuine migration path from DA to UA rather than a workaround.
+
+See the ImBrain documentation for the full decision flowchart and bridge deployment options.
 
 ---
 
@@ -226,17 +354,17 @@ Positioning: *"The only open Python framework for industrial protocol packet cra
 
 ## Licensing strategy
 
-### Imbra Connect (Python) — own license
+**Decision: resolved.**
 
-**Decision pending.** Options:
+| Component | License | Reason |
+|-----------|---------|--------|
+| Imbra Connect SDK (Python + Go) | **MIT** | Maximum adoption, zero friction. Engineers at industrial companies cannot use GPL libraries — MIT removes all legal barriers. The SDK is a community-building tool, not a revenue source. |
+| Community agents | **MIT** (mandatory) | Registry policy enforced by Imbra review, not by the SDK license. |
+| Rust / TypeScript ports | **Commercial** | Proprietary. Value is the porting work and language-specific optimisations. |
 
-| License | Commercial use by others | Paid port obligation | Recommended for |
-|---------|--------------------------|---------------------|-----------------|
-| MIT | Free, unrestricted | None | Maximum adoption, no friction |
-| LGPL | Free if used as dependency | None if not modifying | Slight friction for bundling |
-| AGPL | Must open source network-facing derivatives | Strong copyleft | Forces commercial users to pay or comply |
+MIT places no obligation on users to open source their own code. The only requirement is to keep the copyright notice. This is intentional — friction-free adoption is the goal.
 
-**Recommendation:** start with **MIT** to maximise adoption and community trust. The paid Go/Rust ports derive value from language, performance, and support — not from restricting the Python version.
+This is the same model used by HashiCorp (Terraform), Grafana, and most successful open infrastructure projects: MIT on the SDK drives community, revenue comes from the product built on top (ImBrain).
 
 ### Third-party dependencies — license compatibility
 
@@ -250,9 +378,9 @@ Imbra Connect wraps or depends on existing libraries. All confirmed safe as opti
 | `canopen` | MIT | Optional dependency | Fully permissive |
 | `asyncua` | LGPL 3.0 | Optional dependency | Safe to import; do not modify and redistribute |
 
-### Rules for the paid ports (Go, Rust, TypeScript)
+### Rules for the Go port
 
-- **Do not translate LGPL library code** into Go/Rust — reimplement from the protocol specification
+- **Do not translate LGPL library code** into Go — reimplement from the protocol specification
 - **Do not bundle GPL code** under any circumstances
 - Protocol implementations for unserved protocols (DeviceNet, Profibus, HART) are entirely original — no licensing concerns
 - Keep a record of which implementations are original vs spec-derived
@@ -261,7 +389,6 @@ Imbra Connect wraps or depends on existing libraries. All confirmed safe as opti
 
 ## Open questions
 
-- [ ] Final license for the Python open source version (MIT vs LGPL vs AGPL)
 - [ ] Does the existing abstract interface match the Driver/Adapter/Connection split or is it structured differently?
 - [ ] GitHub org for the repos — `Imbra-Ltd` or a separate org?
 - [ ] PyPI package name — `imbra-connect` (check availability)

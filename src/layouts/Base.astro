@@ -36,9 +36,35 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="NLAJ2Ho9eJZkSFjWyPd1Un_sAmcOhfsQZagKnDLEc2s" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Imbra.Soft",
+      "legalName": "Imbra OOD",
+      "url": "https://imbra.io",
+      "logo": "https://imbra.io/logos/logo-1b-web.svg",
+      "email": "contact@imbra.io",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Varna",
+        "addressCountry": "BG"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/branimir-georgiev",
+        "https://github.com/Imbra-Ltd"
+      ],
+      "description": "Boutique software and industrial engineering consultancy specialising in OT/IT integration, industrial historian systems, communication protocol SDKs, and bespoke engineering services."
+    }
+    </script>
 
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-C6I_AesCmEwdstmSS5mGn.js"></script>
@@ -49,6 +75,7 @@ const ogImageURL = new URL(ogImage, Astro.site);
   </head>
   <body>
     <slot />
+    <button class="back-to-top" aria-label="Back to top">↑</button>
   </body>
 </html>
 
@@ -61,4 +88,13 @@ const ogImageURL = new URL(ogImage, Astro.site);
     );
     obs.observe(el);
   });
+
+  // Back to top
+  const btn = document.querySelector<HTMLButtonElement>(".back-to-top");
+  if (btn) {
+    window.addEventListener("scroll", () => {
+      btn.classList.toggle("visible", window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  }
 </script>
