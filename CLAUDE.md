@@ -117,6 +117,7 @@ Before every commit, update all relevant documentation:
 - Always test with `npm run dev` before committing
 - Do not commit `dist/` or `node_modules/`
 - **Before pushing or creating a PR**, always check the current branch and open PR status with `git status` and `gh pr list`. If the previous PR is closed or merged, create a new branch rather than pushing to a stale one.
+- **After a PR is merged**, delete both the remote and local branch: `git branch -d <branch>` and `gh api -X DELETE repos/Imbra-Ltd/imbra-io.github.io/git/refs/heads/<branch>`. Then pull main: `git checkout main && git pull`.
 
 ## Commands
 ```
