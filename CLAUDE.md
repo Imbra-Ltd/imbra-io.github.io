@@ -116,6 +116,7 @@ Before every commit, update all relevant documentation:
 - PRs should be small and focused — one concern per PR
 - Always test with `npm run dev` before committing
 - Do not commit `dist/` or `node_modules/`
+- **Before pushing or creating a PR**, always check the current branch and open PR status with `git status` and `gh pr list`. If the previous PR is closed or merged, create a new branch rather than pushing to a stale one.
 
 ## Commands
 ```
