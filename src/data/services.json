@@ -66,16 +66,14 @@
   {
     "num": "04",
     "title": "AI/ML-Augmented Engineering",
-    "desc": "AI/ML applied where it delivers measurable value in industrial contexts — predictive maintenance, test generation, and legacy code modernisation, with a clear path toward autonomous decision making at the OT/IT boundary.",
+    "desc": "AI and machine learning applied where they deliver measurable industrial value: natural language queries over historian data, anomaly detection across process variables, predictive maintenance, golden batch comparison, and AI-generated shift reports — deployable on-premise with no cloud dependency for air-gapped plants.",
     "detail": "AI/ML augments engineering work at several points in the industrial stack. Predictive maintenance models trained on process historian data catch equipment degradation before it becomes downtime.\n\nAI-assisted documentation and refactoring untangles legacy codebases that have accumulated years of undocumented changes — giving teams a working understanding of what the code actually does. Test specifications and test suites generated from product descriptions reduce the manual effort of coverage at scale.\n\nThe next frontier is the agent layer — autonomous agents that act on historian data, not just collect it, opening the door to real-time process optimisation and adaptive control. This website was built entirely with Claude Code — a practical demonstration of AI/ML-augmented engineering in action.",
     "tech": [
       "AI/ML",
       "Predictive Maintenance",
       "LLM",
       "APC",
-      "P&ID Tuning",
-      "Claude Code",
-      "GitHub Copilot"
+      "Claude Code"
     ],
     "useCases": {
       "delivered": [
@@ -88,6 +86,11 @@
       ],
       "exploring": [
         "Natural Language Interfaces over Historian Data",
+        "Anomaly Detection across Process Variables",
+        "Golden Batch Comparison with Real-Time Deviation Alerts",
+        "AI-Generated Shift Reports & Alarm Digests",
+        "On-Premise LLM Deployment for Air-Gapped Plants",
+        "MCP Servers for Industrial Data Sources",
         "Process Modelling & Controller Tuning",
         "APC Design Support"
       ]
