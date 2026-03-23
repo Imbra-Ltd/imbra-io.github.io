@@ -65,7 +65,7 @@
             "Maximum pooled capacity is 1,000 hours per client per year (20 hours/week × 50 working weeks).",
             "Business hours: Mon–Fri 09:00–18:00 CET, excluding Bulgarian and EU public holidays.",
             "SLA response timers apply during business hours only.",
-            "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer Industrial, or Secomea.",
+            "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer, SimpleHelp or Secomea.",
             "SLA response timers start only when remote access to the site is available."
           ]
         },
