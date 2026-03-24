@@ -50,18 +50,6 @@ const pricingLinks = [
               {sub.title}
             </h3>
             <p class="pricing-subtype-desc">{sub.desc}</p>
-            {sub.examples && (
-              <ul class="pricing-examples">
-                {sub.examples.map((e) => <li>{e}</li>)}
-              </ul>
-            )}
-            {sub.excludes && (
-              <div class="pricing-excludes">
-                <div class="pricing-excludes-icon">!</div>
-                <p class="pricing-excludes-text">{sub.excludes}</p>
-              </div>
-            )}
-
             {sub.tiers && (
               <div class="pricing-tiers">
                 {sub.tiers.map((tier) => (
@@ -70,7 +58,6 @@ const pricingLinks = [
                     <div class="pricing-tier-price">{tier.price}</div>
                     <div class="pricing-tier-period">{tier.period}</div>
                     <ul class="pricing-tier-features">
-                      <li>{tier.response}</li>
                       <li>{tier.channel}</li>
                       <li>{tier.reporting ? 'Monthly summary report' : 'No monthly report'}</li>
                       <li>{tier.review ? 'Quarterly business review' : 'No quarterly review'}</li>
@@ -135,22 +122,32 @@ const pricingLinks = [
               </div>
             )}
 
+            {sub.excludes && (
+              <div class="pricing-excludes">
+                <div class="pricing-excludes-icon">!</div>
+                <p class="pricing-excludes-text">{sub.excludes}</p>
+              </div>
+            )}
+
+            {sub.examples && (
+              <details class="pricing-notes-details">
+                <summary class="pricing-notes-summary mono">Use Cases</summary>
+                <ul class="pricing-notes">
+                  {sub.examples.map((e) => <li>{e}</li>)}
+                </ul>
+              </details>
+            )}
+
             {sub.notes && (
-              <div class="pricing-table-wrap">
-                <div class="pricing-table-label mono">Notes</div>
+              <details class="pricing-notes-details">
+                <summary class="pricing-notes-summary mono">Notes</summary>
                 <ol class="pricing-notes">
                   {sub.notes.map((n) => <li>{n}</li>)}
                 </ol>
-              </div>
+              </details>
             )}
           </div>
         ))}
-
-        {cat.examples && (
-          <ul class="pricing-examples">
-            {cat.examples.map((e) => <li>{e}</li>)}
-          </ul>
-        )}
 
         <!-- Project models -->
         {cat.models && (
@@ -163,6 +160,15 @@ const pricingLinks = [
               </div>
             ))}
           </div>
+        )}
+
+        {cat.examples && (
+          <details class="pricing-notes-details">
+            <summary class="pricing-notes-summary mono">Use Cases</summary>
+            <ul class="pricing-notes">
+              {cat.examples.map((e) => <li>{e}</li>)}
+            </ul>
+          </details>
         )}
       </section>
     ))}
