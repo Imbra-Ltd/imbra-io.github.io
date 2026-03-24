@@ -6,7 +6,7 @@
   "intro": {
     "label": "Pricing",
     "heading": "Transparent by design.",
-    "sub": "Three service engagement models for software and industrial engineering work. No hidden fees. All prices are exclusive of VAT — EU reverse charge applies for cross-border B2B transactions."
+    "sub": "Three engagement models for software and industrial engineering work. No hidden fees. All prices are exclusive of VAT — EU reverse charge applies for cross-border B2B transactions."
   },
   "categories": [
     {
@@ -15,23 +15,23 @@
       "title": "Support Retainer",
       "model": "Annual flat fee · per server instance",
       "desc": "Third-level escalation for industrial software systems. Covers incident investigation, root cause analysis, workaround guidance, documentation, and remote consultation — across all covered instances. Each agreement is assigned a dedicated Imbra engineer — the same person across the lifetime of the contract.",
-      "excludes": "Deployment to production systems, on-site visits, and new feature development are excluded and governed separately.",
       "subtypes": [
         {
           "id": "l3-legacy",
           "index": "1.1",
           "title": "Support of Legacy Systems",
-          "desc": "For systems with limited or no original documentation. Investigation requires reverse-engineering, log analysis, and source-level archaeology. Higher rates reflect the additional overhead of working with undocumented, end-of-life, or vendor-unsupported software.",
+          "desc": "For systems with limited or no original documentation. Investigation requires reverse-engineering, log analysis, and source-level archaeology. Higher rates reflect the additional overhead of working with undocumented, end-of-life, or vendor-unsupported software. Third-party systems not previously known to Imbra require a system assessment before support can commence.",
+          "excludes": "Deployment to production systems, on-site visits, and new feature development are excluded and governed separately.",
           "examples": [
-            "A system running on end-of-life software with no documentation.",
-            "An integration with undocumented behaviour causing intermittent data loss."
+            "End-of-life software with no vendor support or documentation.",
+            "Custom-built solution with no source code or original developer."
           ],
           "tiers": [
             {
               "name": "Basic",
               "price": "€1,500",
               "period": "per instance / year",
-              "response": "48 h critical response",
+              "response": "3d critical response",
               "channel": "Email",
               "reporting": false,
               "review": false
@@ -40,7 +40,7 @@
               "name": "Standard",
               "price": "€2,200",
               "period": "per instance / year",
-              "response": "24 h critical response",
+              "response": "1d critical response",
               "channel": "Email + video call",
               "reporting": true,
               "review": false,
@@ -50,17 +50,17 @@
               "name": "Premium",
               "price": "€3,500",
               "period": "per instance / year",
-              "response": "8 h critical response",
-              "channel": "Email + video + on-call",
+              "response": "4h critical response",
+              "channel": "Email + video call",
               "reporting": true,
               "review": true
             }
           ],
           "sla": [
-            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "48 h", "standard": "24 h", "premium": "8 h" },
-            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "3 days", "standard": "1 day", "premium": "8 h" },
-            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "5 days", "standard": "2 days", "premium": "1 day" },
-            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "10 days", "standard": "5 days", "premium": "2 days" }
+            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "2d", "standard": "1d", "premium": "4h" },
+            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "5d", "standard": "2d", "premium": "8h" },
+            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "10d", "standard": "5d", "premium": "2d" },
+            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "10d", "standard": "7d", "premium": "5d" }
           ],
           "notes": [
             "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer, SimpleHelp, Secomea, AnyDesk, or equivalent.",
@@ -71,7 +71,8 @@
             "Hours are pooled across all instances within a client agreement — a quiet instance offsets a busy one.",
             "Maximum pooled capacity is 1,000 hours per client per year (20 hours/week × 50 working weeks).",
             "Instances may be on different tiers within the same agreement.",
-            "Third-party legacy systems not previously delivered by Imbra require a system assessment before support can commence. This is handled as a separate project and governed by a Statement of Work."
+            "Third-party legacy systems not previously delivered by Imbra require a system assessment before support can commence. This is handled as a separate project and governed by a Statement of Work.",
+            "L3 support covers investigation, root cause analysis, and workaround guidance. Code-level fixes require a separate Project Engagement governed by a Statement of Work. Where source code is unavailable, root cause analysis is limited to log analysis, observed behaviour, and binary-level inspection."
           ]
         },
         {
@@ -79,16 +80,16 @@
           "index": "1.2",
           "title": "Support of New Products",
           "desc": "Applies only to systems delivered by Imbra and covered by full arc42 architecture documentation. Same service conditions as legacy support — lower rates reflect the structured codebase, modern tooling, and complete documentation available from day one.",
+          "excludes": "Deployment to production systems, on-site visits, and new feature development are excluded and governed separately.",
           "examples": [
-            "An Imbra-built gateway deployed across 3 production sites.",
-            "A cloud integration delivered by Imbra, now in steady-state operation."
+            "Any system delivered and documented by Imbra in steady-state operation."
           ],
           "tiers": [
             {
               "name": "Basic",
               "price": "€800",
               "period": "per instance / year",
-              "response": "48 h critical response",
+              "response": "3d critical response",
               "channel": "Email",
               "reporting": false,
               "review": false
@@ -97,7 +98,7 @@
               "name": "Standard",
               "price": "€1,200",
               "period": "per instance / year",
-              "response": "24 h critical response",
+              "response": "1d critical response",
               "channel": "Email + video call",
               "reporting": true,
               "review": false,
@@ -107,17 +108,17 @@
               "name": "Premium",
               "price": "€2,000",
               "period": "per instance / year",
-              "response": "8 h critical response",
-              "channel": "Email + video + on-call",
+              "response": "4h critical response",
+              "channel": "Email + video call",
               "reporting": true,
               "review": true
             }
           ],
           "sla": [
-            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "48 h", "standard": "24 h", "premium": "8 h" },
-            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "3 days", "standard": "1 day", "premium": "8 h" },
-            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "5 days", "standard": "2 days", "premium": "1 day" },
-            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "10 days", "standard": "5 days", "premium": "2 days" }
+            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "2d", "standard": "1d", "premium": "4h" },
+            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "5d", "standard": "2d", "premium": "8h" },
+            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "10d", "standard": "5d", "premium": "2d" },
+            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "10d", "standard": "7d", "premium": "5d" }
           ],
           "notes": [
             "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer, SimpleHelp, Secomea, AnyDesk, or equivalent.",
@@ -128,6 +129,22 @@
             "Hours are pooled across all instances within a client agreement — a quiet instance offsets a busy one.",
             "Maximum pooled capacity is 1,000 hours per client per year (20 hours/week × 50 working weeks).",
             "Instances may be on different tiers within the same agreement."
+          ]
+        },
+        {
+          "id": "oncall",
+          "index": "1.3",
+          "title": "24/7 On-Call Add-On",
+          "desc": "An optional extension to any active retainer agreement. Provides round-the-clock availability for Critical incidents, reducing response time to 1h regardless of time of day. Governed by a separate agreement in addition to the base retainer.",
+          "examples": [
+            "A production system where downtime at night or on weekends carries significant financial or operational risk."
+          ],
+          "rate": "€20,000 / client / year",
+          "notes": [
+            "Requires an active retainer agreement (1.1 or 1.2) — cannot be purchased standalone.",
+            "Reduces Critical response time to 1h, 24 hours a day, 7 days a week.",
+            "All other severity response times remain as defined in the base retainer.",
+            "Priced per client — covers all instances under the client agreement regardless of tier."
           ]
         }
       ]
@@ -145,8 +162,9 @@
           "title": "Hotfix & Emergency",
           "desc": "Analysis, preparation, and delivery of patches, configuration corrections, or emergency fixes. All artifacts are tested in-house before delivery.",
           "examples": [
-            "A data pipeline stops writing the night before a regulatory audit.",
-            "A communication driver crashes after a routine OS update."
+            "System down — root cause unknown, production at risk.",
+            "Urgent configuration correction needed after a failed deployment.",
+            "Critical hotfix required before the next production window."
           ],
           "excludes": "Production deployment is carried out by the client.",
           "rate": "€250 / hour",
@@ -165,7 +183,7 @@
           "title": "Exploration & Spikes",
           "desc": "A Spike is a time-boxed investigation used to reduce technical uncertainty before committing to a full project. The outcome is a written finding — not production code. Common uses: feasibility assessment, architecture options analysis, protocol compatibility study, or vendor evaluation.",
           "examples": [
-            "Assessing whether an existing integration can be migrated to a modern protocol without replacing infrastructure.",
+            "Assessing migration options before committing to a technical change.",
             "Evaluating two competing platforms before committing to a multi-year licence."
           ],
           "excludes": "A Spike does not produce deployable software. If the investigation leads to a project, a separate Statement of Work is required.",
@@ -186,8 +204,9 @@
       "model": "Fixed price",
       "desc": "Refactoring, new features, migrations, and integrations. Each project is governed by a Statement of Work agreed in writing before commencement, defining scope, deliverables, timeline, and acceptance criteria. Projects involving third-party systems, undocumented interfaces, or undefined scope require an Exploration & Spike before a fixed price can be quoted.",
       "examples": [
-        "Migrating a legacy COM-based driver to a modern .NET service.",
-        "Building a REST API layer over an existing server."
+        "Modernising a legacy codebase — language upgrades, runtime migrations, or framework replacements.",
+        "Connecting systems that don't talk to each other — APIs, data pipelines, or protocol bridges.",
+        "Extending an existing system with new features or capabilities."
       ],
       "models": [
         {
