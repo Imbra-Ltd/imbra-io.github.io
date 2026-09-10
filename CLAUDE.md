@@ -76,7 +76,7 @@ src/components/
 | Page                            | Path                                | Notes                                      |
 |---------------------------------|-------------------------------------|--------------------------------------------|
 | Homepage                        | `/`                                 | All main sections                          |
-| Pricing                         | `/pricing/`                         | Linked from the main nav; still `noindex` and excluded from the sitemap so search engines skip it |
+| Pricing                         | `/pricing/`                         | Rate ladder, support, projects, worked examples; linked from nav and 404 |
 | Whitepaper — ImBrain            | `/whitepapers/imbrain/`             | Landing page for ImBrain white paper       |
 | Whitepaper — Imbra Connect      | `/whitepapers/imbra-connect/`       | Landing page for Imbra Connect white paper |
 | Whitepaper — Honeywell/Siemens  | `/whitepapers/honeywell-siemens/`   | Landing page for Honeywell white paper     |
