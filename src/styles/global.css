@@ -274,7 +274,7 @@ footer { background: var(--color-dark); color: white; }
 
 /* ── Pricing page ── */
 .pricing-page { max-width: 900px; margin: 0 auto; padding: 100px 48px 96px; }
-.pricing-header { margin-bottom: 72px; border-bottom: 1px solid var(--color-border); padding-bottom: 48px; }
+.pricing-header { border-bottom: 1px solid var(--color-border); padding-bottom: 48px; }
 .pricing-label { font-size: 11px; font-weight: 500; color: var(--color-accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; }
 .pricing-heading { font-size: clamp(32px, 4vw, 48px); font-weight: 300; color: var(--color-dark); letter-spacing: -0.02em; margin-bottom: 16px; }
 .pricing-sub { font-size: 15px; color: var(--color-text-muted); font-weight: 300; line-height: 1.7; max-width: 560px; }
@@ -284,15 +284,11 @@ footer { background: var(--color-dark); color: white; }
 .pricing-section-title { font-size: 24px; font-weight: 500; color: var(--color-dark); letter-spacing: -0.01em; margin-bottom: 6px; }
 .pricing-model { font-size: 12px; color: var(--color-accent); letter-spacing: 0.05em; }
 .pricing-desc { font-size: 15px; color: var(--color-text-body); line-height: 1.7; margin-bottom: 12px; max-width: 680px; }
-.pricing-excludes { display: grid; grid-template-columns: 48px 1fr; background: var(--color-border); border: 1px solid var(--color-border); gap: 1px; margin-bottom: 32px; }
-.pricing-excludes-icon { background: #D97706; color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 500; display: flex; align-items: center; justify-content: center; }
-.pricing-excludes-text { background: var(--color-white); font-size: 13px; color: var(--color-text-body); line-height: 1.6; padding: 14px 20px; margin: 0; }
-.pricing-excludes-list { background: var(--color-white); font-size: 13px; color: var(--color-text-body); line-height: 1.6; padding: 14px 20px 14px 36px; margin: 0; display: flex; flex-direction: column; gap: 6px; }
-.pricing-subtype { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--color-border-light); }
-.pricing-subtype-title { font-size: 16px; font-weight: 500; color: var(--color-dark); letter-spacing: 0.01em; margin-bottom: 8px; display: flex; align-items: baseline; gap: 12px; }
-.pricing-subtype-index { font-size: 13px; color: var(--color-accent); font-weight: 400; letter-spacing: 0.04em; }
-.pricing-subtype-desc { font-size: 14px; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 24px; max-width: 680px; }
-.pricing-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); margin: 32px 0; }.pricing-tier { background: var(--color-white); padding: 32px 28px; }
+.pricing-callout { display: grid; grid-template-columns: 48px 1fr; background: var(--color-border); border: 1px solid var(--color-border); gap: 1px; margin-bottom: 32px; }
+.pricing-callout-icon { background: var(--color-accent); color: var(--color-white); font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 500; display: flex; align-items: center; justify-content: center; }
+.pricing-callout-text { background: var(--color-white); font-size: 13px; color: var(--color-text-body); line-height: 1.6; padding: 14px 20px; margin: 0; }
+.pricing-tiers { display: grid; grid-template-columns: repeat(var(--tier-cols, 2), 1fr); gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); margin: 32px 0; }
+.pricing-tier { background: var(--color-white); padding: 32px 28px; }
 .pricing-tier--highlight { background: var(--color-accent-light); }
 .pricing-tier-name { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 20px; }
 .pricing-tier-price { font-size: 36px; font-weight: 300; color: var(--color-dark); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px; }
@@ -300,18 +296,11 @@ footer { background: var(--color-dark); color: white; }
 .pricing-tier-period { font-size: 12px; color: var(--color-text-dim); margin-bottom: 24px; }
 .pricing-tier-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .pricing-tier-features li { font-size: 13px; color: var(--color-text-body); line-height: 1.5; padding-left: 16px; position: relative; }
-.pricing-tier-features li::before { content: '—'; position: absolute; left: 0; color: var(--color-border); }
-.pricing-table-wrap { margin: 32px 0 24px; overflow-x: auto; }
-.pricing-table-label { font-size: 11px; color: var(--color-text-dim); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
-.pricing-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.pricing-table th { text-align: left; font-weight: 500; font-size: 11px; color: var(--color-text-muted); letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 16px; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
-.pricing-table td { padding: 12px 16px; border-bottom: 1px solid var(--color-border-subtle); color: var(--color-text-body); vertical-align: top; }
-.pricing-table tr:last-child td { border-bottom: none; }
-.pricing-notes-details { margin-top: 24px; border-top: 1px solid var(--color-border-light); padding-top: 16px; }
+.pricing-tier-features li::before { content: '—'; position: absolute; left: 0; color: var(--color-border); }.pricing-notes-details { margin-top: 24px; border-top: 1px solid var(--color-border-light); padding-top: 16px; }
 .pricing-notes-summary { font-size: 11px; color: var(--color-text-dim); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; user-select: none; list-style: none; display: flex; align-items: center; gap: 8px; }
 .pricing-notes-summary::after { content: '+'; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--color-text-dim); }
 details[open] .pricing-notes-summary::after { content: '−'; }
-.pricing-notes-details ol, .pricing-notes-details ul { margin-top: 16px; }
+.pricing-notes-details ol { margin-top: 16px; }
 .pricing-notes { margin: 0; list-style: none; counter-reset: pricing-note; display: flex; flex-direction: column; gap: 8px; padding-left: 0; }
 .pricing-notes li { font-size: 13px; color: var(--color-text-body); line-height: 1.6; padding-left: 24px; position: relative; counter-increment: pricing-note; }
 .pricing-notes li::before { content: counter(pricing-note) '.'; position: absolute; left: 0; color: var(--color-text-dim); font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
@@ -320,11 +309,6 @@ details[open] .pricing-notes-summary::after { content: '−'; }
 .pricing-rate-row:last-child { border-bottom: none; }
 .pricing-rate-label { font-size: 13px; color: var(--color-text-muted); }
 .pricing-rate-value { font-size: 14px; color: var(--color-dark); text-align: right; }
-.pricing-project-models { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); margin: 32px 0; }
-.pricing-project-model { background: var(--color-white); padding: 32px 28px; }
-.pricing-project-model-name { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 16px; }
-.pricing-project-model-desc { font-size: 14px; color: var(--color-text-body); line-height: 1.6; margin-bottom: 20px; }
-.pricing-project-model-rate { font-size: 22px; font-weight: 300; color: var(--color-accent); letter-spacing: -0.01em; }
 .pricing-scenarios-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); }
 .pricing-scenario { background: var(--color-white); padding: 32px 28px; }
 .pricing-scenario-title { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 8px; }
@@ -407,7 +391,7 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .footer-bottom { padding: 14px 20px; }
   .pricing-page { padding: 80px 24px 64px; }
   .pricing-tiers { grid-template-columns: 1fr; }
-  .pricing-project-models { grid-template-columns: 1fr; }
+  .pricing-scenarios-grid { grid-template-columns: 1fr; }
   .pricing-rate-row { flex-direction: column; gap: 4px; }
   .pricing-cta { padding: 40px 24px; }
 }

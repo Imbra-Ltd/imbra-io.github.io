@@ -1,210 +1,79 @@
 {
   "meta": {
     "title": "Pricing",
-    "description": "Transparent pricing for support retainers, hourly services, and project engagements."
+    "description": "Transparent pricing for engineering support and project engagements."
   },
   "intro": {
     "label": "Pricing",
     "heading": "Transparent by design.",
-    "sub": "Three engagement models for software and industrial engineering work. No hidden fees. All prices are exclusive of VAT — EU reverse charge applies for cross-border B2B transactions."
+    "sub": "One rate ladder, two ways to use it: hourly support and fixed-price projects. The longer you commit, the lower the rate. No hidden fees. All prices are exclusive of VAT — EU reverse charge applies for cross-border B2B transactions."
   },
   "categories": [
     {
-      "id": "retainer",
+      "id": "rates",
       "index": "1",
-      "title": "Support Retainer",
-      "model": "Annual flat fee · per server instance",
-      "desc": "Third-level escalation for industrial software systems. Covers incident investigation, root cause analysis, workaround guidance, documentation, and remote consultation — across all covered instances. Each agreement is assigned a dedicated Imbra engineer — the same person across the lifetime of the contract.",
-      "transparency": [
-        "Response time refers to a human engineer acknowledging the incident and starting the investigation — not resolution time.",
-        "Business hours: Mon–Fri 09:00–18:00 CET, excluding Bulgarian and EU public holidays. All SLA timers apply during business hours only.",
-        "The SLA clock pauses while waiting for a response or access credentials from the client.",
-        "For legacy systems, Critical response times are contingent on the system assessment being completed and remote access being active."
-      ],
-      "subtypes": [
+      "title": "Rates",
+      "model": "Per hour · set by your commitment",
+      "desc": "Three rates, set by how long you commit. After the assessment, your rate applies to support and fixed-price projects alike — across all your installations.",
+      "callout": "Systems not built by Imbra start with a separate ad-hoc assessment — from €800 (one day) — before any commitment. Commitments and fixed prices are quoted from it.",
+      "tiers": [
         {
-          "id": "l3-legacy",
-          "index": "1.1",
-          "title": "Support of Legacy Systems",
-          "desc": "For systems with limited or no original documentation. Investigation requires reverse-engineering, log analysis, and source-level archaeology. Higher rates reflect the additional overhead of working with undocumented, end-of-life, or vendor-unsupported software.",
-          "prerequisite": "Third-party legacy systems not previously known to Imbra require a completed system assessment and operational playbooks before support can commence. This is a separate project governed by a Statement of Work.",
-          "excludes": "Deployment to production systems, on-site visits, and new feature development are excluded and governed separately.",
-          "examples": [
-            "End-of-life software with no vendor support or documentation.",
-            "Custom-built solution with no source code or original developer.",
-            "A system running on an unsupported OS or runtime — Windows XP, Python 2, .NET 2.0.",
-            "A proprietary system whose vendor no longer exists."
-          ],
-          "tiers": [
-            {
-              "name": "Basic",
-              "price": "€1,500",
-              "period": "per instance / year",
-              "response": "3d critical response",
-              "channel": "Email",
-              "reporting": false,
-              "review": false,
-              "oncall": false
-            },
-            {
-              "name": "Standard",
-              "price": "€2,200",
-              "period": "per instance / year",
-              "response": "1d critical response",
-              "channel": "Email + video call",
-              "reporting": true,
-              "review": false,
-              "oncall": false,
-              "highlight": true
-            },
-            {
-              "name": "Premium",
-              "price": "€3,500",
-              "period": "per instance / year",
-              "response": "4h critical response",
-              "channel": "Email + video call",
-              "reporting": true,
-              "review": true,
-              "oncall": true
-            }
-          ],
-          "sla": [
-            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "2d", "standard": "1d", "premium": "8h" },
-            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "5d", "standard": "2d", "premium": "1d" },
-            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "10d", "standard": "5d", "premium": "2d" },
-            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "15d", "standard": "7d", "premium": "5d" }
-          ],
-          "notes": [
-            "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer, SimpleHelp, Secomea, AnyDesk, or equivalent.",
-            "Excess work is billed at €200/hour with prior written approval.",
-            "Hours are pooled across all instances within a client agreement — a quiet instance offsets a busy one.",
-            "Maximum pooled capacity is 1,000 hours per client per year (20 hours/week × 50 working weeks).",
-            "Instances may be on different tiers within the same agreement.",
-            "L3 support covers investigation, root cause analysis, and workaround guidance. Code-level fixes require a separate Project Engagement governed by a Statement of Work. Where source code is unavailable, root cause analysis is limited to log analysis, observed behaviour, and binary-level inspection."
+          "name": "Ad-hoc",
+          "price": "€100",
+          "period": "per hour · no commitment",
+          "features": [
+            "Scheduled as available",
+            "4-hour minimum",
+            "Also the assessment rate"
           ]
         },
         {
-          "id": "l3-new",
-          "index": "1.2",
-          "title": "Support of New Products",
-          "desc": "Applies only to systems delivered by Imbra and covered by full arc42 architecture documentation. Same service conditions as legacy support — lower rates reflect the structured codebase, modern tooling, and complete documentation available from day one.",
-          "excludes": "Deployment to production systems, on-site visits, and new feature development are excluded and governed separately.",
-          "examples": [
-            "Any system delivered and documented by Imbra in steady-state operation.",
-            "An Imbra-built integration recently deployed and entering production."
+          "name": "Quarterly",
+          "price": "€80",
+          "period": "per hour · 3-month minimum",
+          "features": [
+            "Minimum 20 hours / month",
+            "Hours reserved"
           ],
-          "tiers": [
-            {
-              "name": "Basic",
-              "price": "€800",
-              "period": "per instance / year",
-              "response": "3d critical response",
-              "channel": "Email",
-              "reporting": false,
-              "review": false,
-              "oncall": false
-            },
-            {
-              "name": "Standard",
-              "price": "€1,200",
-              "period": "per instance / year",
-              "response": "1d critical response",
-              "channel": "Email + video call",
-              "reporting": true,
-              "review": false,
-              "oncall": false,
-              "highlight": true
-            },
-            {
-              "name": "Premium",
-              "price": "€2,500",
-              "period": "per instance / year",
-              "response": "4h critical response",
-              "channel": "Email + video call",
-              "reporting": true,
-              "review": true,
-              "oncall": true
-            }
-          ],
-          "sla": [
-            { "severity": "Critical", "definition": "System fully offline, data loss risk", "basic": "1d", "standard": "8h", "premium": "4h" },
-            { "severity": "High", "definition": "Significant data gap or integration failure", "basic": "2d", "standard": "1d", "premium": "8h" },
-            { "severity": "Medium", "definition": "Degraded performance, partial data issues", "basic": "5d", "standard": "2d", "premium": "1d" },
-            { "severity": "Low", "definition": "Non-urgent queries, documentation", "basic": "7d", "standard": "3d", "premium": "2d" }
-          ],
-          "notes": [
-            "Client is responsible for enabling secure remote access prior to the start of the agreement. Accepted methods include VPN, TeamViewer, SimpleHelp, Secomea, AnyDesk, or equivalent.",
-            "Excess work is billed at €100/hour with prior written approval.",
-            "Hours are pooled across all instances within a client agreement — a quiet instance offsets a busy one.",
-            "Maximum pooled capacity is 1,000 hours per client per year (20 hours/week × 50 working weeks).",
-            "Instances may be on different tiers within the same agreement."
-          ]
+          "highlight": true
         },
         {
-          "id": "oncall",
-          "index": "1.3",
-          "title": "24/7 On-Call Add-On",
-          "desc": "An optional extension to an active Premium retainer agreement. Provides round-the-clock availability for Critical incidents, reducing response time to 1h regardless of time of day. Governed by a separate agreement in addition to the base retainer.",
-          "examples": [
-            "A production system where downtime at night or on weekends carries significant financial or operational risk."
-          ],
-          "rate": "€20,000 / client / year",
-          "notes": [
-            "Requires an active Premium retainer agreement (1.1 or 1.2) — cannot be purchased standalone or added to Basic/Standard tiers. Safe round-the-clock response depends on the operational context built through quarterly reviews and monthly reporting.",
-            "Reduces Critical response time to 1h, 24 hours a day, 7 days a week.",
-            "All other severity response times remain as defined in the base retainer.",
-            "Priced per client — covers all instances under the client agreement regardless of tier."
+          "name": "Annual",
+          "price": "€70",
+          "period": "per hour · 12-month minimum",
+          "features": [
+            "Minimum 20 hours / month",
+            "Hours reserved",
+            "24/7 on-call add-on"
           ]
         }
+      ],
+      "terms": [
+        {
+          "label": "Committed hours",
+          "value": "Cover support or projects, are billed whether used or not, and expire each month"
+        },
+        {
+          "label": "Extra hours",
+          "value": "Same rate, scheduled as available"
+        }
+      ],
+      "notes": [
+        "Reserved capacity is limited; commitments are accepted in order of signing.",
+        "24/7 on-call is an optional add-on to the Annual tier and is quoted separately.",
+        "Response times, service levels, and expenses are defined in the Master Service Agreement; scheduling, scope, and deployment responsibilities in each Statement of Work."
       ]
     },
     {
-      "id": "hourly",
+      "id": "support",
       "index": "2",
-      "title": "Hourly Services",
-      "model": "Per hour · minimum applies",
-      "desc": "Time-billed engagements for reactive and investigative work. Applicable when scope cannot be defined in advance — emergency fixes, incident analysis, or technical exploration.",
-      "subtypes": [
+      "title": "Engineering Support",
+      "model": "Remote · billed by the hour",
+      "desc": "Escalation support for industrial software systems — the level your own team or vendor calls when they are stuck: incident investigation, root cause analysis, hotfixes, workaround guidance, documentation, and technical exploration.",
+      "terms": [
         {
-          "id": "hotfix",
-          "index": "2.1",
-          "title": "Hotfix & Emergency",
-          "desc": "Analysis, preparation, and delivery of patches, configuration corrections, or emergency fixes. All artifacts are tested in-house before delivery.",
-          "examples": [
-            "System down — root cause unknown, production at risk.",
-            "Urgent configuration correction needed after a failed deployment.",
-            "Critical hotfix required before the next production window.",
-            "A third-party update breaks an existing integration."
-          ],
-          "excludes": "Production deployment is carried out by the client.",
-          "rate": "€250 / hour",
-          "minimum": "4-hour minimum per incident",
-          "outofhours": "1.5× multiplier — evenings after 18:00 CET, weekends, public holidays",
-          "expenses": "The hourly rate covers all standard expenses. Exceptional costs exceeding €1,000 (travel, third-party licences, specialised tooling) are borne by the client with prior written agreement.",
-          "notes": [
-            "Client must provide remote access before work begins. Accepted methods include VPN, TeamViewer, SimpleHelp, Secomea, AnyDesk, or equivalent.",
-            "The 4-hour minimum billing starts from the moment access is confirmed and the engagement can commence — not from when the incident is reported.",
-            "A written summary of findings and delivered artifacts is provided at the end of each engagement."
-          ]
-        },
-        {
-          "id": "exploration",
-          "index": "2.2",
-          "title": "Exploration & Spikes",
-          "desc": "A Spike is a time-boxed investigation used to reduce technical uncertainty before committing to a full project. The outcome is a written finding — not production code. Common uses: feasibility assessment, architecture options analysis, protocol compatibility study, or vendor evaluation.",
-          "examples": [
-            "Assessing migration options before committing to a technical change.",
-            "Evaluating two competing platforms before committing to a multi-year licence.",
-            "Determining feasibility of connecting two systems before starting a project."
-          ],
-          "excludes": "A Spike does not produce deployable software. If the investigation leads to a project, a separate Statement of Work is required.",
-          "rate": "€150 / hour",
-          "minimum": "1-day minimum (8 hours)",
-          "expenses": "All expenses incurred during the engagement (travel, third-party licences, specialised tooling) are borne by the client.",
-          "notes": [
-            "If access to client systems is required, client is responsible for providing it before the engagement begins.",
-            "The deliverable is a written report. No source code, prototypes, or deployable software is produced unless a separate Statement of Work is agreed."
-          ]
+          "label": "Out-of-hours",
+          "value": "1.5× your rate — evenings after 18:00 CET, weekends, public holidays"
         }
       ]
     },
@@ -212,62 +81,105 @@
       "id": "project",
       "index": "3",
       "title": "Project Engagement",
-      "model": "Fixed price",
-      "desc": "Refactoring, new features, migrations, and integrations. Each project is governed by a Statement of Work agreed in writing before commencement, defining scope, deliverables, timeline, and acceptance criteria. Projects involving third-party systems, undocumented interfaces, or undefined scope require an Exploration & Spike before a fixed price can be quoted.",
-      "examples": [
-        "Modernising a legacy codebase — language upgrades, runtime migrations, or framework replacements.",
-        "Connecting systems that don't talk to each other — APIs, data pipelines, or protocol bridges.",
-        "Extending an existing system with new features or capabilities.",
-        "Building a new system from scratch with full arc42 documentation."
+      "model": "Fixed price = estimated hours × your rate",
+      "desc": [
+        "Refactoring, new features, migrations, and integrations. The system assessment (see 1) produces the hour estimate; multiplied by your rate, it is the fixed price — written in the Statement of Work before work starts.",
+        "The project consumes its estimated hours, not the hours actually worked: if Imbra's estimate was too low, Imbra absorbs the difference, and the price moves only if the scope does. A project of at least 20 hours per month over three months or more earns the Quarterly rate on its own."
       ],
-      "models": [
-        {
-          "name": "Fixed Price",
-          "desc": "Applied when scope is clearly defined. Scope changes require a written Change Request.",
-          "rate": "Quoted per project"
-        }
+      "notes": [
+        "A day is 8 hours."
       ]
     }
   ],
-  "scenarios": [
-    {
-      "title": "Legacy retainer — 20 instances",
-      "desc": "16 instances on Basic, 3 on Standard, 1 on Premium.",
-      "lines": [
-        { "label": "16 × Basic (€1,500)", "amount": "€24,000" },
-        { "label": "3 × Standard (€2,200)", "amount": "€6,600" },
-        { "label": "1 × Premium (€3,500)", "amount": "€3,500" }
-      ],
-      "total": "€34,100 / year"
-    },
-    {
-      "title": "New products retainer — 20 instances",
-      "desc": "15 instances on Basic, 4 on Standard, 1 on Premium.",
-      "lines": [
-        { "label": "15 × Basic (€800)", "amount": "€12,000" },
-        { "label": "4 × Standard (€1,200)", "amount": "€4,800" },
-        { "label": "1 × Premium (€2,500)", "amount": "€2,500" }
-      ],
-      "total": "€19,300 / year"
-    },
-    {
-      "title": "Hotfix & Emergency — single incident",
-      "desc": "8-hour emergency engagement during business hours.",
-      "lines": [
-        { "label": "8h × €250", "amount": "€2,000" }
-      ],
-      "total": "€2,000"
-    },
-    {
-      "title": "Exploration & Spike — single engagement",
-      "desc": "1-day investigation, written findings delivered.",
-      "lines": [
-        { "label": "8h × €150", "amount": "€1,200" }
-      ],
-      "total": "€1,200"
-    }
-  ],
-  "legalNote": "All agreements are governed by Bulgarian law. Full terms are included in each engagement contract.",
+  "examples": {
+    "title": "Pricing Examples",
+    "model": "Worked examples · excl. VAT",
+    "items": [
+      {
+        "title": "Small company — one legacy system",
+        "desc": "Quarterly term, renewed for a year. Two-day assessment of a mid-sized legacy test framework, then support at the minimum volume.",
+        "lines": [
+          {
+            "label": "System assessment — 16h × €100",
+            "amount": "€1,600"
+          },
+          {
+            "label": "12 × 20h × €80",
+            "amount": "€19,200"
+          }
+        ],
+        "total": "€20,800 first year"
+      },
+      {
+        "title": "Large company — 100 installations",
+        "desc": "Annual term at 80 hours a month. Four-week assessment of a complex system estate, then support covering every installation under one agreement.",
+        "lines": [
+          {
+            "label": "System assessment — 160h × €100",
+            "amount": "€16,000"
+          },
+          {
+            "label": "12 × 80h × €70",
+            "amount": "€67,200"
+          }
+        ],
+        "total": "€83,200 first year"
+      },
+      {
+        "title": "Project — small integration",
+        "desc": "No commitment. One-day assessment, then an 80-hour integration bridging two systems.",
+        "lines": [
+          {
+            "label": "System assessment — 8h × €100",
+            "amount": "€800"
+          },
+          {
+            "label": "Integration — 80h × €100",
+            "amount": "€8,000"
+          }
+        ],
+        "total": "€8,800 fixed"
+      },
+      {
+        "title": "Project — runtime migration",
+        "desc": "Quarterly term. A 400-hour project over four months, run with the client's own team — three-day assessment, then migration off an unsupported runtime.",
+        "lines": [
+          {
+            "label": "System assessment — 24h × €100",
+            "amount": "€2,400"
+          },
+          {
+            "label": "Migration — 400h × €80",
+            "amount": "€32,000"
+          }
+        ],
+        "total": "€34,400 fixed"
+      },
+      {
+        "title": "Emergency — business hours",
+        "desc": "No commitment. 8-hour engagement on an already-assessed system, on a weekday, subject to availability.",
+        "lines": [
+          {
+            "label": "8h × €100",
+            "amount": "€800"
+          }
+        ],
+        "total": "€800"
+      },
+      {
+        "title": "Emergency — weekend",
+        "desc": "No commitment. 8-hour engagement on an already-assessed system, on a Saturday, subject to availability.",
+        "lines": [
+          {
+            "label": "8h × €100 × 1.5",
+            "amount": "€1,200"
+          }
+        ],
+        "total": "€1,200"
+      }
+    ]
+  },
+  "legalNote": "Full terms, including service levels, are defined in the Master Service Agreement.",
   "cta": {
     "heading": "Not sure which model fits?",
     "sub": "Describe your situation and we will recommend the right engagement type.",
