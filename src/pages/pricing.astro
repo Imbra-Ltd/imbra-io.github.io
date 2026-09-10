@@ -7,8 +7,8 @@ import pricing from "../data/pricing.json";
 
 const pricingLinks = [
   { label: "← Back", target: "", href: "/" },
-  { label: "Retainer", target: "retainer" },
-  { label: "Hourly", target: "hourly" },
+  { label: "Rates", target: "rates" },
+  { label: "Support", target: "support" },
   { label: "Project", target: "project" },
   { label: "Examples", target: "scenarios" },
 ];
@@ -35,175 +35,62 @@ const pricingLinks = [
           </div>
         </div>
 
-        <p class="pricing-desc">{cat.desc}</p>
-        {cat.excludes && (
-          <div class="pricing-excludes">
-            <div class="pricing-excludes-icon">!</div>
-            <p class="pricing-excludes-text">{cat.excludes}</p>
+        {[].concat(cat.desc).map((p) => <p class="pricing-desc">{p}</p>)}
+        {cat.callout && (
+          <div class="pricing-callout">
+            <div class="pricing-callout-icon">i</div>
+            <p class="pricing-callout-text">{cat.callout}</p>
           </div>
         )}
 
-        {cat.transparency && (
-          <div class="pricing-table-wrap">
-            <div class="pricing-table-label mono">Operational Transparency</div>
-            <ol class="pricing-notes">
-              {cat.transparency.map((t) => <li>{t}</li>)}
-            </ol>
-          </div>
-        )}
-
-        <!-- Subtypes: Retainer (Legacy + New) and Hourly (Hotfix + Exploration) -->
-        {cat.subtypes && cat.subtypes.map((sub) => (
-          <div class="pricing-subtype" id={sub.id}>
-            <h3 class="pricing-subtype-title">
-              {sub.index && <span class="pricing-subtype-index mono">{sub.index}</span>}
-              {sub.title}
-            </h3>
-            <p class="pricing-subtype-desc">{sub.desc}</p>
-            {(sub.prerequisite || sub.excludes) && (
-              <div class="pricing-excludes">
-                <div class="pricing-excludes-icon">!</div>
-                {(sub.prerequisite && sub.excludes) ? (
-                  <ul class="pricing-excludes-list">
-                    <li>{sub.prerequisite}</li>
-                    <li>{sub.excludes}</li>
-                  </ul>
-                ) : (
-                  <p class="pricing-excludes-text">{sub.prerequisite || sub.excludes}</p>
-                )}
-              </div>
-            )}
-            {sub.tiers && (
-              <div class="pricing-tiers">
-                {sub.tiers.map((tier) => (
-                  <div class={`pricing-tier${tier.highlight ? ' pricing-tier--highlight' : ''}`}>
-                    <div class="pricing-tier-name mono">{tier.name}</div>
-                    <div class="pricing-tier-price">{tier.price}</div>
-                    <div class="pricing-tier-period">{tier.period}</div>
-                    <ul class="pricing-tier-features">
-                      <li>{tier.channel}</li>
-                      <li>{tier.reporting ? 'Monthly summary report' : 'No monthly report'}</li>
-                      <li>{tier.review ? 'Quarterly business review' : 'No quarterly review'}</li>
-                      {tier.oncall !== undefined && (
-                        <li>{tier.oncall ? '24/7 on-call eligible' : 'No 24/7 on-call'}</li>
-                      )}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {sub.sla && (
-              <div class="pricing-table-wrap">
-                <div class="pricing-table-label mono">Response times</div>
-                <table class="pricing-table">
-                  <thead>
-                    <tr>
-                      <th>Severity</th>
-                      <th>Definition</th>
-                      <th>Basic</th>
-                      <th>Standard</th>
-                      <th>Premium</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {sub.sla.map((row) => (
-                      <tr>
-                        <td class="mono">{row.severity}</td>
-                        <td>{row.definition}</td>
-                        <td class="mono">{row.basic}</td>
-                        <td class="mono">{row.standard}</td>
-                        <td class="mono">{row.premium}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-
-            {sub.rate && (
-              <div class="pricing-rates">
-                <div class="pricing-rate-row">
-                  <span class="pricing-rate-label">Standard rate</span>
-                  <span class="pricing-rate-value mono">{sub.rate}</span>
-                </div>
-                {sub.minimum && (
-                  <div class="pricing-rate-row">
-                    <span class="pricing-rate-label">Minimum</span>
-                    <span class="pricing-rate-value mono">{sub.minimum}</span>
-                  </div>
-                )}
-                {sub.outofhours && (
-                  <div class="pricing-rate-row">
-                    <span class="pricing-rate-label">Out-of-hours</span>
-                    <span class="pricing-rate-value mono">{sub.outofhours}</span>
-                  </div>
-                )}
-                {sub.expenses && (
-                  <div class="pricing-rate-row">
-                    <span class="pricing-rate-label">Expenses</span>
-                    <span class="pricing-rate-value">{sub.expenses}</span>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {sub.examples && (
-              <details class="pricing-notes-details" open>
-                <summary class="pricing-notes-summary mono">Use Cases</summary>
-                <ul class="pricing-notes">
-                  {sub.examples.map((e) => <li>{e}</li>)}
+        {cat.tiers && (
+          <div class="pricing-tiers" style={{ "--tier-cols": cat.tiers.length }}>
+            {cat.tiers.map((tier) => (
+              <div class={`pricing-tier${tier.highlight ? ' pricing-tier--highlight' : ''}`}>
+                <div class="pricing-tier-name mono">{tier.name}</div>
+                <div class="pricing-tier-price">{tier.price}</div>
+                <div class="pricing-tier-period">{tier.period}</div>
+                <ul class="pricing-tier-features">
+                  {tier.features.map((f) => <li>{f}</li>)}
                 </ul>
-              </details>
-            )}
-
-            {sub.notes && (
-              <details class="pricing-notes-details">
-                <summary class="pricing-notes-summary mono">Notes</summary>
-                <ol class="pricing-notes">
-                  {sub.notes.map((n) => <li>{n}</li>)}
-                </ol>
-              </details>
-            )}
-          </div>
-        ))}
-
-        <!-- Project models -->
-        {cat.models && (
-          <div class="pricing-project-models">
-            {cat.models.map((m) => (
-              <div class="pricing-project-model">
-                <div class="pricing-project-model-name mono">{m.name}</div>
-                <p class="pricing-project-model-desc">{m.desc}</p>
-                <div class="pricing-project-model-rate">{m.rate}</div>
               </div>
             ))}
           </div>
         )}
 
-        {cat.examples && (
-          <details class="pricing-notes-details" open>
-            <summary class="pricing-notes-summary mono">Use Cases</summary>
-            <ul class="pricing-notes">
-              {cat.examples.map((e) => <li>{e}</li>)}
-            </ul>
+        {cat.terms && (
+          <div class="pricing-rates">
+            {cat.terms.map((t) => (
+              <div class="pricing-rate-row">
+                <span class="pricing-rate-label">{t.label}</span>
+                <span class="pricing-rate-value">{t.value}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {cat.notes && (
+          <details class="pricing-notes-details">
+            <summary class="pricing-notes-summary mono">Notes</summary>
+            <ol class="pricing-notes">
+              {cat.notes.map((n) => <li>{n}</li>)}
+            </ol>
           </details>
         )}
       </section>
     ))}
 
-    <!-- Scenarios -->
-    {pricing.scenarios && (
+    {pricing.examples && (
       <section class="pricing-section" id="scenarios">
         <div class="pricing-section-header">
-          <span class="pricing-index mono">4</span>
+          <span class="pricing-index mono">{pricing.categories.length + 1}</span>
           <div>
-            <h2 class="pricing-section-title">Pricing Examples</h2>
-            <div class="pricing-model mono">Illustrative scenarios — all prices exclusive of VAT</div>
+            <h2 class="pricing-section-title">{pricing.examples.title}</h2>
+            <div class="pricing-model mono">{pricing.examples.model}</div>
           </div>
         </div>
         <div class="pricing-scenarios-grid">
-          {pricing.scenarios.map((s) => (
+          {pricing.examples.items.map((s) => (
             <div class="pricing-scenario">
               <div class="pricing-scenario-title mono">{s.title}</div>
               <p class="pricing-scenario-desc">{s.desc}</p>
@@ -225,11 +112,8 @@ const pricingLinks = [
       </section>
     )}
 
-    <!-- Legal note -->
-
     <p class="pricing-legal-note">{pricing.legalNote}</p>
 
-    <!-- CTA -->
     <section class="pricing-cta" id="contact">
       <h2 class="pricing-cta-heading">{pricing.cta.heading}</h2>
       <p class="pricing-cta-sub">{pricing.cta.sub}</p>
