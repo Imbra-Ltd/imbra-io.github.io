@@ -8,3 +8,7 @@ node_modules/
 .claude/
 .idea/
 *.docx
+
+# Local scratch folders (fetched pages, experiments); never committed
+/tmp*
+/temp*
