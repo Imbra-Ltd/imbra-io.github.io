@@ -140,12 +140,9 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 
 | File | Controls |
 |------|----------|
-| `src/data/site.json` | Nav links, hero stats, contact section (incl. Formspree endpoint), footer |
-| `src/data/products.json` | Portfolio cards and detail panels |
-| `src/data/services.json` | Services accordion items |
-| `src/data/expertise.json` | Domain expertise cards |
+| `src/data/site.json` | Nav links, hero, contact section (incl. Formspree endpoint), footer |
+| `src/data/services.json` | Services accordion items, incl. white paper links |
 | `src/data/publications.json` | Research publications with DOI links |
-| `src/data/process.json` | How We Work section steps |
 | `src/data/pricing.json` | Pricing page — all engagement models |
 
 ---

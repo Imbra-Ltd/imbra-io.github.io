@@ -12,6 +12,9 @@
       "FTP/SFTP",
       "PxTrend",
       "WinCC"
+    ],
+    "whitepapers": [
+      { "label": "Read the ImBrain white paper →", "href": "/whitepapers/imbrain/" }
     ]
   },
   {
@@ -30,6 +33,10 @@
       "Protocol Emulator Framework · Hilscher",
       "Data Integration Agents · Heidelberg Materials",
       "PxTrend Historian · Heidelberg Materials"
+    ],
+    "whitepapers": [
+      { "label": "Read the Imbra Connect white paper →", "href": "/whitepapers/imbra-connect/" },
+      { "label": "Read the Honeywell Control Blocks white paper →", "href": "/whitepapers/honeywell-siemens/" }
     ]
   },
   {
@@ -47,39 +54,6 @@
   },
   {
     "num": "04",
-    "title": "AI/ML-Augmented Engineering",
-    "desc": "AI and machine learning applied where they deliver measurable industrial value: natural language queries over historian data, anomaly detection across process variables, predictive maintenance, golden batch comparison, and AI-generated shift reports — deployable on-premise with no cloud dependency for air-gapped plants.",
-    "detail": "AI/ML augments engineering work at several points in the industrial stack. Predictive maintenance models trained on process historian data catch equipment degradation before it becomes downtime.\n\nAI-assisted documentation and refactoring untangles legacy codebases that have accumulated years of undocumented changes — giving teams a working understanding of what the code actually does. Test specifications and test suites generated from product descriptions reduce the manual effort of coverage at scale.\n\nThe next frontier is the agent layer — autonomous agents that act on historian data, not just collect it, opening the door to real-time process optimisation and adaptive control. This website was built entirely with Claude Code — a practical demonstration of AI/ML-augmented engineering in action.",
-    "tech": [
-      "AI/ML",
-      "Predictive Maintenance",
-      "LLM",
-      "APC",
-      "Claude Code"
-    ],
-    "useCases": {
-      "delivered": [
-        "Predictive Maintenance Models · Solvay Sodi (Six Sigma)",
-        "Fuzzy Logic Controller · Solvay Sodi (Carbonation Columns)",
-        "AI-Assisted Documentation & Refactoring · Hilscher",
-        "AI-Assisted Documentation & Refactoring · Heidelberg Materials",
-        "AI-Assisted Test Generation · Hilscher",
-        "AI-Assisted Code Provenance Tracing · Heidelberg Materials"
-      ],
-      "exploring": [
-        "Natural Language Interfaces over Historian Data",
-        "Anomaly Detection across Process Variables",
-        "Golden Batch Comparison with Real-Time Deviation Alerts",
-        "AI-Generated Shift Reports & Alarm Digests",
-        "On-Premise LLM Deployment for Air-Gapped Plants",
-        "MCP Servers for Industrial Data Sources",
-        "Process Modelling & Controller Tuning",
-        "APC Design Support"
-      ]
-    }
-  },
-  {
-    "num": "05",
     "title": "Testing & Quality Assurance",
     "desc": "Specification-driven test infrastructure for industrial communication software — from TDD-based product development to BDD integration and end-to-end test suites covering protocol-specific edge cases.",
     "detail": "Testing starts at the product level — built test-first using TDD so the test harness itself is verified before a single production line is written. This ensures product behaviour is correct and traceable to specification.\n\nIntegration and end-to-end tests are described using BDD — structured as given/when/then scenarios that read as executable specifications. For example, a TFTP test might read: given a TFTP server in read mode, when a client requests a file, then the server responds with the correct data blocks in order. This makes test intent clear to both engineers and stakeholders.\n\nAI-assisted test generation from product descriptions scales coverage beyond what manual authoring can achieve — applied at Hilscher to protocol SDK testing across multiple communication stacks.",
@@ -94,79 +68,15 @@
     ]
   },
   {
-    "num": "06",
+    "num": "05",
     "title": "Maintenance & Support",
     "desc": "Ongoing L2/L3 support for deployed systems — industrial historians, communication software, and legacy codebases that need someone who understands them deeply enough to intervene safely.",
-    "detail": "Support is structured around defined response SLAs. L2 covers configuration changes, minor enhancements, and user support. L3 covers root cause analysis, hotfixes, and deep system-level intervention.\n\nRemote-first, with on-site available by arrangement. The emphasis is on understanding the system well enough to act quickly without introducing new risk — particularly important for legacy codebases where documentation is sparse and side effects are hard to predict.",
+    "detail": "L2 covers configuration changes, minor enhancements, and user support. L3 covers root cause analysis, hotfixes, and deep system-level intervention. Rates and commitment tiers are on the pricing page; response times are agreed per client.\n\nRemote-first. The emphasis is on understanding the system well enough to act quickly without introducing new risk — particularly important for legacy codebases where documentation is sparse and side effects are hard to predict.",
     "tech": ["PxTrend", "OPC-UA", "Siemens TIA Portal", "Python", "Ansible"],
     "projects": [
       "Legacy L2/L3 Support — HilscherFramework · Hilscher",
       "Legacy L2/L3 Support — PxTrend Suite · Heidelberg Materials",
       "Legacy L2/L3 Support — Water & Steam & Brine Automation · Solvay Sodi"
     ]
-  },
-  {
-    "num": "07",
-    "title": "PLC & DCS Engineering",
-    "desc": "Full project lifecycle for process automation — from concept definition and equipment selection through PLC/DCS programming, marshalling cabinet testing, SCADA displays, PID tuning, and executive documentation.",
-    "detail": "Scope and automation concept are defined at kick-off, with signal architecture decided early — critical signals wired directly, remaining I/O via fieldbus to contain cabling cost over long distances. PLC/DCS logic and SCADA displays are implemented to specification, followed by FAT at the integrator site where I/O, logic, and displays are verified with the client. On-site commissioning covers instrument calibration, PID tuning, and interlock verification before the system runs under real process conditions. SAT is performed with live field equipment and executive documentation is filed in each control and marshalling cabinet at handover.",
-    "tech": [
-      "Honeywell Experion",
-      "Honeywell TPS",
-      "Siemens S7-300/1500",
-      "TIA Portal",
-      "WinCC",
-      "SCL",
-      "PID Tuning",
-      "ATEX/IECEx"
-    ],
-    "projects": [
-      "Fly Ash Handling · Honeywell Experion",
-      "Dense Soda · Honeywell Experion",
-      "Absorption & Distillation · Honeywell TPS / Experion",
-      "Boiler Automation · Honeywell Experion",
-      "Brine Purification · Siemens S7-1500",
-      "Water & Steam · Siemens S7-300",
-      "NH3 Analyser · Siemens S7-300",
-      "Ammonia Station (ATEX/IECEx) · Siemens S7-300",
-      "Air Compressors · Siemens S7-300",
-      "Honey Invertase · Siemens LOGO!",
-      "Cooling Tower Simulation · Excel / VB6",
-      "Fuzzy Logic Controller · Solvay Sodi (Carbonation Columns)"
-    ]
-  },
-  {
-    "num": "08",
-    "title": "DevOps & CI/CD",
-    "desc": "Version control, containerisation, and CI/CD workflows for software and industrial projects — practical DevOps that gets code from development to deployment reliably.",
-    "detail": "Day-to-day experience with Git and SVN across long-running projects, including branching strategy, code review workflows, and repository management on GitHub and GitLab. Docker is used extensively for packaging, shipping, and testing services — from protocol emulators to historian components.\n\nCI/CD pipelines are supported and maintained using Jenkins and Ansible, with a focus on keeping deployments stable and repeatable in environments where downtime has real cost.",
-    "tech": ["Git", "SVN", "GitHub", "GitLab", "Docker", "Jenkins", "Ansible"]
-  },
-  {
-    "num": "09",
-    "title": "Industrial Security",
-    "desc": "OT security advisory and protocol-level security testing — identifying weaknesses at the boundary between plant networks and IT infrastructure, grounded in deep protocol knowledge rather than generic scanning tools.",
-    "detail": "OT security requires a different mindset from web application pentesting — availability constraints, proprietary protocols, and legacy hardware demand a precise, non-disruptive approach. Security work is grounded in established principles: the people-process-technology triangle, security by design, and defence-in-depth — applied to environments where a misconfigured certificate or an open port can have physical consequences. Assessment follows a heuristic approach tailored to the specific OT environment — not a generic checklist.",
-    "tech": ["OT Security", "Modbus TCP/IP", "TLS", "Packet Crafting", "IEC 62443", "OPC-UA"],
-    "useCases": {
-      "delivered": [
-        "Modbus TCP/IP over TLS — Automated Requirement Tests · Hilscher",
-        "LDAP Security Hardening · Heidelberg Materials",
-        "UPS Device Hardening · Solvay Sodi"
-      ],
-      "exploring": [
-        "IEC 62443 — Industrial Cybersecurity Standard",
-        "NIST SP 800-82 — Guide to OT Security",
-        "NIS2 Directive — EU Critical Infrastructure",
-        "GICSP Certification (GIAC/SANS)"
-      ]
-    }
-  },
-  {
-    "num": "10",
-    "title": "Training & Tutorials",
-    "desc": "Practical training and tutorials for engineers working at the OT/IT boundary — industrial protocols, software engineering, historian architecture, testing methodologies, and applied AI/ML.",
-    "detail": "Content is built around real industrial problems encountered across automation, connectivity, and software engineering projects — not synthetic examples.\n\nTopics covered include industrial communication protocols, OT/IT integration and historian architecture, emulator-based testing and specification-driven QA, and applied AI/ML for predictive maintenance and engineering tooling.\n\nDelivered as written guides, video walkthroughs, and structured courses. New content released as projects generate material worth sharing.",
-    "tech": ["Video", "Written Guides", "Hands-on Examples"]
   }
 ]

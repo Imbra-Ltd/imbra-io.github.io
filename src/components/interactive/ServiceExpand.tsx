@@ -8,6 +8,7 @@ interface Service {
   tech: string[];
   projects?: string[];
   useCases?: { delivered: string[]; exploring?: string[]; };
+  whitepapers?: { label: string; href: string }[];
 }
 
 interface Props {
@@ -70,6 +71,13 @@ export default function ServiceExpand({ services }: Props) {
                     </div>
                   )}
                 </>
+              )}
+              {s.whitepapers && (
+                <div className="service-detail-links">
+                  {s.whitepapers.map(w => (
+                    <a key={w.href} className="service-detail-link" href={w.href}>{w.label}</a>
+                  ))}
+                </div>
               )}
               <div className="service-tags">
                 {s.tech.map(t => <span key={t} className="service-tag">{t}</span>)}
