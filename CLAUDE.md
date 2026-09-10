@@ -79,7 +79,7 @@ src/components/
 
 ## Homepage sections (in order)
 1. Nav — logo (links to `/`), section links, hamburger on mobile
-2. Hero — eyebrow, headline, positioning text, one CTA button, image
+2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the words "one-engineer" link to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
 4. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
 5. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
