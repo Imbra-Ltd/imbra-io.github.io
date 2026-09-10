@@ -70,17 +70,9 @@ src/components/
 |---------------------------------|-------------------------------------|--------------------------------------------|
 | Homepage                        | `/`                                 | All main sections                          |
 | Pricing                         | `/pricing/`                         | Rate ladder, support, projects, worked examples; linked from nav and 404 |
-| Whitepaper — ImBrain            | `/whitepapers/imbrain/`             | Landing page for ImBrain white paper       |
-| Whitepaper — Imbra Connect      | `/whitepapers/imbra-connect/`       | Landing page for Imbra Connect white paper |
-| Whitepaper — Honeywell/Siemens  | `/whitepapers/honeywell-siemens/`   | Landing page for Honeywell white paper     |
 | Privacy Policy                  | `/privacy/`                         | Legal page                                 |
 | Imprint                         | `/imprint/`                         | Legal page                                 |
 | 404                             | `/404`                              | Branded not-found page                     |
-
-Whitepaper PDFs are stored in `public/docs/` and served at `/docs/*.pdf`. PDFs are committed to git and deployed with the site. To regenerate a PDF after editing its source markdown:
-```
-pandoc docs/WHITEPAPER-<NAME>.md -o public/docs/<name>.pdf --pdf-engine="C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe" --metadata title="<Title>"
-```
 
 ## Homepage sections (in order)
 1. Nav — logo (links to `/`), section links, hamburger on mobile
@@ -92,7 +84,7 @@ pandoc docs/WHITEPAPER-<NAME>.md -o public/docs/<name>.pdf --pdf-engine="C:/Prog
 
 The homepage is deliberately minimal: no stat strip, no process or expertise sections. The engagement flow lives on `/pricing/`.
 
-Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned on the homepage; their white paper pages exist but are unlinked. The positioning statement lives in `site.json` → `hero.sub`; the vision line in `footer.about`.
+Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned anywhere on the site. Their white paper sources remain in `docs/WHITEPAPER-*.md`; the landing pages and PDFs were removed in September 2026 and can be restored from git history when the products ship. The positioning statement lives in `site.json` → `hero.sub`; the vision line in `footer.about`.
 
 ## Reveal animations
 `.reveal` → `.reveal.visible` transition handled by a single `IntersectionObserver` script in `src/layouts/Base.astro`. Do not add per-component reveal scripts.
