@@ -23,7 +23,14 @@
     "heading": "What we",
     "headingStrong": "fix, build, and keep running",
     "sub": "Expand a service: the problem, what we do about it, and where we have done it before.",
-    "projectsLabel": "Projects"
+    "projectsLabel": "Projects",
+    "founder": {
+      "lead": "All six are delivered by one engineer:",
+      "name": "Branimir Georgiev",
+      "span": "nine years of DCS and PLC logic in a chemical plant, then protocol stacks, test frameworks and historian software for automation vendors and plants.",
+      "linkLabel": "LinkedIn ↗",
+      "href": "https://linkedin.com/in/branimir-georgiev"
+    }
   },
   "contact": {
     "headline": "The complexity is",

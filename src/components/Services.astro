@@ -9,4 +9,8 @@ const { services, header } = Astro.props;
     <p class="section-sub">{header.sub}</p>
   </div>
   <ServiceExpand client:load services={services} projectsLabel={header.projectsLabel} />
+  <p class="founder-line reveal">
+    {header.founder.lead} <strong>{header.founder.name}</strong> — {header.founder.span}
+    <a href={header.founder.href} target="_blank" rel="noopener noreferrer">{header.founder.linkLabel}</a>
+  </p>
 </section>

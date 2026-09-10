@@ -42,7 +42,7 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
-| `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
+| `src/data/site.json`         | Nav links, hero, services header + founder line, contact section (incl. Formspree endpoint), footer |
 | `src/data/services.json`     | Services accordion items                       |
 | `src/data/publications.json` | Research publications with DOI links           |
 | `src/data/pricing.json`      | Pricing page — all engagement models           |
@@ -80,7 +80,7 @@ src/components/
 ## Homepage sections (in order)
 1. Nav — logo (links to `/`), section links, hamburger on mobile
 2. Hero — eyebrow, headline, positioning text, one CTA button, image
-3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
+3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners. A one-line founder note (`site.json` → `services.founder`) closes the section: it defines "we" as Branimir, since every named project is his personal career, not an Imbra engagement
 4. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
 5. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
 6. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
