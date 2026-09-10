@@ -101,8 +101,6 @@ section { padding: 96px max(48px, calc((100% - var(--page-max-width)) / 2)); }
 .service-detail { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--color-border); }
 .service-detail-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
 .service-detail-row { display: flex; gap: 24px; margin-bottom: 16px; }
-.service-detail-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 16px; }
-.service-detail-link { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: var(--color-accent); text-decoration: none; border-bottom: 1px solid currentColor; }
 .service-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .service-detail-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; min-width: 80px; padding-top: 2px; }
 .service-detail-projects { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }

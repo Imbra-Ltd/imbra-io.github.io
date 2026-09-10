@@ -18,6 +18,12 @@
     "sub": "A one-engineer software consultancy for industrial companies. We build, integrate, and support the software between plant floor and IT — protocol stacks and test tooling, data integration and historians, the legacy systems nobody else will touch — on published rates or at a fixed price.",
     "cta": { "label": "Discuss a project →", "target": "contact" }
   },
+  "services": {
+    "label": "01 — Services",
+    "heading": "What we",
+    "headingStrong": "fix, build, and keep running",
+    "sub": "Open a card: the problem, what we do about it, and where we have done it before."
+  },
   "contact": {
     "headline": "The complexity is",
     "headlineStrong": "ours to solve.",

@@ -38,7 +38,7 @@ npm run preview   # verify — preview the production build locally
 src/
 ├── data/                  # All editable content as JSON
 │   ├── site.json          # Nav, hero, contact, footer
-│   ├── services.json      # Services accordion (incl. white paper links)
+│   ├── services.json      # Services accordion
 │   ├── publications.json  # Research publications
 │   └── pricing.json       # Pricing page content
 ├── components/
