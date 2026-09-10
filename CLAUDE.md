@@ -79,7 +79,7 @@ src/components/
 
 ## Homepage sections (in order)
 1. Nav — logo (links to `/`), section links, hamburger on mobile
-2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the words "one-engineer" link to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image
+2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the words "one-engineer" link to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
 4. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
 5. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
