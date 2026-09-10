@@ -21,6 +21,8 @@ Website for Imbra (imbra.io) — a boutique software and industrial engineering 
 - Background: `#FFFFFF` and `#F8F9FA` alternating sections
 - Accent: steel blue `#1B4F8A`
 - Typography: IBM Plex Sans (300, 400, 500, 600) + IBM Plex Mono (400, 500) loaded from Google Fonts
+- Body copy is 14–16px at weight 400; weight 300 is reserved for display headings and large numbers. Mono labels are 11–12px minimum
+- Text colours: `--color-dark` for headings and primary text, `--color-text-body` for body copy, `--color-text-muted` for secondary text. All three clear WCAG AA on white and on `--color-bg`; do not add paler greys
 - All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic/computed values
 - Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage and the pricing page alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
 - Responsive breakpoints:
@@ -79,7 +81,7 @@ src/components/
 1. Nav — logo (links to `/`), section links, hamburger on mobile
 2. Hero — eyebrow, headline, positioning text, one CTA button, image
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
-4. Research & Credentials — 3 publication cards, title is the DOI link
+4. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
 5. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
 6. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
 

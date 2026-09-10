@@ -7,15 +7,12 @@ const { publications } = Astro.props;
     <h2 class="section-heading">Grounded in <strong>engineering science</strong></h2>
     <p class="section-sub">Peer-reviewed research on advanced process control and fuzzy logic — published in indexed engineering journals.</p>
   </div>
-  <div class="reveal">
-    <div class="pub-grid">
-      {publications.map(p => (
-        <div class="pub-cell">
-          <div class="pub-journal">{p.journal} · {p.year}</div>
-          <a class="pub-title" href={p.doi} target="_blank" rel="noopener noreferrer">{p.title} ↗</a>
-          <div class="pub-vol">{p.vol}</div>
-        </div>
-      ))}
-    </div>
-  </div>
+  <ul class="pub-list reveal">
+    {publications.map(p => (
+      <li class="pub-item">
+        <a class="pub-title" href={p.doi} target="_blank" rel="noopener noreferrer">{p.title}&nbsp;↗</a>
+        <div class="pub-meta">{p.journal} · {p.year} · {p.vol}</div>
+      </li>
+    ))}
+  </ul>
 </section>
