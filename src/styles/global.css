@@ -67,9 +67,9 @@ nav {
 
 /* ── Hero ── */
 .hero { border-bottom: 1px solid var(--color-border); padding-top: 60px; background: var(--color-white); }
-.hero-inner { padding: 64px var(--content-inset) 56px; display: flex; align-items: center; gap: 48px; }
-.hero-content { flex: 1; min-width: 0; }
-.hero-image { flex: 0 0 40%; }
+.hero-inner { padding: 64px var(--page-inset) 56px var(--content-inset); display: flex; align-items: center; gap: 48px; }
+.hero-content { flex: 0 0 460px; max-width: 100%; }
+.hero-image { flex: 1; min-width: 0; }
 .hero-image img { width: 100%; height: auto; display: block; }
 .hero-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; color: var(--color-accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
 .hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--color-accent); }
