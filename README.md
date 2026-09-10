@@ -38,16 +38,12 @@ npm run preview   # verify — preview the production build locally
 src/
 ├── data/                  # All editable content as JSON
 │   ├── site.json          # Nav, hero, contact, footer
-│   ├── products.json      # Portfolio products
 │   ├── services.json      # Services accordion
-│   ├── expertise.json     # Domain expertise cards
 │   ├── publications.json  # Research publications
-│   ├── process.json       # How We Work section
 │   └── pricing.json       # Pricing page content
 ├── components/
 │   ├── interactive/       # React islands (client-side JS)
 │   │   ├── HamburgerMenu.tsx
-│   │   ├── ProductExpand.tsx
 │   │   ├── ServiceExpand.tsx
 │   │   └── ContactForm.tsx
 │   └── *.astro            # Static section components

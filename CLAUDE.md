@@ -39,12 +39,9 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
-| `src/data/site.json`         | Nav links, hero stats, contact section (incl. Formspree endpoint), footer |
-| `src/data/products.json`     | Portfolio cards and detail panels              |
+| `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
 | `src/data/services.json`     | Services accordion items                       |
-| `src/data/expertise.json`    | Domain expertise cards                         |
 | `src/data/publications.json` | Research publications with DOI links           |
-| `src/data/process.json`      | How We Work section steps                      |
 | `src/data/pricing.json`      | Pricing page — all engagement models           |
 
 Note: `src/content/` is intentionally avoided — Astro reserves that path for Content Collections.
@@ -55,15 +52,11 @@ Note: `src/content/` is intentionally avoided — Astro reserves that path for C
 src/components/
 ├── interactive/          # React islands — only components that need JS
 │   ├── HamburgerMenu.tsx # Mobile nav toggle
-│   ├── ProductExpand.tsx # Portfolio card expand/collapse
 │   ├── ServiceExpand.tsx # Services accordion
 │   └── ContactForm.tsx   # Contact form — POST to Formspree endpoint
 ├── Nav.astro             # Static nav shell — mounts HamburgerMenu island
 ├── Hero.astro
-├── Portfolio.astro       # Static section header — mounts ProductExpand island
 ├── Services.astro        # Static section header — mounts ServiceExpand island
-├── Process.astro         # How We Work — 4 steps, data from process.json
-├── Expertise.astro
 ├── Publications.astro
 ├── Contact.astro         # Dark CTA section — email link + ContactForm island
 └── Footer.astro
@@ -91,14 +84,15 @@ pandoc docs/WHITEPAPER-<NAME>.md -o public/docs/<name>.pdf --pdf-engine="C:/Prog
 
 ## Homepage sections (in order)
 1. Nav — logo (links to `/`), section links, hamburger on mobile
-2. Hero — eyebrow, headline, sub-text, CTA buttons, stat strip (4 cards)
-3. Portfolio — 3 product cards in a grid (count-driven, no hardcoded columns), expandable with detail panel
-4. Services — 10 service cards in 2-column grid, each expandable inline
-5. Process — How We Work, 4 steps (Spike → SOW → Deliver → Support)
-6. Expertise — 4 domain expertise cards
-7. Research & Credentials — 3 publication cards, title is the DOI link
-8. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
-9. Footer — top bar (legal links + social icons), body (address + about), bottom bar (copyright)
+2. Hero — eyebrow, headline, positioning text, one CTA button, image
+3. Services — 6 service cards in 2-column grid (an odd last card would span both columns), each expandable inline; rows pair by audience: vendors, plants, legacy owners
+4. Research & Credentials — 3 publication cards, title is the DOI link
+5. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
+6. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
+
+The homepage is deliberately minimal: no stat strip, no process or expertise sections. The engagement flow lives on `/pricing/`.
+
+Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned on the homepage; their white paper pages exist but are unlinked. The positioning statement lives in `site.json` → `hero.sub`; the vision line in `footer.about`.
 
 ## Reveal animations
 `.reveal` → `.reveal.visible` transition handled by a single `IntersectionObserver` script in `src/layouts/Base.astro`. Do not add per-component reveal scripts.

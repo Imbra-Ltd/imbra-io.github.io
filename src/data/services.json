@@ -1,24 +1,9 @@
 [
   {
     "num": "01",
-    "title": "Data Integration & ETL",
-    "desc": "Agent-based data pipelines connecting OT sources to historian and analytics targets — covering industrial protocols, file-based sources, and the self-healing, redundancy, and data harmonisation challenges that production environments demand.",
-    "detail": "Each agent handles one protocol or source, normalises the data, and delivers it to a common sink — a model that maps naturally to AI-augmented decision making, where agents act on data rather than just forward it. Protocols covered include OPC DA, OPC XDA, OPC UA, MQTT, FTP, and SFTP. Applied at scale connecting Siemens WinCC controllers to PxTrend for time-series metrics, alarms, and lab analyser messages. The hardest problems in production are not connectivity but resilience: self-healing on PxTrend connection loss, data harmonisation across sources with inconsistent tag schemas, and redundancy to ensure no data is lost during network interruptions.",
-    "tech": [
-      "OPC DA",
-      "OPC XDA",
-      "OPC UA",
-      "MQTT",
-      "FTP/SFTP",
-      "PxTrend",
-      "WinCC"
-    ]
-  },
-  {
-    "num": "02",
     "title": "Software Services & SDKs",
-    "desc": "From REST APIs and databases to protocol libraries and device interfaces — backend engineering that covers the full depth of the OT/IT stack, not just the application layer.",
-    "detail": "In industrial environments, the gap between OT devices and IT systems is rarely a single integration problem — it is a stack of them. Work starts at the protocol level, building libraries from scratch where standard implementations cannot handle the proprietary behaviour that real devices demand.\n\nThese libraries become the foundation for agents that collect, normalise, and deliver data across the OT/IT boundary, and for emulators that replicate device behaviour precisely enough to test against. REST API endpoints give IT systems a clean interface to device state and data streams without exposing protocol internals.\n\nPython for rapid iteration and data work, Go for performance-critical services and agents. Everything is containerised and delivered through a structured DevOps cycle — version control, CI pipelines, and automated testing — so what reaches production is verified and repeatable.",
+    "desc": "You need software that talks to your devices — a protocol library, a device emulator, an API that gives IT a clean view of the plant floor — and the off-the-shelf options are incomplete, unmaintained, or wrong for your hardware.",
+    "detail": "Most OT/IT gaps are not one integration problem but a stack of them: a protocol nobody has implemented properly, a device that deviates from the standard, an IT team that wants a REST endpoint rather than register addresses. We have programmed the controller end of these links, so a library is built for how the device actually behaves, not only for what the standard says.\n\nWe build at whichever level the problem sits. Protocol libraries written from the specification when existing ones cannot handle real device behaviour. Emulators that reproduce a device closely enough to test against without hardware on the bench. REST APIs that expose device state and data streams without leaking protocol internals.\n\nPython for data work and fast iteration, Go for services that must be fast and concurrent. Everything is packaged, version-controlled, and delivered through CI with automated tests — you receive the source, the documentation, and the pipeline that builds the deliverable, whether that is a container, a package, or a binary.",
     "tech": [
       "Python",
       "Go",
@@ -33,89 +18,50 @@
     ]
   },
   {
-    "num": "03",
-    "title": "Application Refactoring",
-    "desc": "Structured modernisation of legacy codebases — audit, incremental refactoring, test coverage, and architecture documentation for industrial and communication software.",
-    "detail": "Legacy industrial codebases accumulate technical debt quietly — no type hints, no tests, undocumented business logic, and architectural decisions that made sense years ago but now block progress. The process starts with an audit to map the real state of the code, followed by incremental refactoring with test coverage added in parallel so behaviour is preserved while the structure improves.\n\nFor larger codebases, architecture documentation using the arc42 template provides a shared understanding of the system before and after refactoring — giving teams a reference that survives team changes and time.",
-    "tech": ["Code Audit", "arc42", "Type Safety", "Architecture Review"],
-    "projects": [
-      "Audit & Refactoring — HilscherFramework · Hilscher",
-      "Code Audit, Architecture Review & arc42 Documentation — PxTrend Suite · Heidelberg Materials",
-      "Legacy Test Framework Refactoring · Hilscher",
-      "Legacy Source Code Audit & Provenance Tracing · Heidelberg Materials"
-    ]
-  },
-  {
-    "num": "04",
-    "title": "AI/ML-Augmented Engineering",
-    "desc": "AI and machine learning applied where they deliver measurable industrial value: natural language queries over historian data, anomaly detection across process variables, predictive maintenance, golden batch comparison, and AI-generated shift reports — deployable on-premise with no cloud dependency for air-gapped plants.",
-    "detail": "AI/ML augments engineering work at several points in the industrial stack. Predictive maintenance models trained on process historian data catch equipment degradation before it becomes downtime.\n\nAI-assisted documentation and refactoring untangles legacy codebases that have accumulated years of undocumented changes — giving teams a working understanding of what the code actually does. Test specifications and test suites generated from product descriptions reduce the manual effort of coverage at scale.\n\nThe next frontier is the agent layer — autonomous agents that act on historian data, not just collect it, opening the door to real-time process optimisation and adaptive control. This website was built entirely with Claude Code — a practical demonstration of AI/ML-augmented engineering in action.",
-    "tech": [
-      "AI/ML",
-      "Predictive Maintenance",
-      "LLM",
-      "APC",
-      "Claude Code"
-    ],
-    "useCases": {
-      "delivered": [
-        "Predictive Maintenance Models · Solvay Sodi (Six Sigma)",
-        "Fuzzy Logic Controller · Solvay Sodi (Carbonation Columns)",
-        "AI-Assisted Documentation & Refactoring · Hilscher",
-        "AI-Assisted Documentation & Refactoring · Heidelberg Materials",
-        "AI-Assisted Test Generation · Hilscher",
-        "AI-Assisted Code Provenance Tracing · Heidelberg Materials"
-      ],
-      "exploring": [
-        "Natural Language Interfaces over Historian Data",
-        "Anomaly Detection across Process Variables",
-        "Golden Batch Comparison with Real-Time Deviation Alerts",
-        "AI-Generated Shift Reports & Alarm Digests",
-        "On-Premise LLM Deployment for Air-Gapped Plants",
-        "MCP Servers for Industrial Data Sources",
-        "Process Modelling & Controller Tuning",
-        "APC Design Support"
-      ]
-    }
-  },
-  {
-    "num": "05",
+    "num": "02",
     "title": "Testing & Quality Assurance",
-    "desc": "Specification-driven test infrastructure for industrial communication software — from TDD-based product development to BDD integration and end-to-end test suites covering protocol-specific edge cases.",
-    "detail": "Testing starts at the product level — built test-first using TDD so the test harness itself is verified before a single production line is written. This ensures product behaviour is correct and traceable to specification.\n\nIntegration and end-to-end tests are described using BDD — structured as given/when/then scenarios that read as executable specifications. For example, a TFTP test might read: given a TFTP server in read mode, when a client requests a file, then the server responds with the correct data blocks in order. This makes test intent clear to both engineers and stakeholders.\n\nAI-assisted test generation from product descriptions scales coverage beyond what manual authoring can achieve — applied at Hilscher to protocol SDK testing across multiple communication stacks.",
+    "desc": "You ship protocol stacks, firmware, or communication software and need proof that it behaves — under the specification, and under the malformed traffic real networks produce. We build the test infrastructure that gives you that proof on every build.",
+    "detail": "Communication software fails at the edges: odd frame sizes, timing, half-closed connections, devices that bend the standard. Manual testing does not reach them and cannot be repeated on every release.\n\nWe build specification-driven suites: unit tests written test-first so the harness is proven before the product code exists, and integration and end-to-end tests written as given/when/then scenarios that read as executable requirements. Where hardware is scarce, emulators stand in for devices so the suite runs in CI.\n\nAt Hilscher this covered DeviceNet, Modbus (RTU and TCP), Modbus Security, MQTT, TFTP, and CAN stacks, with AI-assisted generation of test cases from the product specification to extend coverage beyond what manual authoring reaches.",
     "tech": ["TDD", "BDD", "Emulator Development", "Integration Tests", "System Tests", "Code Coverage", "pytest", "Docker", "Git"],
     "projects": [
       "Automated Test Suite — DeviceNet Master/Slave · Hilscher",
-      "Automated Test Suite — Modbus TCP Server/Client · Hilscher",
+      "Automated Test Suite — Modbus RTU/TCP Server/Client · Hilscher",
       "Automated Test Suite — Modbus Security · Hilscher",
+      "Automated Test Suite — MQTT · Hilscher",
       "Automated Test Suite — TFTP Server/Client · Hilscher",
       "Automated Test Suite — CAN · Hilscher",
       "Manual Test Specification — PxTrend Suite · Heidelberg Materials"
     ]
   },
   {
-    "num": "06",
-    "title": "Maintenance & Support",
-    "desc": "Ongoing L2/L3 support for deployed systems — industrial historians, communication software, and legacy codebases that need someone who understands them deeply enough to intervene safely.",
-    "detail": "Support is structured around defined response SLAs. L2 covers configuration changes, minor enhancements, and user support. L3 covers root cause analysis, hotfixes, and deep system-level intervention.\n\nRemote-first, with on-site available by arrangement. The emphasis is on understanding the system well enough to act quickly without introducing new risk — particularly important for legacy codebases where documentation is sparse and side effects are hard to predict.",
-    "tech": ["PxTrend", "OPC-UA", "Siemens TIA Portal", "Python", "Ansible"],
+    "num": "03",
+    "title": "Data Integration & ETL",
+    "desc": "Your process data sits in PLCs, SCADA alarms, and lab systems that were never meant to talk to each other. We build the pipelines that collect it, normalise it, and deliver it to your historian or analytics platform — without losing data when the network drops.",
+    "detail": "The usual starting point: you have a historian or data platform, but what arrives in it is incomplete. Some sources have no connector. Others drop samples when a link goes down. Tag names differ between lines and sites, so nothing can be compared.\n\nWe build one agent per source — OPC DA/UA, MQTT, file drops over FTP/SFTP, WinCC alarms, lab analysers — that maps its data to your tag schema and delivers it to a common sink. Agents buffer through outages and reconnect on their own, so a network interruption is a delay, not a gap.\n\nDelivered at scale for Heidelberg Materials: Siemens WinCC controllers feeding PxTrend with time-series metrics, alarms, and lab analyser messages across production lines.",
+    "tech": [
+      "OPC DA",
+      "OPC XDA",
+      "OPC UA",
+      "MQTT",
+      "FTP/SFTP",
+      "PxTrend",
+      "WinCC"
+    ],
     "projects": [
-      "Legacy L2/L3 Support — HilscherFramework · Hilscher",
-      "Legacy L2/L3 Support — PxTrend Suite · Heidelberg Materials",
-      "Legacy L2/L3 Support — Water & Steam & Brine Automation · Solvay Sodi"
+      "Data Integration Agents · Heidelberg Materials",
+      "WinCC → PxTrend Pipelines · Heidelberg Materials"
     ]
   },
   {
-    "num": "07",
-    "title": "PLC & DCS Engineering",
-    "desc": "Full project lifecycle for process automation — from concept definition and equipment selection through PLC/DCS programming, marshalling cabinet testing, SCADA displays, PID tuning, and executive documentation.",
-    "detail": "Scope and automation concept are defined at kick-off, with signal architecture decided early — critical signals wired directly, remaining I/O via fieldbus to contain cabling cost over long distances. PLC/DCS logic and SCADA displays are implemented to specification, followed by FAT at the integrator site where I/O, logic, and displays are verified with the client. On-site commissioning covers instrument calibration, PID tuning, and interlock verification before the system runs under real process conditions. SAT is performed with live field equipment and executive documentation is filed in each control and marshalling cabinet at handover.",
+    "num": "04",
+    "title": "Control Logic & PLC Software",
+    "desc": "Your control logic needs to move, change, or be made consistent — a Honeywell strategy ported to Siemens, a PLC program nobody dares to modify, PID loops that were never tuned properly. We do the software side of process automation, remotely, and hand over to your integrator for commissioning.",
+    "detail": "Process control logic is software with unusual constraints: it runs on a PLC or DCS, it is written in SCL, ladder, or function blocks, and a wrong edit stops production. Most integrators want the whole project; most software shops will not touch it.\n\nWe work in that gap. Control block libraries and ports between platforms — Honeywell semantics on Siemens hardware, so operators keep one control philosophy across the plant. Refactoring and documentation of existing PLC programs. Simulation and PID tuning support based on historian data rather than trial and error on the live process. The communication side of the controller as well: fieldbus and I/O architecture — Profibus, Profinet, Modbus RTU and TCP from the PLC's end — which signals are hardwired and which go over the bus, and how the controller exposes its data to OPC and the historian.\n\nNine years of this at Solvay Sodi — Honeywell Experion and TPS, Siemens S7-300/1500, from concept through commissioning, ATEX units included — and three peer-reviewed papers on process control that came out of it.",
     "tech": [
       "Honeywell Experion",
       "Honeywell TPS",
       "Siemens S7-300/1500",
       "TIA Portal",
-      "WinCC",
       "SCL",
       "PID Tuning",
       "ATEX/IECEx"
@@ -136,37 +82,28 @@
     ]
   },
   {
-    "num": "08",
-    "title": "DevOps & CI/CD",
-    "desc": "Version control, containerisation, and CI/CD workflows for software and industrial projects — practical DevOps that gets code from development to deployment reliably.",
-    "detail": "Day-to-day experience with Git and SVN across long-running projects, including branching strategy, code review workflows, and repository management on GitHub and GitLab. Docker is used extensively for packaging, shipping, and testing services — from protocol emulators to historian components.\n\nCI/CD pipelines are supported and maintained using Jenkins and Ansible, with a focus on keeping deployments stable and repeatable in environments where downtime has real cost.",
-    "tech": ["Git", "SVN", "GitHub", "GitLab", "Docker", "Jenkins", "Ansible"]
+    "num": "05",
+    "title": "Application Refactoring",
+    "desc": "You have a system that works and that nobody dares to change. The original developer has left, there are no tests, and every fix risks breaking something else. We make it safe to change again.",
+    "detail": "Legacy industrial software rarely fails outright; it becomes untouchable. Undocumented business rules, no type information, no test coverage, and architectural decisions that made sense years ago now block every change.\n\nWe start with an audit that maps the code as it actually is — dependencies, dead paths, where the business logic really lives. Then we refactor incrementally, adding tests alongside each step so behaviour is preserved while structure improves. For larger systems we write arc42 architecture documentation, so the understanding survives the next staff change.\n\nYou keep operating throughout. Nothing is rewritten from scratch; there is no big-bang cutover.",
+    "tech": ["Code Audit", "arc42", "Type Safety", "Architecture Review"],
+    "projects": [
+      "Audit & Refactoring — HilscherFramework · Hilscher",
+      "Code Audit, Architecture Review & arc42 Documentation — PxTrend Suite · Heidelberg Materials",
+      "Legacy Test Framework Refactoring · Hilscher",
+      "Legacy Source Code Audit & Provenance Tracing · Heidelberg Materials"
+    ]
   },
   {
-    "num": "09",
-    "title": "Industrial Security",
-    "desc": "OT security advisory and protocol-level security testing — identifying weaknesses at the boundary between plant networks and IT infrastructure, grounded in deep protocol knowledge rather than generic scanning tools.",
-    "detail": "OT security requires a different mindset from web application pentesting — availability constraints, proprietary protocols, and legacy hardware demand a precise, non-disruptive approach. Security work is grounded in established principles: the people-process-technology triangle, security by design, and defence-in-depth — applied to environments where a misconfigured certificate or an open port can have physical consequences. Assessment follows a heuristic approach tailored to the specific OT environment — not a generic checklist.",
-    "tech": ["OT Security", "Modbus TCP/IP", "TLS", "Packet Crafting", "IEC 62443", "OPC-UA"],
-    "useCases": {
-      "delivered": [
-        "Modbus TCP/IP over TLS — Automated Requirement Tests · Hilscher",
-        "LDAP Security Hardening · Heidelberg Materials",
-        "UPS Device Hardening · Solvay Sodi"
-      ],
-      "exploring": [
-        "IEC 62443 — Industrial Cybersecurity Standard",
-        "NIST SP 800-82 — Guide to OT Security",
-        "NIS2 Directive — EU Critical Infrastructure",
-        "GICSP Certification (GIAC/SANS)"
-      ]
-    }
-  },
-  {
-    "num": "10",
-    "title": "Training & Tutorials",
-    "desc": "Practical training and tutorials for engineers working at the OT/IT boundary — industrial protocols, software engineering, historian architecture, testing methodologies, and applied AI/ML.",
-    "detail": "Content is built around real industrial problems encountered across automation, connectivity, and software engineering projects — not synthetic examples.\n\nTopics covered include industrial communication protocols, OT/IT integration and historian architecture, emulator-based testing and specification-driven QA, and applied AI/ML for predictive maintenance and engineering tooling.\n\nDelivered as written guides, video walkthroughs, and structured courses. New content released as projects generate material worth sharing.",
-    "tech": ["Video", "Written Guides", "Hands-on Examples"]
+    "num": "06",
+    "title": "Maintenance & Support",
+    "desc": "A system your plant depends on — a historian, communication software, a legacy application — misbehaves, and your team and the vendor are out of depth. We are the escalation point that understands it well enough to intervene without making it worse.",
+    "detail": "Second level: configuration changes, small enhancements, user questions. Third level: root cause analysis, hotfixes, and intervention at the system level when nothing else has worked.\n\nThe rule is understand before acting. Legacy systems have sparse documentation and unpredictable side effects; the value is in knowing the system, not in reacting fast. Systems we did not build start with an assessment that maps them and produces the runbooks support then runs on.\n\nRemote-first. Rates and commitment tiers are on the pricing page; response times are agreed per client.",
+    "tech": ["PxTrend", "OPC-UA", "Siemens TIA Portal", "Python", "Ansible"],
+    "projects": [
+      "Legacy L2/L3 Support — HilscherFramework · Hilscher",
+      "Legacy L2/L3 Support — PxTrend Suite · Heidelberg Materials",
+      "Legacy L2/L3 Support — Water & Steam & Brine Automation · Solvay Sodi"
+    ]
   }
 ]
