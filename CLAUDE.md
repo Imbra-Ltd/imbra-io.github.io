@@ -22,6 +22,7 @@ Website for Imbra (imbra.io) — a boutique software and industrial engineering 
 - Accent: steel blue `#1B4F8A`
 - Typography: IBM Plex Sans (300, 400, 500, 600) + IBM Plex Mono (400, 500) loaded from Google Fonts
 - All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic/computed values
+- Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage and the pricing page alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
 - Responsive breakpoints:
   - Tablet: max-width 1024px
   - Mobile: max-width 768px (hamburger menu replaces nav links)
