@@ -127,14 +127,17 @@ section { padding: 96px var(--content-inset); }
 
 /* ── Contact ── */
 #contact { background: var(--color-dark); color: white; display: flex; flex-direction: column; padding: 72px var(--content-inset); gap: 48px; }
-.contact-top { display: flex; align-items: center; justify-content: space-between; }
-.cta-headline { font-size: clamp(24px, 3vw, 38px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px; }
+.contact-top { max-width: 640px; }
+.cta-headline { font-size: clamp(24px, 3vw, 38px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
 .cta-headline strong { font-weight: 600; }
-.cta-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+.cta-sub { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+.cta-sub a { color: white; text-decoration: underline; text-underline-offset: 3px; }
 .btn-white { background: white; color: var(--color-dark); font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 32px; border: none; cursor: pointer; letter-spacing: 0.04em; transition: background 0.15s; white-space: nowrap; text-decoration: none; }
 .btn-white:hover { background: var(--color-accent-light); }
 .btn-white:focus-visible { outline: 2px solid white; outline-offset: 3px; }
-.cta-email { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
+.cta-alt { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
+.cta-alt a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: border-color 0.15s; }
+.cta-alt a:hover { border-color: white; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 48px; }
 .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .contact-form-field { display: flex; flex-direction: column; gap: 6px; }
@@ -276,9 +279,7 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .service-desc { grid-column: 1; }
   .service-detail { padding-left: 0; }
   #contact { padding-block: 48px; }
-  .contact-top { flex-direction: column; align-items: flex-start; gap: 32px; }
   .contact-form-row { grid-template-columns: 1fr; }
-  .cta-right { align-items: flex-start; }
   .footer-top { padding-block: 14px; flex-wrap: wrap; gap: 12px; }
   .footer-legal { gap: 20px; flex-wrap: wrap; }
   .footer-body { grid-template-columns: 1fr; padding-block: 28px; gap: 32px; }

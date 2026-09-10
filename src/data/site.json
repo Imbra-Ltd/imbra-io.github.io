@@ -26,9 +26,10 @@
     "projectsLabel": "Projects"
   },
   "contact": {
-    "headline": "The complexity is",
-    "headlineStrong": "ours to solve.",
-    "cta": "Get in touch",
+    "headline": "Tell us about",
+    "headlineStrong": "your system.",
+    "sub": "What it is, what it should do, and where it hurts. One message is enough to start; assessment and rates are on the <a href=\"/pricing/\">pricing page</a>.",
+    "altLabel": "Prefer email?",
     "email": "contact@imbra.io",
     "formEndpoint": "https://formspree.io/f/mzdjvyly"
   },

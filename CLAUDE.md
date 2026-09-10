@@ -82,7 +82,7 @@ src/components/
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the words "one-engineer" link to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
 4. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
-5. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
+5. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
 6. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
 
 The homepage is deliberately minimal: no stat strip, no process or expertise sections. The engagement flow lives on `/pricing/`.
