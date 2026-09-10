@@ -18,11 +18,11 @@ Website for Imbra (imbra.io) — a boutique software and industrial engineering 
 
 ## Design
 - Aesthetic: Swiss precision, clean, minimal, clinical
-- Background: `#FFFFFF` and `#F8F9FA` alternating sections
+- Background: white throughout (`--color-white`); sections separate by hairline rules in `--color-border`, the dark contact and footer block, and whitespace. No grey section backgrounds
 - Accent: steel blue `#1B4F8A`
 - Typography: IBM Plex Sans (300, 400, 500, 600) + IBM Plex Mono (400, 500) loaded from Google Fonts
 - Body copy is 14–16px at weight 400; weight 300 is reserved for display headings and large numbers. Mono labels are 11–12px minimum
-- Text colours: `--color-dark` for headings and primary text, `--color-text-body` for body copy, `--color-text-muted` for secondary text. All three clear WCAG AA on white and on `--color-bg`; do not add paler greys
+- Text colours: `--color-dark` for headings and primary text, `--color-text-body` for body copy, `--color-text-muted` for secondary text. All three clear WCAG AA on white; do not add paler greys
 - All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic/computed values
 - Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage and the pricing page alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
 - Responsive breakpoints:

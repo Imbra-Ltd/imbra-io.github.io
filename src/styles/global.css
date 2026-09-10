@@ -17,7 +17,6 @@
   --content-inset:        max(var(--gutter), calc((100% - var(--content-max-width)) / 2 + var(--gutter)));
 
   --color-white:          #FFFFFF;
-  --color-bg:             #F8F9FA;
   --color-dark:           #111318;
   --color-accent:         #1B4F8A;
   --color-accent-dark:    #163F6E;
@@ -34,13 +33,13 @@
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'IBM Plex Sans', sans-serif; background: var(--color-bg); color: var(--color-dark); -webkit-font-smoothing: antialiased; }
+body { font-family: 'IBM Plex Sans', sans-serif; background: var(--color-white); color: var(--color-dark); -webkit-font-smoothing: antialiased; }
 .mono { font-family: 'IBM Plex Mono', monospace; }
 
 /* ── Nav ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(248,249,250,0.92); backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border); height: 60px;
   display: flex; align-items: center; padding: 0 var(--page-inset); justify-content: space-between;
 }
@@ -97,7 +96,6 @@ section { padding: 96px var(--content-inset); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── Services ── */
-#services { background: var(--color-bg); }
 .services-list { border-top: 1px solid var(--color-border); }
 .service-item { border-bottom: 1px solid var(--color-border); }
 .service-header { display: grid; grid-template-columns: 48px 1fr; column-gap: 24px; padding: 28px 0; cursor: pointer; }
@@ -118,7 +116,7 @@ section { padding: 96px var(--content-inset); }
 .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
 /* ── Publications ── */
-#publications { background: var(--color-bg); border-top: 1px solid var(--color-border); }
+#publications { border-top: 1px solid var(--color-border); }
 .pub-list { list-style: none; border-top: 1px solid var(--color-border); }
 .pub-item { padding: 22px 0; border-bottom: 1px solid var(--color-border); }
 .pub-title { font-size: 16px; font-weight: 500; color: var(--color-dark); line-height: 1.45; text-decoration: none; display: block; max-width: 680px; }
