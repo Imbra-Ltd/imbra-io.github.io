@@ -28,7 +28,7 @@ npm run preview   # verify — preview the production build locally
 ## Stack
 
 - [Astro](https://astro.build) — static site generator
-- React — interactive islands only (hamburger menu, product expand, services accordion, contact form)
+- React — interactive islands only (hamburger menu, services accordion, contact form)
 - Plain CSS — no Tailwind, no CSS-in-JS
 - JSON — all content in `src/data/`, no hardcoded copy in components
 

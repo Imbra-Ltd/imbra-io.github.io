@@ -7,77 +7,58 @@ interface Service {
   detail: string;
   tech: string[];
   projects?: string[];
-  useCases?: { delivered: string[]; exploring?: string[]; };
 }
 
 interface Props {
   services: Service[];
+  projectsLabel: string;
 }
 
-export default function ServiceExpand({ services }: Props) {
+export default function ServiceExpand({ services, projectsLabel }: Props) {
   const [activeNum, setActiveNum] = useState<string | null>(null);
 
-  function toggle(e: React.MouseEvent, num: string) {
-    e.stopPropagation();
-    setActiveNum(prev => prev === num ? null : num);
+  function toggle(num: string) {
+    setActiveNum(prev => (prev === num ? null : num));
   }
 
   return (
-    <div className="services-grid reveal">
-      {services.map(s => (
-        <div key={s.num} className={`service-item ${activeNum === s.num ? "active" : ""}`}>
-          <div className="service-header">
-            <div className="service-header-content">
-              <div className="service-title">{s.title}</div>
-              <div className="service-desc">{s.desc}</div>
+    <div className="services-list reveal">
+      {services.map(s => {
+        const open = activeNum === s.num;
+        const panelId = `service-detail-${s.num}`;
+        return (
+          <div key={s.num} className={`service-item${open ? " active" : ""}`}>
+            {/* The whole heading row is the click target; the button inside it is the keyboard
+                control, and its click bubbles up to the same handler. */}
+            <div className="service-header" onClick={() => toggle(s.num)}>
+              <span className="service-num mono">{s.num}</span>
+              <h3 className="service-title">
+                <button type="button" className="service-toggle" aria-expanded={open} aria-controls={panelId}>
+                  <span>{s.title}</span>
+                  <span className="service-indicator" aria-hidden="true">{open ? "−" : "+"}</span>
+                </button>
+              </h3>
+              <p className="service-desc">{s.desc}</p>
             </div>
-            <button
-              className="service-toggle"
-              onClick={(e) => toggle(e, s.num)}
-              aria-expanded={activeNum === s.num}
-              aria-label={`${activeNum === s.num ? "Collapse" : "Expand"} details for ${s.title}`}
-            >
-              {activeNum === s.num ? "−" : "+"}
-            </button>
-          </div>
-          {activeNum === s.num && (
-            <div className="service-detail">
+            <div className="service-detail" id={panelId} hidden={!open}>
               {s.detail.split("\n\n").map((para, i) => (
                 <p key={i} className="service-detail-text">{para}</p>
               ))}
               {s.projects && (
                 <div className="service-detail-row">
-                  <div className="service-detail-label">Projects</div>
+                  <div className="service-detail-label">{projectsLabel}</div>
                   <ul className="service-detail-projects">
                     {s.projects.map(p => <li key={p}>{p}</li>)}
                   </ul>
                 </div>
               )}
-              {s.useCases && (
-                <>
-                  <div className="service-detail-row">
-                    <div className="service-detail-label">Delivered</div>
-                    <ul className="service-detail-projects">
-                      {s.useCases.delivered.map(u => <li key={u}>{u}</li>)}
-                    </ul>
-                  </div>
-                  {s.useCases.exploring && (
-                    <div className="service-detail-row">
-                      <div className="service-detail-label">In Development</div>
-                      <ul className="service-detail-projects">
-                        {s.useCases.exploring.map(u => <li key={u}>{u}</li>)}
-                      </ul>
-                    </div>
-                  )}
-                </>
-              )}
               <div className="service-tags">
                 {s.tech.map(t => <span key={t} className="service-tag">{t}</span>)}
               </div>
             </div>
-          )}
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </div>
   );
 }

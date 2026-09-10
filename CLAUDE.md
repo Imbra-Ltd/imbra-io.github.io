@@ -78,7 +78,7 @@ src/components/
 ## Homepage sections (in order)
 1. Nav — logo (links to `/`), section links, hamburger on mobile
 2. Hero — eyebrow, headline, positioning text, one CTA button, image
-3. Services — 6 service cards in 2-column grid (an odd last card would span both columns), each expandable inline; rows pair by audience: vendors, plants, legacy owners
+3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
 4. Research & Credentials — 3 publication cards, title is the DOI link
 5. Contact CTA — dark (`#111318`) section with headline, email link, and contact form
 6. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)

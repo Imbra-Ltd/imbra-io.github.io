@@ -22,7 +22,8 @@
     "label": "01 — Services",
     "heading": "What we",
     "headingStrong": "fix, build, and keep running",
-    "sub": "Open a card: the problem, what we do about it, and where we have done it before."
+    "sub": "Expand a service: the problem, what we do about it, and where we have done it before.",
+    "projectsLabel": "Projects"
   },
   "contact": {
     "headline": "The complexity is",
