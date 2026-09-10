@@ -8,5 +8,5 @@ const { services, header } = Astro.props;
     <h2 class="section-heading">{header.heading} <strong>{header.headingStrong}</strong></h2>
     <p class="section-sub">{header.sub}</p>
   </div>
-  <ServiceExpand client:load services={services} />
+  <ServiceExpand client:load services={services} projectsLabel={header.projectsLabel} />
 </section>

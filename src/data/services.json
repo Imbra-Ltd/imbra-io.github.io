@@ -20,7 +20,7 @@
   {
     "num": "02",
     "title": "Testing & Quality Assurance",
-    "desc": "You ship protocol stacks, firmware, or communication software and need proof that it behaves — under the specification, and under the malformed traffic real networks produce. We build the test infrastructure that gives you that proof on every build.",
+    "desc": "You ship protocol stacks, firmware, or communication software and need proof that it behaves — under the specification, and under the malformed traffic real networks produce.",
     "detail": "Communication software fails at the edges: odd frame sizes, timing, half-closed connections, devices that bend the standard. Manual testing does not reach them and cannot be repeated on every release.\n\nWe build specification-driven suites: unit tests written test-first so the harness is proven before the product code exists, and integration and end-to-end tests written as given/when/then scenarios that read as executable requirements. Where hardware is scarce, emulators stand in for devices so the suite runs in CI.\n\nAt Hilscher this covered DeviceNet, Modbus (RTU and TCP), Modbus Security, MQTT, TFTP, and CAN stacks, with AI-assisted generation of test cases from the product specification to extend coverage beyond what manual authoring reaches.",
     "tech": ["TDD", "BDD", "Emulator Development", "Integration Tests", "System Tests", "Code Coverage", "pytest", "Docker", "Git"],
     "projects": [
@@ -36,7 +36,7 @@
   {
     "num": "03",
     "title": "Data Integration & ETL",
-    "desc": "Your process data sits in PLCs, SCADA alarms, and lab systems that were never meant to talk to each other. We build the pipelines that collect it, normalise it, and deliver it to your historian or analytics platform — without losing data when the network drops.",
+    "desc": "Your process data sits in PLCs, SCADA alarms, and lab systems that were never meant to talk to each other.",
     "detail": "The usual starting point: you have a historian or data platform, but what arrives in it is incomplete. Some sources have no connector. Others drop samples when a link goes down. Tag names differ between lines and sites, so nothing can be compared.\n\nWe build one agent per source — OPC DA/UA, MQTT, file drops over FTP/SFTP, WinCC alarms, lab analysers — that maps its data to your tag schema and delivers it to a common sink. Agents buffer through outages and reconnect on their own, so a network interruption is a delay, not a gap.\n\nDelivered at scale for Heidelberg Materials: Siemens WinCC controllers feeding PxTrend with time-series metrics, alarms, and lab analyser messages across production lines.",
     "tech": [
       "OPC DA",
@@ -55,8 +55,8 @@
   {
     "num": "04",
     "title": "Control Logic & PLC Software",
-    "desc": "Your control logic needs to move, change, or be made consistent — a Honeywell strategy ported to Siemens, a PLC program nobody dares to modify, PID loops that were never tuned properly. We do the software side of process automation, remotely, and hand over to your integrator for commissioning.",
-    "detail": "Process control logic is software with unusual constraints: it runs on a PLC or DCS, it is written in SCL, ladder, or function blocks, and a wrong edit stops production. Most integrators want the whole project; most software shops will not touch it.\n\nWe work in that gap. Control block libraries and ports between platforms — Honeywell semantics on Siemens hardware, so operators keep one control philosophy across the plant. Refactoring and documentation of existing PLC programs. Simulation and PID tuning support based on historian data rather than trial and error on the live process. The communication side of the controller as well: fieldbus and I/O architecture — Profibus, Profinet, Modbus RTU and TCP from the PLC's end — which signals are hardwired and which go over the bus, and how the controller exposes its data to OPC and the historian.\n\nNine years of this at Solvay Sodi — Honeywell Experion and TPS, Siemens S7-300/1500, from concept through commissioning, ATEX units included — and three peer-reviewed papers on process control that came out of it.",
+    "desc": "Your control logic needs to move, change, or be made consistent — a Honeywell strategy ported to Siemens, a PLC program nobody dares to modify, PID loops that were never tuned properly.",
+    "detail": "Process control logic is software with unusual constraints: it runs on a PLC or DCS, it is written in SCL, ladder, or function blocks, and a wrong edit stops production. Most integrators want the whole project; most software shops will not touch it.\n\nWe work in that gap. Control block libraries and ports between platforms — Honeywell semantics on Siemens hardware, so operators keep one control philosophy across the plant. Refactoring and documentation of existing PLC programs. Simulation and PID tuning support based on historian data rather than trial and error on the live process. The communication side of the controller as well: fieldbus and I/O architecture — Profibus, Profinet, Modbus RTU and TCP from the PLC's end — which signals are hardwired and which go over the bus, and how the controller exposes its data to OPC and the historian. We do the software side, remotely, and hand over to your integrator for commissioning.\n\nNine years of this at Solvay Sodi — Honeywell Experion and TPS, Siemens S7-300/1500, from concept through commissioning, ATEX units included — and three peer-reviewed papers on process control that came out of it.",
     "tech": [
       "Honeywell Experion",
       "Honeywell TPS",
@@ -84,8 +84,8 @@
   {
     "num": "05",
     "title": "Application Refactoring",
-    "desc": "You have a system that works and that nobody dares to change. The original developer has left, there are no tests, and every fix risks breaking something else. We make it safe to change again.",
-    "detail": "Legacy industrial software rarely fails outright; it becomes untouchable. Undocumented business rules, no type information, no test coverage, and architectural decisions that made sense years ago now block every change.\n\nWe start with an audit that maps the code as it actually is — dependencies, dead paths, where the business logic really lives. Then we refactor incrementally, adding tests alongside each step so behaviour is preserved while structure improves. For larger systems we write arc42 architecture documentation, so the understanding survives the next staff change.\n\nYou keep operating throughout. Nothing is rewritten from scratch; there is no big-bang cutover.",
+    "desc": "You have a system that works and that nobody dares to change: the original developer has left, there are no tests, and every fix risks breaking something else.",
+    "detail": "Legacy industrial software rarely fails outright; it becomes untouchable. Undocumented business rules, no type information, no test coverage, and architectural decisions that made sense years ago now block every change.\n\nWe make it safe to change again. It starts with an audit that maps the code as it actually is — dependencies, dead paths, where the business logic really lives. Then we refactor incrementally, adding tests alongside each step so behaviour is preserved while structure improves. For larger systems we write arc42 architecture documentation, so the understanding survives the next staff change.\n\nYou keep operating throughout. Nothing is rewritten from scratch; there is no big-bang cutover.",
     "tech": ["Code Audit", "arc42", "Type Safety", "Architecture Review"],
     "projects": [
       "Audit & Refactoring — HilscherFramework · Hilscher",
@@ -97,8 +97,8 @@
   {
     "num": "06",
     "title": "Maintenance & Support",
-    "desc": "A system your plant depends on — a historian, communication software, a legacy application — misbehaves, and your team and the vendor are out of depth. We are the escalation point that understands it well enough to intervene without making it worse.",
-    "detail": "Second level: configuration changes, small enhancements, user questions. Third level: root cause analysis, hotfixes, and intervention at the system level when nothing else has worked.\n\nThe rule is understand before acting. Legacy systems have sparse documentation and unpredictable side effects; the value is in knowing the system, not in reacting fast. Systems we did not build start with an assessment that maps them and produces the runbooks support then runs on.\n\nRemote-first. Rates and commitment tiers are on the pricing page; response times are agreed per client.",
+    "desc": "A system your plant depends on — a historian, communication software, a legacy application — misbehaves, and your team and the vendor are out of depth.",
+    "detail": "We are the escalation point that understands the system well enough to intervene without making it worse. Second level: configuration changes, small enhancements, user questions. Third level: root cause analysis, hotfixes, and intervention at the system level when nothing else has worked.\n\nThe rule is understand before acting. Legacy systems have sparse documentation and unpredictable side effects; the value is in knowing the system, not in reacting fast. Systems we did not build start with an assessment that maps them and produces the runbooks support then runs on.\n\nRemote-first. Rates and commitment tiers are on the pricing page; response times are agreed per client.",
     "tech": ["PxTrend", "OPC-UA", "Siemens TIA Portal", "Python", "Ansible"],
     "projects": [
       "Legacy L2/L3 Support — HilscherFramework · Hilscher",
