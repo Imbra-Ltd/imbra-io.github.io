@@ -141,12 +141,8 @@ section { padding: 96px var(--content-inset); }
 .contact-form-field { display: flex; flex-direction: column; gap: 6px; }
 .contact-form-field label { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 .contact-form-field input,
-.contact-form-field select,
 .contact-form-field textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: white; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; padding: 12px 14px; outline: none; resize: vertical; transition: border-color 0.15s; }
-.contact-form-field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
-.contact-form-field select option { background: var(--color-dark); color: white; }
 .contact-form-field input:focus,
-.contact-form-field select:focus,
 .contact-form-field textarea:focus { border-color: rgba(255,255,255,0.4); }
 .contact-form .btn-white { align-self: flex-start; }
 .contact-form-error { font-size: 13px; color: #F87171; }
@@ -267,6 +263,7 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .hamburger { display: flex; }
   .hero { padding-top: 56px; }
   .hero-inner { padding-block: 40px 32px; flex-direction: column; align-items: stretch; gap: 24px; }
+  .hero-content { flex: none; }
   .hero-image { display: none; }
   .hero-eyebrow { font-size: 10px; }
   section { padding-block: 48px; }
@@ -276,6 +273,7 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .service-num { display: none; }
   .service-desc { grid-column: 1; }
   .service-detail { padding-left: 0; }
+  .service-detail-row { flex-direction: column; gap: 8px; }
   #contact { padding-block: 48px; }
   .contact-form-row { grid-template-columns: 1fr; }
   .footer-top { padding-block: 14px; flex-wrap: wrap; gap: 12px; }
