@@ -1,0 +1,23 @@
+---
+interface Step    { index: string; title: string; desc: string; }
+interface Process { label: string; heading: string; headingStrong: string; sub: string; steps: Step[]; }
+interface Props   { process: Process; }
+
+const { process } = Astro.props as Props;
+---
+<section id="process">
+  <div class="reveal">
+    <div class="section-label">{process.label}</div>
+    <h2 class="section-heading">{process.heading} <strong>{process.headingStrong}</strong></h2>
+    <p class="section-sub">{process.sub}</p>
+  </div>
+  <ol class="process-steps reveal">
+    {process.steps.map((step) => (
+      <li class="process-step">
+        <div class="process-step-index">{step.index}</div>
+        <h3 class="process-step-title">{step.title}</h3>
+        <p class="process-step-desc">{step.desc}</p>
+      </li>
+    ))}
+  </ol>
+</section>

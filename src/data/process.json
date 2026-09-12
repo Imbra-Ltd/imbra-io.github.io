@@ -1,0 +1,28 @@
+{
+  "label": "02 — How we work",
+  "heading": "From first contact to",
+  "headingStrong": "long-term support.",
+  "sub": "Every engagement follows the same four steps. You always know which one you are in, what comes next, and what it costs.",
+  "steps": [
+    {
+      "index": "01",
+      "title": "Assess",
+      "desc": "A time-boxed assessment of your system produces a written finding: context, options, a recommendation, and an hour estimate."
+    },
+    {
+      "index": "02",
+      "title": "Agree",
+      "desc": "The estimate becomes a Statement of Work — scope, deliverables, acceptance criteria, and a fixed price — signed before any work starts."
+    },
+    {
+      "index": "03",
+      "title": "Deliver",
+      "desc": "Work runs in short cycles with written progress reports; architecture is documented as it is decided, and nothing is done until you sign off."
+    },
+    {
+      "index": "04",
+      "title": "Support",
+      "desc": "After go-live, committed hours cover escalation support and further work, at a rate set by how long you commit."
+    }
+  ]
+}

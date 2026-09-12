@@ -115,6 +115,14 @@ section { padding: 96px var(--content-inset); }
 .service-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 8px; border: 1px solid var(--color-accent); color: var(--color-accent); letter-spacing: 0.05em; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
+/* ── Process ── */
+#process { border-top: 1px solid var(--color-border); }
+.process-steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 32px; border-top: 1px solid var(--color-border); }
+.process-step { padding: 28px 0; }
+.process-step-index { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; color: var(--color-accent); letter-spacing: 0.05em; margin-bottom: 20px; }
+.process-step-title { font-size: 18px; font-weight: 500; color: var(--color-dark); letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 10px; }
+.process-step-desc { font-size: 14px; color: var(--color-text-body); line-height: 1.65; }
+
 /* ── Publications ── */
 #publications { border-top: 1px solid var(--color-border); }
 .pub-list { list-style: none; border-top: 1px solid var(--color-border); }
@@ -250,6 +258,7 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   :root { --gutter: 32px; }
   .hero-inner { padding-block: 48px 40px; }
   section { padding-block: 56px; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
   #contact { padding-block: 56px; }
   .footer-body { padding-block: 32px; gap: 40px; }
 }
@@ -274,6 +283,9 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .service-desc { grid-column: 1; }
   .service-detail { padding-left: 0; }
   .service-detail-row { flex-direction: column; gap: 8px; }
+  .process-steps { grid-template-columns: 1fr; }
+  .process-step { padding: 20px 0; border-bottom: 1px solid var(--color-border); }
+  .process-step-index { margin-bottom: 10px; }
   #contact { padding-block: 48px; }
   .contact-form-row { grid-template-columns: 1fr; }
   .footer-top { padding-block: 14px; flex-wrap: wrap; gap: 12px; }

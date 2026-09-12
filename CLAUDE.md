@@ -44,6 +44,7 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 |------------------------------|------------------------------------------------|
 | `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
 | `src/data/services.json`     | Services accordion items                       |
+| `src/data/process.json`      | How-we-work section — the four engagement steps |
 | `src/data/publications.json` | Research publications with DOI links           |
 | `src/data/pricing.json`      | Pricing page — all engagement models           |
 
@@ -60,6 +61,7 @@ src/components/
 ├── Nav.astro             # Static nav shell — mounts HamburgerMenu island
 ├── Hero.astro
 ├── Services.astro        # Static section header — mounts ServiceExpand island
+├── Process.astro         # Static four-step how-we-work grid
 ├── Publications.astro
 ├── Contact.astro         # Dark CTA section — email link + ContactForm island
 └── Footer.astro
@@ -81,11 +83,12 @@ src/components/
 1. Nav — logo (links to `/`), section links, hamburger on mobile
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the words "one-engineer" link to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
-4. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
-5. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
-6. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
+4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/` (assessment → Statement of Work → fixed price → committed hours) and carry no rates or response times
+5. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
+6. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
+7. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
 
-The homepage is deliberately minimal: no stat strip, no process or expertise sections. The engagement flow lives on `/pricing/`.
+The homepage is deliberately minimal: no stat strip, no expertise section. The process section names the steps; the numbers behind them live on `/pricing/`.
 
 Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned anywhere on the site. Their white paper sources remain in `docs/WHITEPAPER-*.md`; the landing pages and PDFs were removed in September 2026 and can be restored from git history when the products ship. The positioning statement lives in `site.json` → `hero.sub`; the vision line in `footer.about`.
 

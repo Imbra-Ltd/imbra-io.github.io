@@ -39,6 +39,7 @@ src/
 ├── data/                  # All editable content as JSON
 │   ├── site.json          # Nav, hero, contact, footer
 │   ├── services.json      # Services accordion
+│   ├── process.json       # How-we-work steps
 │   ├── publications.json  # Research publications
 │   └── pricing.json       # Pricing page content
 ├── components/
