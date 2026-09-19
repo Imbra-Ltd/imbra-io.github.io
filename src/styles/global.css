@@ -259,6 +259,7 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .hero-inner { padding-block: 48px 40px; }
   section { padding-block: 56px; }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .pricing-tiers { --tier-cols: 2 !important; }
   #contact { padding-block: 56px; }
   .footer-body { padding-block: 32px; gap: 40px; }
 }
