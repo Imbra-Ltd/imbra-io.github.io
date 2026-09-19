@@ -18,7 +18,7 @@ interface Pillar {
 
 interface Props {
   pillars: Pillar[];
-  projectsLabel: string;
+  projectsLabel?: string;
   idPrefix?: string;
 }
 

@@ -207,8 +207,8 @@ must not appear in production navigation or the sitemap.
 Solutions live in `src/data/solutions.json`, one row per problem, in the same
 shape as a service in `services.json`: `num`, `title`, `desc` (the symptom in
 one sentence), `detail` (what we do, then what you receive and what is not
-included), `tech` (protocols and systems) and `projects` (the founder's prior
-professional experience, shown under "Experience"). The homepage Solutions
+included) and `tech` (protocols and systems). The experience list stays on the
+service rows, so solution rows have no `projects`. The homepage Solutions
 section renders them with the services accordion. There is no pillar, slug,
 metadata or draft field, because there are no separate pages. The illustrative
 examples were dropped: they described the method, and the method is what paid
