@@ -14,8 +14,8 @@
       "index": "1",
       "title": "Rates",
       "model": "Per hour · set by your commitment",
-      "desc": "Three rates, set by how long you commit. After the assessment, your rate applies to support and fixed-price projects alike — across all your installations.",
-      "callout": "Systems not built by Imbra start with a separate ad-hoc assessment — from €800 (one day) — before any commitment. Commitments and fixed prices are quoted from it.",
+      "desc": "Three rates, set by how long you commit. Your agreed rate applies to support and fixed-price projects alike — across all your installations.",
+      "callout": "We start with a free assessment: a conversation to understand your needs and see whether we are a good fit for each other. Neither side is obliged to proceed. Detailed technical investigation starts from €800 (one day), with scope and price agreed before proceeding.",
       "tiers": [
         {
           "name": "Ad-hoc",
@@ -24,7 +24,7 @@
           "features": [
             "Scheduled as available",
             "4-hour minimum",
-            "Also the assessment rate"
+            "Also the technical investigation rate"
           ]
         },
         {
@@ -59,6 +59,9 @@
         }
       ],
       "notes": [
+        "Detailed technical investigation examines code, logs or architecture and starts from €800 (one day). We agree its scope, deliverables, time limit and price, and obtain your approval before chargeable work starts.",
+        "You receive written findings covering risks and dependencies, options, a recommendation and a scoped estimate. You keep these findings whether or not you commission further work.",
+        "For systems we already understand, we use existing knowledge and documentation to identify any gaps. We agree only the investigation needed to scope the work; familiarity does not replace necessary checks.",
         "Reserved capacity is limited; commitments are accepted in order of signing.",
         "24/7 on-call is an optional add-on to the Annual tier and is quoted separately.",
         "Response times, service levels, and expenses are defined in the Master Service Agreement; scheduling, scope, and deployment responsibilities in each Statement of Work."
@@ -83,7 +86,7 @@
       "title": "Project Engagement",
       "model": "Fixed price = estimated hours × your rate",
       "desc": [
-        "Refactoring, new features, migrations, and integrations. The system assessment (see 1) produces the hour estimate; multiplied by your rate, it is the fixed price — written in the Statement of Work before work starts.",
+        "Refactoring, new features, migrations, and integrations. Agreed technical investigation, where needed, informs the hour estimate; multiplied by your rate, it is the fixed price — written in the Statement of Work before work starts.",
         "The project consumes its estimated hours, not the hours actually worked: if Imbra's estimate was too low, Imbra absorbs the difference, and the price moves only if the scope does. A project of at least 20 hours per month over three months or more earns the Quarterly rate on its own."
       ],
       "notes": [
@@ -97,10 +100,10 @@
     "items": [
       {
         "title": "Small company — one legacy system",
-        "desc": "Quarterly term, renewed for a year. Two-day assessment of a mid-sized legacy test framework, then support at the minimum volume.",
+        "desc": "Quarterly term, renewed for a year. Two-day technical investigation of a mid-sized legacy test framework, then support at the minimum volume.",
         "lines": [
           {
-            "label": "System assessment — 16h × €100",
+            "label": "Technical investigation — 16h × €100",
             "amount": "€1,600"
           },
           {
@@ -112,10 +115,10 @@
       },
       {
         "title": "Large company — 100 installations",
-        "desc": "Annual term at 80 hours a month. Four-week assessment of a complex system estate, then support covering every installation under one agreement.",
+        "desc": "Annual term at 80 hours a month. Four-week technical investigation of a complex system estate, then support covering every installation under one agreement.",
         "lines": [
           {
-            "label": "System assessment — 160h × €100",
+            "label": "Technical investigation — 160h × €100",
             "amount": "€16,000"
           },
           {
@@ -127,10 +130,10 @@
       },
       {
         "title": "Project — small integration",
-        "desc": "No commitment. One-day assessment, then an 80-hour integration bridging two systems.",
+        "desc": "No commitment. One-day technical investigation, then an 80-hour integration bridging two systems.",
         "lines": [
           {
-            "label": "System assessment — 8h × €100",
+            "label": "Technical investigation — 8h × €100",
             "amount": "€800"
           },
           {
@@ -142,10 +145,10 @@
       },
       {
         "title": "Project — runtime migration",
-        "desc": "Quarterly term. A 400-hour project over four months, run with the client's own team — three-day assessment, then migration off an unsupported runtime.",
+        "desc": "Quarterly term. A 400-hour project over four months, run with the client's own team — three-day technical investigation, then migration off an unsupported runtime.",
         "lines": [
           {
-            "label": "System assessment — 24h × €100",
+            "label": "Technical investigation — 24h × €100",
             "amount": "€2,400"
           },
           {
@@ -157,7 +160,7 @@
       },
       {
         "title": "Emergency — business hours",
-        "desc": "No commitment. 8-hour engagement on an already-assessed system, on a weekday, subject to availability.",
+        "desc": "No commitment. 8-hour engagement on an already-understood system, on a weekday, subject to availability.",
         "lines": [
           {
             "label": "8h × €100",
@@ -168,7 +171,7 @@
       },
       {
         "title": "Emergency — weekend",
-        "desc": "No commitment. 8-hour engagement on an already-assessed system, on a Saturday, subject to availability.",
+        "desc": "No commitment. 8-hour engagement on an already-understood system, on a Saturday, subject to availability.",
         "lines": [
           {
             "label": "8h × €100 × 1.5",
@@ -182,7 +185,7 @@
   "legalNote": "Full terms, including service levels, are defined in the Master Service Agreement.",
   "cta": {
     "heading": "Not sure which model fits?",
-    "sub": "Describe your situation and we will recommend the right engagement type.",
+    "sub": "Start with a free assessment to discuss your needs and whether we are a good fit for each other. Sending a message does not commit you to paid work.",
     "label": "Get in touch",
     "email": "contact@imbra.io"
   }

@@ -29,7 +29,7 @@
   "contact": {
     "headline": "Tell us about",
     "headlineStrong": "your system.",
-    "sub": "What it is, what it should do, and where it hurts. One message is enough to start; assessment and rates are on the <a href=\"/pricing/\">pricing page</a>.",
+    "sub": "Tell us about your system and what you need. We start with a free assessment to see whether we are a good fit for each other, without obligation. Any paid technical investigation is agreed separately; details and rates are on the <a href=\"/pricing/\">pricing page</a>.",
     "altLabel": "Prefer email?",
     "email": "contact@imbra.io",
     "formEndpoint": "https://formspree.io/f/mzdjvyly"
