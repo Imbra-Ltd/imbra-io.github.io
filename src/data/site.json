@@ -5,7 +5,7 @@
   },
   "nav": {
     "links": [
-      { "label": "Solutions",  "href": "/solutions/" },
+      { "label": "Solutions",  "target": "solutions" },
       { "label": "Services",   "target": "services" },
       { "label": "Delivery",   "target": "process" },
       { "label": "Research",   "target": "publications" },
@@ -20,8 +20,15 @@
     "sub": "Imbra is an engineering-led company helping industrial plants, device manufacturers, protocol vendors and automation teams solve the software between the plant floor and IT. We build, test, integrate, and support protocol stacks, data flows, historians, and legacy systems — with direct access to the <a href=\"https://linkedin.com/in/branimir-georgiev\" target=\"_blank\" rel=\"noopener noreferrer\">founder</a>.",
     "cta": { "label": "Discuss a project →", "target": "contact" }
   },
+  "solutions": {
+    "label": "01 — Solutions",
+    "heading": "Start from",
+    "headingStrong": "the problem",
+    "sub": "Situations we are called in for. Expand one to see what we do, what you receive and where the work stops.",
+    "projectsLabel": "Experience"
+  },
   "services": {
-    "label": "01 — Services",
+    "label": "02 — Services",
     "heading": "What we",
     "headingStrong": "fix, build, and keep running",
     "sub": "Expand a service: the problem, what we do about it, and where we have done it before.",

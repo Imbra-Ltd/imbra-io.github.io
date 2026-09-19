@@ -24,7 +24,7 @@ Website for Imbra (imbra.io) — a boutique software and industrial engineering 
 - Body copy is 14–16px at weight 400; weight 300 is reserved for display headings and large numbers. Mono labels are 11–12px minimum
 - Text colours: `--color-dark` for headings and primary text, `--color-text-body` for body copy, `--color-text-muted` for secondary text. All three clear WCAG AA on white; do not add paler greys
 - All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic/computed values
-- Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage, the pricing page and the solution pages alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
+- Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage and the pricing page alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
 - Responsive breakpoints:
   - Tablet: max-width 1024px
   - Mobile: max-width 768px (hamburger menu replaces nav links)
@@ -43,12 +43,12 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
 | `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
-| `src/data/services.json`     | Services accordion — three pillars (each with an `id`), each holding its service items |
+| `src/data/services.json`     | Services accordion — three pillars, each holding its service items |
 | `src/data/process.json`      | How-we-work section — the four engagement steps |
 | `src/data/commitments.json`  | Commitments section — what we think (beliefs) and what we commit to |
 | `src/data/publications.json` | Research publications with DOI links           |
 | `src/data/pricing.json`      | Pricing page — all engagement models           |
-| `src/data/solutions.json`    | Solutions index and solution pages — one record per customer problem |
+| `src/data/solutions.json`    | Solutions accordion — one row per customer problem |
 
 Note: `src/content/` is intentionally avoided — Astro reserves that path for Content Collections.
 
@@ -58,10 +58,11 @@ Note: `src/content/` is intentionally avoided — Astro reserves that path for C
 src/components/
 ├── interactive/          # React islands — only components that need JS
 │   ├── HamburgerMenu.tsx # Mobile nav toggle
-│   ├── ServiceExpand.tsx # Services accordion
+│   ├── ServiceExpand.tsx # Services and Solutions accordion
 │   └── ContactForm.tsx   # Contact form — POST to Formspree endpoint
 ├── Nav.astro             # Static nav shell — mounts HamburgerMenu island
 ├── Hero.astro
+├── Solutions.astro       # Static section header — mounts ServiceExpand island
 ├── Services.astro        # Static section header — mounts ServiceExpand island
 ├── Process.astro         # Static four-step how-we-work grid
 ├── Commitments.astro     # Static beliefs + commitments section
@@ -78,25 +79,22 @@ src/components/
 |---------------------------------|-------------------------------------|--------------------------------------------|
 | Homepage                        | `/`                                 | All main sections                          |
 | Pricing                         | `/pricing/`                         | Rate ladder, support, projects, worked examples; linked from nav and 404 |
-| Solutions                       | `/solutions/`                       | Customer problems grouped by service pillar; linked from nav |
-| Solution                        | `/solutions/<slug>/`                | One page per record in `solutions.json`, built by `src/pages/solutions/[slug].astro` |
 | Privacy Policy                  | `/privacy/`                         | Legal page                                 |
 | Imprint                         | `/imprint/`                         | Legal page                                 |
 | 404                             | `/404`                              | Branded not-found page                     |
 
-Solution pages follow the contract in `docs/SITE-STRUCTURE.md`. The index groups records by the pillar ids in `services.json` and leaves out pillars without pages. Every example and experience list carries an evidence label: Imbra engagement, founder's prior professional experience, or illustrative scenario. Imbra has no publishable engagements yet, so nothing is labelled as one. A page in progress stays on its branch; there is no draft flag.
-
 ## Homepage sections (in order)
-1. Nav — logo (links to `/`), a Solutions link to `/solutions/`, section links, hamburger on mobile
+1. Nav — logo (links to `/`), section links, hamburger on mobile
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the word "founder" links to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
-3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under three pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance). Each pillar is a heading and a one-line scope above its rows. There are exactly three pillars; AI is not one of them
-4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times
-5. Commitments — heading and sub full width, then two columns: "What we think" (four beliefs, hairline list) on the left and "What we commit to" (four commitments, accent left rules) on the right; stacked on mobile. Commitments: AI-assisted implementation, automated tests and documentation (derived from product and protocol specifications), human review and customer sign-off, client ownership of everything delivered. AI is how Imbra delivers, not a service: no AI/ML consulting offer, no unreleased tools. The nav's "Delivery" link targets the process section, which this one follows directly
-6. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
-7. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
-8. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
+3. Solutions — one expandable row per customer problem (number, title, the symptom in one sentence), rendered by the same accordion as Services but without pillar headings. Detail: what we do, then what you receive and what is not included; the founder's relevant experience; protocol tags. Rows state the symptom the client sees, Services state what Imbra builds. There are no separate solution pages, so every problem is one click from the section
+4. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under three pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance). Each pillar is a heading and a one-line scope above its rows. There are exactly three pillars; AI is not one of them
+5. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times
+6. Commitments — heading and sub full width, then two columns: "What we think" (four beliefs, hairline list) on the left and "What we commit to" (four commitments, accent left rules) on the right; stacked on mobile. Commitments: AI-assisted implementation, automated tests and documentation (derived from product and protocol specifications), human review and customer sign-off, client ownership of everything delivered. AI is how Imbra delivers, not a service: no AI/ML consulting offer, no unreleased tools. The nav's "Delivery" link targets the process section, which this one follows directly
+7. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
+8. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
+9. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
 
-The free assessment is a mutual-fit conversation, not a paid code or system investigation. Any detailed technical investigation needs an agreed scope, deliverables, time limit, price and customer approval before work starts. Use this distinction consistently in process, support, pricing examples and contact copy.
+The free assessment is a mutual-fit conversation, not a paid code or system investigation. Any detailed technical investigation needs an agreed scope, deliverables, time limit, price and customer approval before work starts. Use this distinction consistently in process, support, pricing examples and contact copy. Solution and service copy describes the problem, the outcome and the deliverables, never the method: the insight is what Imbra sells, and the free assessment does not diagnose.
 
 Identity copy has three layers, each with one home: what Imbra is (`site.json` → `hero.sub`), what it thinks (`commitments.json` → `beliefs`), and what it commits to (`commitments.json` → `commitments`). Beliefs are drawn from the Agile Manifesto and SAFe's Lean-Agile principles but written in Imbra's words; neither framework is named on the site. A commitment must hold on every engagement and match the MSA and Statement of Work templates.
 

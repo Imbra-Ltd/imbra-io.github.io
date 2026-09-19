@@ -1,6 +1,5 @@
 [
   {
-    "id": "communication",
     "title": "Industrial Communication & Testing",
     "desc": "Protocol stacks, device communication, emulators and test tooling for the software that talks to industrial devices.",
     "services": [
@@ -51,7 +50,6 @@
     ]
   },
   {
-    "id": "integration",
     "title": "OT/IT Integration",
     "desc": "PLC software and the data paths that connect PLCs, SCADA and laboratory systems to IT platforms.",
     "services": [
@@ -106,7 +104,6 @@
     ]
   },
   {
-    "id": "historization",
     "title": "Historization & Data Infrastructure",
     "desc": "Historians, legacy modernisation and the long-term operation of the systems that hold plant data.",
     "services": [

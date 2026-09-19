@@ -2,7 +2,16 @@
 
 **Status:** approved planning baseline  
 **Scope:** Task #119  
-**Date:** 2026-09-19
+**Date:** 2026-09-19  
+**Revised:** 2026-09-20 (#120)
+
+> **Revision, 20 September 2026.** Solutions are a homepage section, not
+> separate pages. The page-based first version needed too many clicks and did
+> not match "simple outside". Each problem is now an expandable row, like the
+> services, one click from the section. The briefs below still define each
+> problem's scope. Their paths, examples and the page contract apply only if
+> dedicated pages return, which needs search evidence first. Rows describe the
+> problem, the outcome and the deliverables, never the method.
 
 ## Objective
 
@@ -28,8 +37,7 @@ technical investigation remains separately scoped and paid.
 | Area | Canonical path | Purpose | Launch rule |
 | --- | --- | --- | --- |
 | Home | `/` | Concise company overview, service pillars, selected problems, process, evidence and contact | Always |
-| Solutions | `/solutions/` | Index of customer problems grouped by service pillar | Launch with the first approved solution |
-| Solution | `/solutions/<problem>/` | Commercial landing page for one distinct problem | Each page requires approved copy and evidence status |
+| Solutions | `/#solutions` | Homepage section: one expandable row per customer problem | Launch with the first approved problem |
 | Cases | `/cases/` and `/cases/<case>/` | Evidence from publishable real work | Do not expose an empty index |
 | Blog | `/blog/` and `/blog/<article>/` | Technical answers supporting solution pages | Expose when the first article is approved |
 | Pricing | `/pricing/` | Existing rate ladder and engagement rules | Preserve the existing canonical URL |
@@ -158,7 +166,7 @@ solution landing page.
 
 ### Homepage
 
-`Home → Solutions → Relevant problem → Book a call/contact`
+`Home → Solutions section → Expand the problem → Book a call/contact`
 
 Every initial solution must be reachable from the homepage within two
 navigation steps and must offer a visible next step without requiring a return
@@ -196,23 +204,15 @@ must not appear in production navigation or the sitemap.
 
 ### Decision for solutions (#120)
 
-Solution records live in `src/data/solutions.json`, one record per problem.
-`src/pages/solutions/[slug].astro` renders each record and
-`src/pages/solutions/index.astro` lists them by pillar.
-
-| Required field | Representation |
-| --- | --- |
-| Title, slug and summary | `title` (cards, breadcrumb), `slug`, `summary` (index card and meta description) |
-| Audience and problem | `heading`, `headingStrong`, `intro`, `symptoms`, `impact` |
-| Service pillar | `pillars`: ids defined in `services.json`, never redefined |
-| Page type | Implied by the file. Cases and articles get their own model |
-| Metadata and canonical path | `metaTitle` for the browser title, canonical from the path, BreadcrumbList structured data |
-| Evidence type | `example.evidence` and `experience.evidence`: `engagement`, `founder` or `illustrative`, labelled from `evidence` |
-| Related solutions, cases, articles | Not modelled yet. Add when the first case or article exists |
-| Draft/published status | None. A page in progress stays on its branch until approved, so nothing unpublished reaches `main`, the nav or the sitemap |
-
-Page content also carries `systems`, `approach`, `deliverables` and
-`boundaries`. The blog format is decided separately in #121.
+Solutions live in `src/data/solutions.json`, one row per problem, in the same
+shape as a service in `services.json`: `num`, `title`, `desc` (the symptom in
+one sentence), `detail` (what we do, then what you receive and what is not
+included), `tech` (protocols and systems) and `projects` (the founder's prior
+professional experience, shown under "Experience"). The homepage Solutions
+section renders them with the services accordion. There is no pillar, slug,
+metadata or draft field, because there are no separate pages. The illustrative
+examples were dropped: they described the method, and the method is what paid
+work delivers.
 
 ## Search handoff
 
@@ -226,8 +226,8 @@ examples. It should not promise rankings, AI citations or rich results.
 
 ## Handoffs
 
-- **#120 Solutions:** Implement the approved solution template and the initial
-  three pages.
+- **#120 Solutions:** Implement the initial three problems as the homepage
+  Solutions section (see the revision note).
 - **#121 Blog:** Propose articles tied to the initial solution pages; avoid
   competing landing pages.
 - **#122 Booking:** Configure the free-assessment booking page and provider.

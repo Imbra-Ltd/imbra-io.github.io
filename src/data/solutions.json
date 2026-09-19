@@ -1,90 +1,40 @@
-{
-  "meta": {
-    "title": "Solutions",
-    "description": "Industrial software problems Imbra solves, each with its approach, its deliverables and where the work stops."
-  },
-  "nav": {
-    "index": [
-      { "label": "← Home", "href": "/" },
-      { "label": "Pricing", "href": "/pricing/" }
-    ],
-    "page": [
-      { "label": "← Solutions", "href": "/solutions/" },
-      { "label": "Pricing", "href": "/pricing/" }
+[
+  {
+    "num": "01",
+    "title": "Communication troubleshooting",
+    "desc": "Your devices time out, disconnect or behave inconsistently, and nobody can say why.",
+    "detail": "We make the failure reproducible, isolate where it starts across software, configuration and the interface, and agree the fix and how to validate it.\n\nYou receive a reproducible test, written findings, corrective actions in priority order and an agreed validation. The work is remote. On-site wiring repair, protocol certification and a guarantee of zero downtime are not included.",
+    "tech": ["Modbus RTU", "Modbus TCP", "DeviceNet", "CAN", "MQTT", "TFTP", "OPC UA", "Profibus", "Profinet"],
+    "projects": [
+      "Protocol Emulator Framework · Hilscher",
+      "Automated Test Suite — Modbus RTU/TCP Server/Client · Hilscher",
+      "Automated Test Suite — DeviceNet Master/Slave · Hilscher",
+      "Legacy L2/L3 Support — HilscherFramework · Hilscher"
     ]
   },
-  "intro": {
-    "label": "Solutions",
-    "heading": "Start from",
-    "headingStrong": "the problem.",
-    "sub": "Each page covers one problem: how it shows up, how we approach it, what you receive and where the work stops."
+  {
+    "num": "02",
+    "title": "Historian integration",
+    "desc": "Production or laboratory data reaches your historian incomplete, duplicated or with inconsistent timestamps, or someone still copies it by hand.",
+    "detail": "We agree the sources, the target, the tag mapping, the timestamps and what happens when a link fails. Then we build the data path and validate it against that agreement.\n\nYou receive the integration component, the mapping specification, validation evidence and operating guidance. Third-party licences are not included, and no component is promised to fit every system.",
+    "tech": ["OPC DA", "OPC UA", "MQTT", "FTP/SFTP", "WinCC", "PxTrend"],
+    "projects": [
+      "Data Integration Agents · Heidelberg Materials",
+      "WinCC → PxTrend Pipelines · Heidelberg Materials",
+      "PxTrend Historian · Heidelberg Materials"
+    ]
   },
-  "labels": {
-    "problem": "The problem",
-    "systems": "Systems",
-    "approach": "Approach",
-    "example": "Example",
-    "deliverables": "You receive",
-    "boundaries": "Not included",
-    "experience": "Experience",
-    "pricing": "Pricing",
-    "pricingNote": "The investigation and the work are billed at the published rates. See the <a href=\"/pricing/\">pricing page</a>."
-  },
-  "evidence": {
-    "engagement": "Imbra engagement",
-    "founder": "Founder's prior professional experience",
-    "illustrative": "Illustrative scenario"
-  },
-  "items": [
-    {
-      "slug": "industrial-communication-troubleshooting",
-      "pillars": ["communication"],
-      "title": "Communication troubleshooting",
-      "metaTitle": "Industrial communication troubleshooting",
-      "summary": "Timeouts, disconnects or inconsistent protocol behaviour with no clear cause. We reproduce the failure and isolate where it starts.",
-      "heading": "Timeouts, disconnects,",
-      "headingStrong": "and no clear cause.",
-      "intro": "For device vendors, integrators and engineering teams whose industrial communication fails now and then, and nobody can say why. We make the failure happen on demand, find where it starts, and tell you what to change.",
-      "symptoms": [
-        "Requests time out a few times a day, never while someone is watching",
-        "Connections drop after hours or days of normal operation",
-        "A device works with one master, gateway or firmware version and fails with another",
-        "The device vendor, the integrator and the IT team each suspect someone else"
-      ],
-      "impact": "A fault you cannot reproduce cannot be fixed with confidence. Each occurrence means another log hunt and another escalation, and the next release may ship with the same fault.",
-      "systems": ["Modbus RTU", "Modbus TCP", "DeviceNet", "CAN", "MQTT", "TFTP", "OPC UA", "Profibus", "Profinet"],
-      "approach": [
-        "In the free assessment we discuss the symptoms and constraints and decide together whether we are the right fit.",
-        "Before we examine code, logs or traffic, we agree a paid technical investigation: scope, deliverables, time limit and price, approved by you.",
-        "We reproduce the failure with a test harness or device emulator, so it happens on demand instead of at random.",
-        "We narrow the fault across software, configuration and the interface until the cause is isolated.",
-        "We agree the corrective actions and how the fix will be validated."
-      ],
-      "example": {
-        "evidence": "illustrative",
-        "text": "A Modbus TCP device times out several times a day after a new SCADA master is installed. A test harness replays the master's polling pattern against the device and varies timing and load until the timeout appears on demand. With the failure reproducible, the fault is traced to one side of the link, and the same harness becomes the regression test for the fix."
-      },
-      "deliverables": [
-        "A reproducible test that triggers the failure",
-        "Written findings: the cause, the evidence and the affected components",
-        "Corrective actions in priority order",
-        "An agreed validation, which can stay in your test suite"
-      ],
-      "boundaries": [
-        "On-site wiring or hardware repair",
-        "Protocol certification or conformance sign-off",
-        "A guarantee of zero downtime"
-      ],
-      "experience": {
-        "evidence": "founder",
-        "items": [
-          "Protocol Emulator Framework · Hilscher",
-          "Automated Test Suite — Modbus RTU/TCP Server/Client · Hilscher",
-          "Automated Test Suite — DeviceNet Master/Slave · Hilscher",
-          "Automated Test Suite — CAN · Hilscher",
-          "Legacy L2/L3 Support — HilscherFramework · Hilscher"
-        ]
-      }
-    }
-  ]
-}
+  {
+    "num": "03",
+    "title": "Protocol testing",
+    "desc": "Each release waits for a hardware bench and manual test runs, and failure paths rarely get tested at all.",
+    "detail": "We agree the protocol subset and the behaviour to prove, failure paths included, and build tests that run without the full hardware setup and repeat on every release.\n\nYou receive the test suite, the agreed scenarios, reproducible results and instructions to run them. Simulation complements hardware testing. It does not prove full hardware compatibility or replace formal certification.",
+    "tech": ["Modbus RTU", "Modbus TCP", "DeviceNet", "CAN", "MQTT", "TFTP", "pytest"],
+    "projects": [
+      "Protocol Emulator Framework · Hilscher",
+      "Automated Test Suite — Modbus RTU/TCP Server/Client · Hilscher",
+      "Automated Test Suite — MQTT · Hilscher",
+      "Automated Test Suite — CAN · Hilscher"
+    ]
+  }
+]
