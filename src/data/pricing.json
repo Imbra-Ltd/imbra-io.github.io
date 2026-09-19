@@ -58,24 +58,6 @@
           ]
         }
       ],
-      "capacity": {
-        "title": "Typical capacity allocation",
-        "items": [
-          {
-            "label": "Quarterly / short-term",
-            "value": "Approximately 40 hours / month"
-          },
-          {
-            "label": "Semi-annual / mid-term",
-            "value": "Approximately 80 hours / month"
-          },
-          {
-            "label": "Custom / long-term",
-            "value": "Approximately 120 hours / month"
-          }
-        ],
-        "note": "These are typical allocation bands. Exact capacity, maximum and start date are agreed in the contract."
-      },
       "terms": [
         {
           "label": "Standard minimum",
