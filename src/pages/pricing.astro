@@ -35,6 +35,9 @@ const pricingLinks = [
         </div>
 
         {[].concat(cat.desc).map((p) => <p class="pricing-desc">{p}</p>)}
+        {cat.guarantee && (
+          <p class="pricing-desc"><strong>{cat.guarantee}</strong></p>
+        )}
         {cat.callout && (
           <div class="pricing-callout">
             <div class="pricing-callout-icon">i</div>

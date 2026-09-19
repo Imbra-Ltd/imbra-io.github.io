@@ -74,6 +74,14 @@
         {
           "label": "Extra hours",
           "value": "Same rate, scheduled as available"
+        },
+        {
+          "label": "Included",
+          "value": "Agreed engineering work, coordination, documentation and testing within the stated scope and capacity"
+        },
+        {
+          "label": "Separate costs",
+          "value": "Licences, cloud or hosting, travel, dedicated test environments and optional availability require separate written agreement"
         }
       ],
       "notes": [
@@ -96,6 +104,14 @@
         {
           "label": "Out-of-hours",
           "value": "1.5× your rate — evenings after 18:00 CET, weekends, public holidays"
+        },
+        {
+          "label": "Emergency work",
+          "value": "Subject to availability at the applicable rate; an emergency request does not guarantee immediate response or on-call coverage"
+        },
+        {
+          "label": "On-call availability",
+          "value": "Separate written agreement defines coverage, activation and response terms; it is not included in the hourly rate"
         }
       ]
     },
@@ -106,10 +122,13 @@
       "model": "Fixed price = estimated hours × your rate",
       "desc": [
         "Refactoring, new features, migrations, and integrations. Agreed technical investigation, where needed, informs the hour estimate; multiplied by your rate, it is the fixed price — written in the Statement of Work before work starts.",
-        "The project consumes its estimated hours, not the hours actually worked: if Imbra's estimate was too low, Imbra absorbs the difference, and the price moves only if the scope does. A project of at least 40 hours per month over three months or more earns the Quarterly rate; a six-month commitment may use the Semi-annual rate when agreed in writing."
+        "The project consumes its estimated hours, not the hours actually worked. The price changes only if the agreed scope changes. A project of at least 40 hours per month over three months or more earns the Quarterly rate; a six-month commitment may use the Semi-annual rate when agreed in writing."
       ],
+      "guarantee": "If Imbra's estimate was too low, Imbra absorbs the difference.",
       "notes": [
-        "A day is 8 hours."
+        "A day is 8 hours.",
+        "For a reserved-capacity engagement, a fixed-price Statement of Work may allocate part of the paid monthly reservation to the project. Those hours are not invoiced again; the Statement of Work identifies the project allocation and remaining support capacity.",
+        "Projects outside reserved capacity are quoted and invoiced separately. Additional work requires written approval and remains subject to availability."
       ]
     }
   ],
@@ -176,6 +195,25 @@
           }
         ],
         "total": "€34,400 fixed"
+      },
+      {
+        "title": "Mixed month — project and support",
+        "desc": "Quarterly engagement with 40 reserved hours in one month. A 24-hour fixed-price project uses part of the paid reservation; the remaining 16 hours stay available for support. The reservation is paid once.",
+        "lines": [
+          {
+            "label": "Monthly reservation — 40h × €80",
+            "amount": "€3,200"
+          },
+          {
+            "label": "Project allocation — 24h × €80",
+            "amount": "€1,920 included"
+          },
+          {
+            "label": "Support allocation — 16h × €80",
+            "amount": "€1,280 included"
+          }
+        ],
+        "total": "€3,200"
       },
       {
         "title": "Emergency — business hours",
