@@ -38,8 +38,9 @@ npm run preview   # verify — preview the production build locally
 src/
 ├── data/                  # All editable content as JSON
 │   ├── site.json          # Nav, hero, contact, footer
-│   ├── services.json      # Services accordion
+│   ├── services.json      # Services accordion, grouped into three pillars
 │   ├── process.json       # How-we-work steps
+│   ├── operating-model.json # AI-first delivery section
 │   ├── publications.json  # Research publications
 │   └── pricing.json       # Pricing page content
 ├── components/

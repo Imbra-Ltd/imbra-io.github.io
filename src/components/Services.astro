@@ -1,6 +1,6 @@
 ---
 import ServiceExpand from "./interactive/ServiceExpand.tsx";
-const { services, header } = Astro.props;
+const { pillars, header } = Astro.props;
 ---
 <section id="services">
   <div class="reveal">
@@ -8,5 +8,5 @@ const { services, header } = Astro.props;
     <h2 class="section-heading">{header.heading} <strong>{header.headingStrong}</strong></h2>
     <p class="section-sub">{header.sub}</p>
   </div>
-  <ServiceExpand client:load services={services} projectsLabel={header.projectsLabel} />
+  <ServiceExpand client:load pillars={pillars} projectsLabel={header.projectsLabel} />
 </section>

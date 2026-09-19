@@ -43,8 +43,9 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
 | `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
-| `src/data/services.json`     | Services accordion items                       |
+| `src/data/services.json`     | Services accordion — three pillars, each holding its service items |
 | `src/data/process.json`      | How-we-work section — the four engagement steps |
+| `src/data/operating-model.json` | AI-first delivery section — how AI is used in delivery |
 | `src/data/publications.json` | Research publications with DOI links           |
 | `src/data/pricing.json`      | Pricing page — all engagement models           |
 
@@ -62,6 +63,7 @@ src/components/
 ├── Hero.astro
 ├── Services.astro        # Static section header — mounts ServiceExpand island
 ├── Process.astro         # Static four-step how-we-work grid
+├── OperatingModel.astro  # Static AI-first delivery section
 ├── Publications.astro
 ├── Contact.astro         # Dark CTA section — email link + ContactForm island
 └── Footer.astro
@@ -82,11 +84,12 @@ src/components/
 ## Homepage sections (in order)
 1. Nav — logo (links to `/`), section links, hamburger on mobile
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the word "founder" links to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
-3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags; ordered by audience: vendors, plants, legacy owners
+3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under three pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance). Each pillar is a heading and a one-line scope above its rows. There are exactly three pillars; AI is not one of them
 4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times
-5. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
-6. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
-7. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
+5. AI-first delivery — how AI is used inside delivery (AI-assisted implementation, automated tests and documentation, human review and customer sign-off). It describes the operating model, not a service: no AI/ML consulting offer, no unreleased tools. The heading sits full width; below it, the sub is in the left column and the three principles, marked by accent left rules, are in the right; stacked on mobile
+6. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
+7. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
+8. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
 
 The free assessment is a mutual-fit conversation, not a paid code or system investigation. Any detailed technical investigation needs an agreed scope, deliverables, time limit, price and customer approval before work starts. Use this distinction consistently in process, support, pricing examples and contact copy.
 

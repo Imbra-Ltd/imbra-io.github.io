@@ -1,0 +1,20 @@
+{
+  "label": "03 — AI-first delivery",
+  "heading": "AI-assisted engineering,",
+  "headingStrong": "human accountability.",
+  "sub": "AI tools are part of how we deliver, not a service we sell. They shorten the path to working, tested and documented software; every result is still reviewed by an engineer and signed off by you.",
+  "principles": [
+    {
+      "title": "AI-assisted implementation and exploration",
+      "desc": "AI tools draft code, work through unfamiliar specifications and legacy sources, and try alternatives quickly, so working software arrives sooner and more time goes into your system's edge cases."
+    },
+    {
+      "title": "Automated testing and documentation",
+      "desc": "Tests and documentation are produced with the code and kept current as it changes, including test cases derived directly from protocol specifications."
+    },
+    {
+      "title": "Human review and your sign-off",
+      "desc": "An engineer reviews every change and is accountable for it. Nothing is delivered until you have signed it off."
+    }
+  ]
+}
