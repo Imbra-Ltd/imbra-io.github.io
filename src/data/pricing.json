@@ -197,29 +197,6 @@
         "total": "€34,400 fixed"
       },
       {
-        "title": "Mixed month — project and support",
-        "desc": "Quarterly engagement with 40 reserved hours in one month. A 24-hour fixed-price project uses part of the paid reservation; the remaining 16 hours stay available for support. Eight additional hours are approved separately after the reservation is fully allocated.",
-        "lines": [
-          {
-            "label": "Monthly reservation — 40h × €80",
-            "amount": "€3,200"
-          },
-          {
-            "label": "Project allocation — 24h × €80",
-            "amount": "€1,920 included"
-          },
-          {
-            "label": "Support allocation — 16h × €80",
-            "amount": "€1,280 included"
-          },
-          {
-            "label": "Extra approved work — 8h × €80",
-            "amount": "€640 additional"
-          }
-        ],
-        "total": "€3,840"
-      },
-      {
         "title": "Emergency — business hours",
         "desc": "No commitment. 8-hour engagement on an already-understood system, on a weekday, subject to availability.",
         "lines": [
