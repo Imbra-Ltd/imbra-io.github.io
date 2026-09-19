@@ -57,6 +57,21 @@ const pricingLinks = [
           </div>
         )}
 
+        {cat.capacity && (
+          <div class="pricing-capacity">
+            <h3 class="pricing-capacity-title mono">{cat.capacity.title}</h3>
+            <div class="pricing-capacity-grid">
+              {cat.capacity.items.map((item) => (
+                <div class="pricing-capacity-item">
+                  <div class="pricing-capacity-label">{item.label}</div>
+                  <div class="pricing-capacity-value mono">{item.value}</div>
+                </div>
+              ))}
+            </div>
+            <p class="pricing-capacity-note">{cat.capacity.note}</p>
+          </div>
+        )}
+
         {cat.terms && (
           <div class="pricing-rates">
             {cat.terms.map((t) => (
