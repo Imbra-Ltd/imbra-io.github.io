@@ -60,14 +60,6 @@
       ],
       "terms": [
         {
-          "label": "Standard minimum",
-          "value": "Quarterly and Semi-annual require at least 40 reserved hours per month; this minimum is non-negotiable"
-        },
-        {
-          "label": "Custom capacity",
-          "value": "Typically around 120 hours per month; exact capacity and maximum are agreed in the contract"
-        },
-        {
           "label": "Committed hours",
           "value": "Cover support or projects, are billed whether used or not, and expire each month"
         },
@@ -88,9 +80,10 @@
         "Detailed technical investigation examines code, logs or architecture and starts from €800 (one day). We agree its scope, deliverables, time limit and price, and obtain your approval before chargeable work starts.",
         "You receive written findings covering risks and dependencies, options, a recommendation and a scoped estimate. You keep these findings whether or not you commission further work.",
         "For systems we already understand, we use existing knowledge and documentation to identify any gaps. We agree only the investigation needed to scope the work; familiarity does not replace necessary checks.",
+        "Quarterly and Semi-annual require at least 40 reserved hours per month. This minimum is non-negotiable.",
         "Reserved capacity is limited; commitments are accepted in order of signing.",
         "On-call availability, if required, is quoted separately; coverage, activation and response terms require a separate agreement.",
-        "Custom engagements are for 12+ month projects that need a tailored scope, delivery plan, capacity and budget. They do not imply unlimited work or a rate below €70 per hour.",
+        "Custom engagements are for 12+ month projects that need a tailored scope, delivery plan, capacity and budget. They do not imply unlimited work or a rate below €70 per hour. Capacity is typically around 120 hours per month, with the exact capacity and maximum agreed in the contract.",
         "Response times, service levels, and expenses are defined in the Master Service Agreement; scheduling, scope, and deployment responsibilities in each Statement of Work."
       ]
     },
