@@ -1,6 +1,6 @@
 # Imbra | Software & Industrial Engineering
 
-Website for [Imbra](https://imbra.io) — a boutique software and industrial engineering consultancy based in Varna, Bulgaria.
+Website for [Imbra](https://imbra.io) — an engineering-led industrial communication and OT/IT integration company based in Varna, Bulgaria.
 
 ## Getting started
 

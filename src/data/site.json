@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Imbra — Software & Industrial Engineering",
-    "description": "Imbra is a one-engineer software consultancy for industrial companies — building, integrating, and supporting the software between plant floor and IT."
+    "description": "Imbra is an engineering-led industrial communication and OT/IT integration company for plants, device manufacturers, protocol vendors and automation teams."
   },
   "nav": {
     "links": [
@@ -16,7 +16,7 @@
     "eyebrow": "Software & Industrial Engineering",
     "headline": "Complex inside.",
     "headlineStrong": "Simple outside.",
-    "sub": "A <a href=\"https://linkedin.com/in/branimir-georgiev\" target=\"_blank\" rel=\"noopener noreferrer\">one-engineer</a> software consultancy for industrial companies. We build, integrate, and support the software between plant floor and IT — protocol stacks and test tooling, data integration and historians, the legacy systems nobody else will touch — on published rates or at a fixed price.",
+    "sub": "Imbra is an engineering-led company helping industrial plants, device manufacturers, protocol vendors and automation teams solve the software between the plant floor and IT. We build, test, integrate, and support protocol stacks, data flows, historians, and legacy systems — with direct access to the <a href=\"https://linkedin.com/in/branimir-georgiev\" target=\"_blank\" rel=\"noopener noreferrer\">founder</a>.",
     "cta": { "label": "Discuss a project →", "target": "contact" }
   },
   "services": {
@@ -58,7 +58,7 @@
       "githubHref": "https://github.com/Imbra-Ltd"
     },
     "about": "Based in Varna, Bulgaria (EU, CET+1), working remotely across Europe. Complexity stays inside: every engagement is fully documented — architecture, runbooks, and source code are client-owned and transferable. Outside, deployment, operation, and commercial terms stay clear. Where it is going: an affordable, open ecosystem for plant data — from the protocol stack to the historian — built by Imbra, owned by the plants that run it.",
-      "founderLink": { "label": "Built by Branimir Georgiev →", "href": "https://braboj.me" },
+    "founderLink": { "label": "Built by Branimir Georgiev →", "href": "https://braboj.me" },
     "copy": "© 2026 Imbra · All rights reserved"
   }
 }
