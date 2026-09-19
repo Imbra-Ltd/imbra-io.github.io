@@ -32,7 +32,7 @@
           "price": "€80",
           "period": "per hour · 3-month minimum",
           "features": [
-            "Minimum 20 hours / month",
+            "Minimum 40 hours / month",
             "Hours reserved"
           ],
           "highlight": false
@@ -42,8 +42,7 @@
           "price": "€70",
           "period": "per hour · 6-month minimum",
           "features": [
-            "Minimum 20 hours / month (€1,400 / month)",
-            "€8,400 minimum over six months",
+            "Minimum 40 hours / month",
             "Hours reserved"
           ],
           "highlight": true
@@ -61,8 +60,12 @@
       ],
       "terms": [
         {
-          "label": "Semi-annual minimum",
-          "value": "20 reserved hours per month, billed monthly for six months — €1,400 per month and €8,400 scheduled minimum"
+          "label": "Standard minimum",
+          "value": "Quarterly and Semi-annual require at least 40 reserved hours per month; this minimum is non-negotiable"
+        },
+        {
+          "label": "Custom capacity",
+          "value": "Typically around 120 hours per month; exact capacity and maximum are agreed in the contract"
         },
         {
           "label": "Committed hours",
@@ -103,7 +106,7 @@
       "model": "Fixed price = estimated hours × your rate",
       "desc": [
         "Refactoring, new features, migrations, and integrations. Agreed technical investigation, where needed, informs the hour estimate; multiplied by your rate, it is the fixed price — written in the Statement of Work before work starts.",
-        "The project consumes its estimated hours, not the hours actually worked: if Imbra's estimate was too low, Imbra absorbs the difference, and the price moves only if the scope does. A project of at least 20 hours per month over three months or more earns the Quarterly rate; a six-month commitment may use the Semi-annual rate when agreed in writing."
+        "The project consumes its estimated hours, not the hours actually worked: if Imbra's estimate was too low, Imbra absorbs the difference, and the price moves only if the scope does. A project of at least 40 hours per month over three months or more earns the Quarterly rate; a six-month commitment may use the Semi-annual rate when agreed in writing."
       ],
       "notes": [
         "A day is 8 hours."
@@ -116,22 +119,22 @@
     "items": [
       {
         "title": "Small company — one legacy system",
-        "desc": "Quarterly term, renewed for a year. Two-day technical investigation of a mid-sized legacy test framework, then support at the minimum volume.",
+        "desc": "Quarterly term, renewed for a year. Two-day technical investigation of a mid-sized legacy test framework, then support at the 40-hour monthly minimum.",
         "lines": [
           {
             "label": "Technical investigation — 16h × €100",
             "amount": "€1,600"
           },
           {
-            "label": "12 × 20h × €80",
-            "amount": "€19,200"
+            "label": "12 × 40h × €80",
+            "amount": "€38,400"
           }
         ],
-        "total": "€20,800 first year"
+        "total": "€40,000 first year"
       },
       {
         "title": "Large company — 100 installations",
-        "desc": "Semi-annual term, renewed after the six-month minimum, at 80 hours a month. Four-week technical investigation of a complex system estate, then support covering the agreed installations under one agreement.",
+        "desc": "Semi-annual term, renewed after the six-month minimum, at an agreed 80 hours a month. Four-week technical investigation of a complex system estate, then support covering the agreed installations under one agreement.",
         "lines": [
           {
             "label": "Technical investigation — 160h × €100",
