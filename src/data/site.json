@@ -27,9 +27,9 @@
     "projectsLabel": "Projects"
   },
   "contact": {
-    "headline": "Tell us about",
-    "headlineStrong": "your system.",
-    "sub": "Tell us about your system and what you need. We start with a free assessment to see whether we are a good fit for each other, without obligation. Any paid technical investigation is agreed separately; details and rates are on the <a href=\"/pricing/\">pricing page</a>.",
+    "headline": "Something between the plant floor and IT",
+    "headlineStrong": "not working?",
+    "sub": "Tell us what is failing. The free assessment checks whether we are a good fit, without obligation. Any technical investigation is agreed and priced separately. Rates are on the <a href=\"/pricing/\">pricing page</a>.",
     "altLabel": "Prefer email?",
     "email": "contact@imbra.io",
     "formEndpoint": "https://formspree.io/f/mzdjvyly"

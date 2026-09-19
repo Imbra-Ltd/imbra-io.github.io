@@ -150,7 +150,7 @@ section { padding: 96px var(--content-inset); }
 /* ── Contact ── */
 #contact { background: var(--color-dark); color: white; display: flex; flex-direction: column; padding: 72px var(--content-inset); gap: 48px; }
 .contact-top { max-width: 640px; }
-.cta-headline { font-size: clamp(24px, 3vw, 38px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+.cta-headline { font-size: clamp(24px, 3vw, 38px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; text-wrap: balance; }
 .cta-headline strong { font-weight: 600; }
 .cta-sub { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; }
 .cta-sub a { color: white; text-decoration: underline; text-underline-offset: 3px; }
