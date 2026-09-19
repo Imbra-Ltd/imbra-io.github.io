@@ -221,6 +221,14 @@ footer { background: var(--color-dark); color: white; }
 .pricing-tier-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .pricing-tier-features li { font-size: 14px; color: var(--color-text-body); line-height: 1.5; padding-left: 16px; position: relative; }
 .pricing-tier-features li::before { content: '—'; position: absolute; left: 0; color: var(--color-border); }.pricing-notes-details { margin-top: 24px; border-top: 1px solid var(--color-border-light); padding-top: 16px; }
+.pricing-capacity { margin: 32px 0; border: 1px solid var(--color-border); }
+.pricing-capacity-title { margin: 0; padding: 16px 24px; border-bottom: 1px solid var(--color-border); font-size: 11px; font-weight: 500; color: var(--color-text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.pricing-capacity-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.pricing-capacity-item { padding: 16px 24px; border-right: 1px solid var(--color-border); }
+.pricing-capacity-item:last-child { border-right: none; }
+.pricing-capacity-label { font-size: 13px; color: var(--color-text-muted); margin-bottom: 6px; }
+.pricing-capacity-value { font-size: 14px; color: var(--color-dark); }
+.pricing-capacity-note { margin: 0; padding: 14px 24px; border-top: 1px solid var(--color-border); font-size: 13px; color: var(--color-text-muted); line-height: 1.6; }
 .pricing-notes-summary { font-size: 11px; color: var(--color-text-muted); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; user-select: none; list-style: none; display: flex; align-items: center; gap: 8px; }
 .pricing-notes-summary::after { content: '+'; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--color-text-muted); }
 details[open] .pricing-notes-summary::after { content: '−'; }
@@ -295,6 +303,9 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .footer-bottom { padding-block: 14px; }
   .pricing-page { padding-block: 80px 64px; }
   .pricing-tiers { grid-template-columns: 1fr; }
+  .pricing-capacity-grid { grid-template-columns: 1fr; }
+  .pricing-capacity-item { border-right: none; border-bottom: 1px solid var(--color-border); }
+  .pricing-capacity-item:last-child { border-bottom: none; }
   .pricing-scenarios-grid { grid-template-columns: 1fr; }
   .pricing-rate-row { flex-direction: column; gap: 4px; }
   .pricing-cta { padding: 40px 24px; }
