@@ -1,0 +1,24 @@
+---
+interface Principle  { title: string; desc: string; }
+interface Principles { label: string; heading: string; headingStrong: string; sub: string; items: Principle[]; }
+interface Props      { principles: Principles; }
+
+const { principles } = Astro.props as Props;
+---
+<section id="principles">
+  <div class="reveal">
+    <div class="section-label">{principles.label}</div>
+    <h2 class="section-heading">{principles.heading} <strong>{principles.headingStrong}</strong></h2>
+  </div>
+  <div class="principles reveal">
+    <p class="principles-sub">{principles.sub}</p>
+    <ul class="principles-list">
+      {principles.items.map((p) => (
+        <li class="principles-item">
+          <h3 class="principles-title">{p.title}</h3>
+          <p class="principles-desc">{p.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

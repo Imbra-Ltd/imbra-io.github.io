@@ -126,14 +126,14 @@ section { padding: 96px var(--content-inset); }
 .process-step-title { font-size: 18px; font-weight: 500; color: var(--color-dark); letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 10px; }
 .process-step-desc { font-size: 14px; color: var(--color-text-body); line-height: 1.65; }
 
-/* ── AI-first operating model ── */
-#operating-model { border-top: 1px solid var(--color-border); }
-.operating-model { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 48px; align-items: start; margin-top: 32px; }
-.operating-model-sub { font-size: 15px; color: var(--color-text-muted); line-height: 1.7; }
-.operating-model-list { list-style: none; display: flex; flex-direction: column; gap: 32px; }
-.operating-model-item { border-left: 2px solid var(--color-accent); padding-left: 20px; }
-.operating-model-title { font-size: 16px; font-weight: 500; color: var(--color-dark); line-height: 1.4; margin-bottom: 8px; }
-.operating-model-desc { font-size: 14px; color: var(--color-text-body); line-height: 1.65; }
+/* ── Principles ── */
+#principles { border-top: 1px solid var(--color-border); }
+.principles { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 48px; align-items: start; margin-top: 32px; }
+.principles-sub { font-size: 15px; color: var(--color-text-muted); line-height: 1.7; }
+.principles-list { list-style: none; display: flex; flex-direction: column; gap: 32px; }
+.principles-item { border-left: 2px solid var(--color-accent); padding-left: 20px; }
+.principles-title { font-size: 16px; font-weight: 500; color: var(--color-dark); line-height: 1.4; margin-bottom: 8px; }
+.principles-desc { font-size: 14px; color: var(--color-text-body); line-height: 1.65; }
 
 /* ── Publications ── */
 #publications { border-top: 1px solid var(--color-border); }
@@ -301,7 +301,7 @@ details[open] .pricing-notes-summary::after { content: '−'; }
   .process-steps { grid-template-columns: 1fr; }
   .process-step { padding: 20px 0; border-bottom: 1px solid var(--color-border); }
   .process-step-index { margin-bottom: 10px; }
-  .operating-model { grid-template-columns: 1fr; row-gap: 32px; }
+  .principles { grid-template-columns: 1fr; row-gap: 32px; }
   #contact { padding-block: 48px; }
   .contact-form-row { grid-template-columns: 1fr; }
   .footer-top { padding-block: 14px; flex-wrap: wrap; gap: 12px; }

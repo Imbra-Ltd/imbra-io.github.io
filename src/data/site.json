@@ -57,7 +57,7 @@
       "github": "github.com/Imbra-Ltd",
       "githubHref": "https://github.com/Imbra-Ltd"
     },
-    "about": "Based in Varna, Bulgaria (EU, CET+1), working remotely across Europe. Complexity stays inside: every engagement is fully documented — architecture, runbooks, and source code are client-owned and transferable. Outside, deployment, operation, and commercial terms stay clear. Where it is going: an affordable, open ecosystem for plant data — from the protocol stack to the historian — built by Imbra, owned by the plants that run it.",
+    "about": "Based in Varna, Bulgaria (EU, CET+1), working remotely across Europe. Complex inside, simple outside: the engineering is thorough, and what you deal with — deployment, operation and contracts — stays simple. Where it is going: an affordable, open ecosystem for plant data — from the protocol stack to the historian — built by Imbra, owned by the plants that run it.",
     "founderLink": { "label": "Built by Branimir Georgiev →", "href": "https://braboj.me" },
     "copy": "© 2026 Imbra · All rights reserved"
   }
