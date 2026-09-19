@@ -73,7 +73,7 @@
         },
         {
           "label": "Separate costs",
-          "value": "Licences, cloud or hosting, production infrastructure, travel, dedicated test environments and optional availability require separate written agreement"
+          "value": "Licences, cloud or hosting, production infrastructure, travel and dedicated test environments require separate written agreement"
         }
       ],
       "notes": [
@@ -82,7 +82,6 @@
         "For systems we already understand, we use existing knowledge and documentation to identify any gaps. We agree only the investigation needed to scope the work; familiarity does not replace necessary checks.",
         "Quarterly and Semi-annual require at least 40 reserved hours per month. This minimum is non-negotiable.",
         "Reserved capacity is limited; commitments are accepted in order of signing.",
-        "On-call availability, if required, is quoted separately; coverage, activation and response terms require a separate agreement.",
         "Custom engagements are for 12+ month projects that need a tailored scope, delivery plan, capacity and budget. They do not imply unlimited work or a rate below €70 per hour. Capacity is typically around 120 hours per month, with the exact capacity and maximum agreed in the contract.",
         "Response times, service levels, and expenses are defined in the Master Service Agreement; scheduling, scope, and deployment responsibilities in each Statement of Work."
       ]
@@ -96,15 +95,11 @@
       "terms": [
         {
           "label": "Out-of-hours",
-          "value": "1.5× your rate — evenings after 18:00 CET, weekends, public holidays"
+          "value": "1.5× your rate, on written request — outside 08:00–18:00 CET/CEST on weekdays, at weekends and on Bulgarian public holidays"
         },
         {
           "label": "Emergency work",
-          "value": "Subject to availability at the applicable rate; an emergency request does not guarantee immediate response or on-call coverage"
-        },
-        {
-          "label": "On-call availability",
-          "value": "Separate written agreement defines coverage, activation and response terms; it is not included in the hourly rate"
+          "value": "Subject to availability at the applicable rate, with no standby or guaranteed response time"
         }
       ]
     },
