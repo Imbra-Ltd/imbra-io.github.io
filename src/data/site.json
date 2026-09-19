@@ -6,7 +6,7 @@
   "nav": {
     "links": [
       { "label": "Services",   "target": "services" },
-      { "label": "Process",    "target": "process" },
+      { "label": "Delivery",   "target": "process" },
       { "label": "Research",   "target": "publications" },
       { "label": "Pricing",    "target": "pricing", "href": "/pricing/" }
     ],
