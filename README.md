@@ -40,7 +40,7 @@ src/
 │   ├── site.json          # Nav, hero, contact, footer
 │   ├── services.json      # Services accordion, grouped into three pillars
 │   ├── process.json       # How-we-work steps
-│   ├── principles.json    # Principles section
+│   ├── commitments.json   # Beliefs and commitments section
 │   ├── publications.json  # Research publications
 │   └── pricing.json       # Pricing page content
 ├── components/

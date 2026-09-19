@@ -45,7 +45,7 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 | `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
 | `src/data/services.json`     | Services accordion — three pillars, each holding its service items |
 | `src/data/process.json`      | How-we-work section — the four engagement steps |
-| `src/data/principles.json`   | Principles section — AI-assisted delivery, review, ownership |
+| `src/data/commitments.json`  | Commitments section — what we think (beliefs) and what we commit to |
 | `src/data/publications.json` | Research publications with DOI links           |
 | `src/data/pricing.json`      | Pricing page — all engagement models           |
 
@@ -63,7 +63,7 @@ src/components/
 ├── Hero.astro
 ├── Services.astro        # Static section header — mounts ServiceExpand island
 ├── Process.astro         # Static four-step how-we-work grid
-├── Principles.astro      # Static principles section (AI-assisted delivery)
+├── Commitments.astro     # Static beliefs + commitments section
 ├── Publications.astro
 ├── Contact.astro         # Dark CTA section — email link + ContactForm island
 └── Footer.astro
@@ -86,12 +86,14 @@ src/components/
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the word "founder" links to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under three pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance). Each pillar is a heading and a one-line scope above its rows. There are exactly three pillars; AI is not one of them
 4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times
-5. Principles — four commitments that hold on every engagement: AI-assisted implementation, automated tests and documentation (derived from product and protocol specifications), human review and customer sign-off, client ownership of everything delivered. AI is how Imbra delivers, not a service: no AI/ML consulting offer, no unreleased tools. The heading sits full width; below it, the sub is in the left column and the principles, marked by accent left rules, are in the right; stacked on mobile. The nav's "Delivery" link targets the process section, which this one follows directly
+5. Commitments — heading and sub full width, then two columns: "What we think" (four beliefs, hairline list) on the left and "What we commit to" (four commitments, accent left rules) on the right; stacked on mobile. Commitments: AI-assisted implementation, automated tests and documentation (derived from product and protocol specifications), human review and customer sign-off, client ownership of everything delivered. AI is how Imbra delivers, not a service: no AI/ML consulting offer, no unreleased tools. The nav's "Delivery" link targets the process section, which this one follows directly
 6. Research & Credentials — publication list (title is the DOI link; journal · year · volume beneath)
 7. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
 8. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
 
 The free assessment is a mutual-fit conversation, not a paid code or system investigation. Any detailed technical investigation needs an agreed scope, deliverables, time limit, price and customer approval before work starts. Use this distinction consistently in process, support, pricing examples and contact copy.
+
+Identity copy has three layers, each with one home: what Imbra is (`site.json` → `hero.sub`), what it thinks (`commitments.json` → `beliefs`), and what it commits to (`commitments.json` → `commitments`). Beliefs are drawn from the Agile Manifesto and SAFe's Lean-Agile principles but written in Imbra's words; neither framework is named on the site. A commitment must hold on every engagement and match the MSA and Statement of Work templates.
 
 The homepage is deliberately minimal: no stat strip, no expertise section. The process section names the steps; the numbers behind them live on `/pricing/`.
 

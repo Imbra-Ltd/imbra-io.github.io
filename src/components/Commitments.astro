@@ -1,0 +1,40 @@
+---
+interface Item        { title: string; desc: string; }
+interface Group       { label: string; items: Item[]; }
+interface Commitments { label: string; heading: string; headingStrong: string; sub: string; beliefs: Group; commitments: Group; }
+interface Props       { commitments: Commitments; }
+
+const { commitments } = Astro.props as Props;
+const { beliefs, commitments: promises } = commitments;
+---
+<section id="commitments">
+  <div class="reveal">
+    <div class="section-label">{commitments.label}</div>
+    <h2 class="section-heading">{commitments.heading} <strong>{commitments.headingStrong}</strong></h2>
+    <p class="section-sub">{commitments.sub}</p>
+  </div>
+  <div class="commitments reveal">
+    <div>
+      <h3 class="commitments-label">{beliefs.label}</h3>
+      <ul class="commitments-beliefs">
+        {beliefs.items.map((b) => (
+          <li class="commitments-belief">
+            <h4 class="commitments-belief-title">{b.title}</h4>
+            <p class="commitments-belief-desc">{b.desc}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h3 class="commitments-label">{promises.label}</h3>
+      <ul class="commitments-list">
+        {promises.items.map((c) => (
+          <li class="commitments-item">
+            <h4 class="commitments-title">{c.title}</h4>
+            <p class="commitments-desc">{c.desc}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
