@@ -121,8 +121,9 @@
       "title": "Project Engagement",
       "model": "Fixed price = estimated hours × your rate",
       "desc": [
-        "Refactoring, new features, migrations, and integrations. Agreed technical investigation, where needed, informs the hour estimate; multiplied by your rate, it is the fixed price — written in the Statement of Work before work starts.",
-        "The project consumes its estimated hours, not the hours actually worked. The price changes only if the agreed scope changes. A project of at least 40 hours per month over three months or more earns the Quarterly rate; a six-month commitment may use the Semi-annual rate when agreed in writing."
+        "Refactoring, new features, migrations, and integrations. Agreed technical investigation, where needed, informs the hour estimate; multiplied by your rate, it is the fixed price — written in the Statement of Work, item by item, before work starts.",
+        "The project consumes its estimated hours, not the hours actually worked. A project of at least 40 hours per month over three months or more earns the Quarterly rate; a six-month commitment may use the Semi-annual rate when agreed in writing.",
+        "Scope can change without a new Statement of Work. You may swap any item not yet started for new work of the same estimated hours; the price stays the same. Work that adds hours is agreed in a short written change note — the added hours × your rate — and approved before it starts."
       ],
       "guarantee": "If Imbra's estimate was too low, Imbra absorbs the difference.",
       "notes": [
