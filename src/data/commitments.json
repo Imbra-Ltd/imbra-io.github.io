@@ -1,0 +1,48 @@
+{
+  "label": "03 — Commitments",
+  "heading": "AI-assisted engineering,",
+  "headingStrong": "human accountability.",
+  "sub": "AI tools are part of how we deliver, not a service we sell. What we think shapes how we work. What we commit to holds on every engagement.",
+  "beliefs": {
+    "label": "What we think",
+    "items": [
+      {
+        "title": "Working software is the measure of progress.",
+        "desc": "Progress is software that runs and passes its tests, not hours spent."
+      },
+      {
+        "title": "Understand the whole system before changing it.",
+        "desc": "A fix in one layer can break another, so we follow the data from the device to the IT platform first."
+      },
+      {
+        "title": "Price the uncertainty before committing to it.",
+        "desc": "When the risk is unknown, a short paid investigation comes before a fixed price."
+      },
+      {
+        "title": "Documentation is part of the system.",
+        "desc": "Industrial software outlives the people who wrote it; what is not written down leaves with them."
+      }
+    ]
+  },
+  "commitments": {
+    "label": "What we commit to",
+    "items": [
+      {
+        "title": "AI-assisted implementation and exploration",
+        "desc": "We use AI tools to draft code, work through unfamiliar specifications and legacy sources, and try alternatives quickly, so working software reaches you sooner and more time goes into your system's edge cases."
+      },
+      {
+        "title": "Automated testing and documentation",
+        "desc": "We produce tests and documentation with the code and keep them current as it changes, deriving test cases directly from product and protocol specifications."
+      },
+      {
+        "title": "Human review and your sign-off",
+        "desc": "An engineer reviews every change and is accountable for it. Nothing is delivered until you have signed it off."
+      },
+      {
+        "title": "You own the result",
+        "desc": "Source code, tests, architecture documentation and runbooks are yours and transferable. Another team can take over without us."
+      }
+    ]
+  }
+}

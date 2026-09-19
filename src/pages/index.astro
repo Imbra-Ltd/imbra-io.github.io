@@ -4,6 +4,7 @@ import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import Services from "../components/Services.astro";
 import Process from "../components/Process.astro";
+import Commitments from "../components/Commitments.astro";
 import Publications from "../components/Publications.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
@@ -11,14 +12,16 @@ import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
 import services from "../data/services.json";
 import process from "../data/process.json";
+import commitments from "../data/commitments.json";
 import publications from "../data/publications.json";
 ---
 <Base title={site.meta.title} description={site.meta.description}>
   <link rel="preload" href="/ot-it-stack.svg" as="image" type="image/svg+xml" slot="head" />
   <Nav links={site.nav.links} cta={site.nav.cta} />
   <Hero hero={site.hero} />
-  <Services services={services} header={site.services} />
+  <Services pillars={services} header={site.services} />
   <Process process={process} />
+  <Commitments commitments={commitments} />
   <Publications publications={publications} />
   <Contact contact={site.contact} />
   <Footer footer={site.footer} />

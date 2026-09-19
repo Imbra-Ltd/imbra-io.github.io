@@ -141,7 +141,9 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 | File | Controls |
 |------|----------|
 | `src/data/site.json` | Nav links, hero, contact section (incl. Formspree endpoint), footer |
-| `src/data/services.json` | Services accordion items |
+| `src/data/services.json` | Services accordion — three pillars, each holding its service items |
+| `src/data/process.json` | How-we-work section — the four engagement steps |
+| `src/data/commitments.json` | Commitments section — what we think (beliefs) and what we commit to |
 | `src/data/publications.json` | Research publications with DOI links |
 | `src/data/pricing.json` | Pricing page — all engagement models |
 
