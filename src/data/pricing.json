@@ -81,7 +81,7 @@
         },
         {
           "label": "Separate costs",
-          "value": "Licences, cloud or hosting, travel, dedicated test environments and optional availability require separate written agreement"
+          "value": "Licences, cloud or hosting, production infrastructure, travel, dedicated test environments and optional availability require separate written agreement"
         }
       ],
       "notes": [
@@ -198,7 +198,7 @@
       },
       {
         "title": "Mixed month — project and support",
-        "desc": "Quarterly engagement with 40 reserved hours in one month. A 24-hour fixed-price project uses part of the paid reservation; the remaining 16 hours stay available for support. The reservation is paid once.",
+        "desc": "Quarterly engagement with 40 reserved hours in one month. A 24-hour fixed-price project uses part of the paid reservation; the remaining 16 hours stay available for support. Eight additional hours are approved separately after the reservation is fully allocated.",
         "lines": [
           {
             "label": "Monthly reservation — 40h × €80",
@@ -211,9 +211,13 @@
           {
             "label": "Support allocation — 16h × €80",
             "amount": "€1,280 included"
+          },
+          {
+            "label": "Extra approved work — 8h × €80",
+            "amount": "€640 additional"
           }
         ],
-        "total": "€3,200"
+        "total": "€3,840"
       },
       {
         "title": "Emergency — business hours",
