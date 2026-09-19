@@ -28,7 +28,7 @@ npm run preview   # verify — preview the production build locally
 ## Stack
 
 - [Astro](https://astro.build) — static site generator
-- React — interactive islands only (hamburger menu, services and solutions accordion, contact form)
+- React — interactive islands only (hamburger menu, services accordion, contact form)
 - Plain CSS — no Tailwind, no CSS-in-JS
 - JSON — all content in `src/data/`, no hardcoded copy in components
 
@@ -42,8 +42,7 @@ src/
 │   ├── process.json       # How-we-work steps
 │   ├── commitments.json   # Beliefs and commitments section
 │   ├── publications.json  # Research publications
-│   ├── pricing.json       # Pricing page content
-│   └── solutions.json     # Solutions accordion, one row per customer problem
+│   └── pricing.json       # Pricing page content
 ├── components/
 │   ├── interactive/       # React islands (client-side JS)
 │   │   ├── HamburgerMenu.tsx

@@ -9,20 +9,18 @@ interface Service {
   projects?: string[];
 }
 
-// Solutions pass one group without a title, so their rows sit directly under the section header.
 interface Pillar {
-  title?: string;
-  desc?: string;
+  title: string;
+  desc: string;
   services: Service[];
 }
 
 interface Props {
   pillars: Pillar[];
-  projectsLabel?: string;
-  idPrefix?: string;
+  projectsLabel: string;
 }
 
-export default function ServiceExpand({ pillars, projectsLabel, idPrefix = "service" }: Props) {
+export default function ServiceExpand({ pillars, projectsLabel }: Props) {
   const [activeNum, setActiveNum] = useState<string | null>(null);
 
   function toggle(num: string) {
@@ -31,14 +29,14 @@ export default function ServiceExpand({ pillars, projectsLabel, idPrefix = "serv
 
   return (
     <div className="services-list reveal">
-      {pillars.map((pillar, i) => (
-        <div key={pillar.title ?? i} className="service-pillar">
-          {pillar.title && <h3 className="service-pillar-title">{pillar.title}</h3>}
-          {pillar.desc && <p className="service-pillar-desc">{pillar.desc}</p>}
+      {pillars.map(pillar => (
+        <div key={pillar.title} className="service-pillar">
+          <h3 className="service-pillar-title">{pillar.title}</h3>
+          <p className="service-pillar-desc">{pillar.desc}</p>
           <div className="service-pillar-items">
             {pillar.services.map(s => {
               const open = activeNum === s.num;
-              const panelId = `${idPrefix}-detail-${s.num}`;
+              const panelId = `service-detail-${s.num}`;
               return (
                 <div key={s.num} className={`service-item${open ? " active" : ""}`}>
                   {/* The whole heading row is the click target; the button inside it is the keyboard
