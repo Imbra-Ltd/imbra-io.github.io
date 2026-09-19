@@ -146,6 +146,7 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 | `src/data/commitments.json` | Commitments section — what we think (beliefs) and what we commit to |
 | `src/data/publications.json` | Research publications with DOI links |
 | `src/data/pricing.json` | Pricing page — all engagement models |
+| `src/data/solutions.json` | Solutions index and solution pages — add a record to add a page |
 
 ---
 

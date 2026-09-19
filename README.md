@@ -42,7 +42,8 @@ src/
 │   ├── process.json       # How-we-work steps
 │   ├── commitments.json   # Beliefs and commitments section
 │   ├── publications.json  # Research publications
-│   └── pricing.json       # Pricing page content
+│   ├── pricing.json       # Pricing page content
+│   └── solutions.json     # Solutions index and solution pages
 ├── components/
 │   ├── interactive/       # React islands (client-side JS)
 │   │   ├── HamburgerMenu.tsx
@@ -54,6 +55,9 @@ src/
 ├── pages/
 │   ├── index.astro        # Homepage
 │   ├── pricing.astro      # Pricing page
+│   ├── solutions/
+│   │   ├── index.astro    # Solutions index, grouped by pillar
+│   │   └── [slug].astro   # One solution page per record in solutions.json
 │   ├── imprint.astro      # Legal imprint
 │   └── privacy.astro      # Privacy policy
 └── styles/

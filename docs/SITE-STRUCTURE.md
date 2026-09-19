@@ -194,6 +194,26 @@ convention unless a deliberate architecture decision approves another format.
 Do not silently migrate to `src/content/` or introduce a CMS. Draft records
 must not appear in production navigation or the sitemap.
 
+### Decision for solutions (#120)
+
+Solution records live in `src/data/solutions.json`, one record per problem.
+`src/pages/solutions/[slug].astro` renders each record and
+`src/pages/solutions/index.astro` lists them by pillar.
+
+| Required field | Representation |
+| --- | --- |
+| Title, slug and summary | `title` (cards, breadcrumb), `slug`, `summary` (index card and meta description) |
+| Audience and problem | `heading`, `headingStrong`, `intro`, `symptoms`, `impact` |
+| Service pillar | `pillars`: ids defined in `services.json`, never redefined |
+| Page type | Implied by the file. Cases and articles get their own model |
+| Metadata and canonical path | `metaTitle` for the browser title, canonical from the path, BreadcrumbList structured data |
+| Evidence type | `example.evidence` and `experience.evidence`: `engagement`, `founder` or `illustrative`, labelled from `evidence` |
+| Related solutions, cases, articles | Not modelled yet. Add when the first case or article exists |
+| Draft/published status | None. A page in progress stays on its branch until approved, so nothing unpublished reaches `main`, the nav or the sitemap |
+
+Page content also carries `systems`, `approach`, `deliverables` and
+`boundaries`. The blog format is decided separately in #121.
+
 ## Search handoff
 
 Task #123 owns technical SEO/AEO/GEO implementation. This document supplies

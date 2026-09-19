@@ -24,7 +24,7 @@ Website for Imbra (imbra.io) — a boutique software and industrial engineering 
 - Body copy is 14–16px at weight 400; weight 300 is reserved for display headings and large numbers. Mono labels are 11–12px minimum
 - Text colours: `--color-dark` for headings and primary text, `--color-text-body` for body copy, `--color-text-muted` for secondary text. All three clear WCAG AA on white; do not add paler greys
 - All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic/computed values
-- Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage and the pricing page alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
+- Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage, the pricing page and the solution pages alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
 - Responsive breakpoints:
   - Tablet: max-width 1024px
   - Mobile: max-width 768px (hamburger menu replaces nav links)
@@ -43,11 +43,12 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
 | `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
-| `src/data/services.json`     | Services accordion — three pillars, each holding its service items |
+| `src/data/services.json`     | Services accordion — three pillars (each with an `id`), each holding its service items |
 | `src/data/process.json`      | How-we-work section — the four engagement steps |
 | `src/data/commitments.json`  | Commitments section — what we think (beliefs) and what we commit to |
 | `src/data/publications.json` | Research publications with DOI links           |
 | `src/data/pricing.json`      | Pricing page — all engagement models           |
+| `src/data/solutions.json`    | Solutions index and solution pages — one record per customer problem |
 
 Note: `src/content/` is intentionally avoided — Astro reserves that path for Content Collections.
 
@@ -77,12 +78,16 @@ src/components/
 |---------------------------------|-------------------------------------|--------------------------------------------|
 | Homepage                        | `/`                                 | All main sections                          |
 | Pricing                         | `/pricing/`                         | Rate ladder, support, projects, worked examples; linked from nav and 404 |
+| Solutions                       | `/solutions/`                       | Customer problems grouped by service pillar; linked from nav |
+| Solution                        | `/solutions/<slug>/`                | One page per record in `solutions.json`, built by `src/pages/solutions/[slug].astro` |
 | Privacy Policy                  | `/privacy/`                         | Legal page                                 |
 | Imprint                         | `/imprint/`                         | Legal page                                 |
 | 404                             | `/404`                              | Branded not-found page                     |
 
+Solution pages follow the contract in `docs/SITE-STRUCTURE.md`. The index groups records by the pillar ids in `services.json` and leaves out pillars without pages. Every example and experience list carries an evidence label: Imbra engagement, founder's prior professional experience, or illustrative scenario. Imbra has no publishable engagements yet, so nothing is labelled as one. A page in progress stays on its branch; there is no draft flag.
+
 ## Homepage sections (in order)
-1. Nav — logo (links to `/`), section links, hamburger on mobile
+1. Nav — logo (links to `/`), a Solutions link to `/solutions/`, section links, hamburger on mobile
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the word "founder" links to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under three pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance). Each pillar is a heading and a one-line scope above its rows. There are exactly three pillars; AI is not one of them
 4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times

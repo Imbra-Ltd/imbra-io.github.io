@@ -5,6 +5,7 @@
   },
   "nav": {
     "links": [
+      { "label": "Solutions",  "href": "/solutions/" },
       { "label": "Services",   "target": "services" },
       { "label": "Delivery",   "target": "process" },
       { "label": "Research",   "target": "publications" },
