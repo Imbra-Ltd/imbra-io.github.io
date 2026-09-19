@@ -91,7 +91,7 @@ src/components/
 7. Contact — dark (`#111318`) section: headline naming the next step, one-line sub (`set:html`, links to pricing), the form as the primary action, and the email address as a labelled alternative beneath it
 8. Footer — top bar (legal links + social icons), body (address + about incl. the vision line), bottom bar (copyright)
 
-The free assessment is a mutual-fit conversation, not a paid code or system investigation. Any detailed technical investigation needs an agreed scope, deliverables, time limit, price and customer approval before work starts. Use this distinction consistently in process, support, pricing examples and contact copy.
+The free assessment is a mutual-fit conversation, not a paid code or system investigation. Any detailed technical investigation needs an agreed scope, deliverables, time limit, price and customer approval before work starts. Use this distinction consistently in process, support, pricing examples and contact copy. Service copy describes the problem, the stages, the outcome and the deliverables, never the specific checks or causes: the insight is what Imbra sells, and the free assessment does not diagnose.
 
 Identity copy has three layers, each with one home: what Imbra is (`site.json` → `hero.sub`), what it thinks (`commitments.json` → `beliefs`), and what it commits to (`commitments.json` → `commitments`). Beliefs are drawn from the Agile Manifesto and SAFe's Lean-Agile principles but written in Imbra's words; neither framework is named on the site. A commitment must hold on every engagement and match the MSA and Statement of Work templates.
 

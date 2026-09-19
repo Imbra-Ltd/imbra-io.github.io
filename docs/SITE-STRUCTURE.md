@@ -2,7 +2,21 @@
 
 **Status:** approved planning baseline  
 **Scope:** Task #119  
-**Date:** 2026-09-19
+**Date:** 2026-09-19  
+**Revised:** 2026-09-20 (#120)
+
+> **Revision, 20 September 2026: no separate solutions.** Solution pages were
+> built and then dropped. The page version needed too many clicks, and a
+> homepage Solutions section duplicated Services: each of the three problems
+> maps to one existing service (Communication troubleshooting → Maintenance &
+> Support, Historian integration → Data Integration & ETL, Protocol testing →
+> Testing & QA). The service rows already open with the client's problem, so
+> they are the problem-led list. What the briefs added (the troubleshooting
+> sequence, root-cause methods, deliverables and what is not included) now sits
+> in those service rows. Sections below that describe `/solutions/` pages, the
+> solution-page contract and solution journeys are kept as history and no
+> longer apply. Copy describes stages, outcomes and deliverables, never the
+> specific checks or causes.
 
 ## Objective
 
@@ -28,8 +42,6 @@ technical investigation remains separately scoped and paid.
 | Area | Canonical path | Purpose | Launch rule |
 | --- | --- | --- | --- |
 | Home | `/` | Concise company overview, service pillars, selected problems, process, evidence and contact | Always |
-| Solutions | `/solutions/` | Index of customer problems grouped by service pillar | Launch with the first approved solution |
-| Solution | `/solutions/<problem>/` | Commercial landing page for one distinct problem | Each page requires approved copy and evidence status |
 | Cases | `/cases/` and `/cases/<case>/` | Evidence from publishable real work | Do not expose an empty index |
 | Blog | `/blog/` and `/blog/<article>/` | Technical answers supporting solution pages | Expose when the first article is approved |
 | Pricing | `/pricing/` | Existing rate ladder and engagement rules | Preserve the existing canonical URL |
@@ -206,8 +218,8 @@ examples. It should not promise rankings, AI citations or rich results.
 
 ## Handoffs
 
-- **#120 Solutions:** Implement the approved solution template and the initial
-  three pages.
+- **#120 Solutions:** Superseded. The three problems were merged into the
+  matching service rows (see the revision note).
 - **#121 Blog:** Propose articles tied to the initial solution pages; avoid
   competing landing pages.
 - **#122 Booking:** Configure the free-assessment booking page and provider.
