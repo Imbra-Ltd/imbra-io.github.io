@@ -46,28 +46,50 @@ style:    CSS/formatting, no logic change
 refactor: code change that neither fixes a bug nor adds a feature
 ```
 
+### Versioning
+
+Release tags are `vMAJOR.MINOR.PATCH`. For this website:
+
+| Part | Increment when |
+|------|----------------|
+| MAJOR | The site is rebuilt or repositioned so that old pages, URLs or the offer no longer hold |
+| MINOR | Pages, sections or commercial terms change — the usual release |
+| PATCH | Fixes and small copy corrections only |
+
+Rules:
+
+- A tag always points at a merged commit on `main` that has been reviewed in a PR.
+- Branimir releases. Nobody tags from a branch.
+- `package.json` carries the same version as the latest release tag, without the `v`.
+- Every push to `main` deploys. Tags mark releases, they do not deploy, and no
+  workflow depends on them.
+- Published tags stay published. The three March 2026 tags were renamed once,
+  to `v0.1.0`, `v0.2.0` and `v0.3.0`, when this scheme was adopted. Each
+  release notes the name and date it originally carried.
+
 ### Release workflow
 
 ```bash
 # 1. Create a chore branch
 git checkout main && git pull
-git checkout -b chore/vX.Y.Z.W
+git checkout -b chore/vX.Y.Z
 
-# 2. Update CLAUDE.md, README.md, PLAYBOOK.md if needed, then commit
-git add docs/PLAYBOOK.md CLAUDE.md README.md
-git commit -m "chore: release vX.Y.Z.W"
+# 2. Bump package.json, update CLAUDE.md, README.md, PLAYBOOK.md if needed
+git add package.json docs/PLAYBOOK.md CLAUDE.md README.md
+git commit -m "chore: release vX.Y.Z"
 
 # 3. Push and open PR, merge via GitHub
-git push -u origin chore/vX.Y.Z.W
-gh pr create --title "chore: release vX.Y.Z.W" --body "Release notes here"
+git push -u origin chore/vX.Y.Z
+gh pr create --title "chore: release vX.Y.Z" --body "Release notes here"
 
 # 4. After PR is merged, pull main and tag
 git checkout main && git pull
-git tag -a vX.Y.Z.W -m "vX.Y.Z.W — short description"
-git push origin vX.Y.Z.W
+git tag -a vX.Y.Z -m "vX.Y.Z — short description"
+git push origin vX.Y.Z
 
-# 5. Clean up branch
-git branch -d chore/vX.Y.Z.W
+# 5. Publish the release notes, then clean up
+gh release create vX.Y.Z --title "vX.Y.Z" --notes "Release notes here"
+git branch -d chore/vX.Y.Z
 git remote prune origin
 ```
 
@@ -81,7 +103,7 @@ git status                     # working tree status
 git stash                      # stash uncommitted changes
 git stash pop                  # restore stashed changes
 git tag                        # list all tags
-git checkout v0.0.1.0          # checkout a specific release
+git checkout v0.1.0            # checkout a specific release
 ```
 
 ---
@@ -103,10 +125,10 @@ gh issue close 12 --repo Imbra-Ltd/imbra-ltd.github.io --comment "Reason"
 ```bash
 # Create a milestone
 gh api repos/Imbra-Ltd/imbra-ltd.github.io/milestones \
-  --method POST --field title="v0.0.2.0"
+  --method POST --field title="v0.4.0"
 
 # Assign issue to milestone
-gh issue edit 8 --repo Imbra-Ltd/imbra-ltd.github.io --milestone "v0.0.2.0"
+gh issue edit 8 --repo Imbra-Ltd/imbra-ltd.github.io --milestone "v0.4.0"
 ```
 
 ### Pull requests
@@ -124,9 +146,9 @@ gh pr merge 37 --repo Imbra-Ltd/imbra-ltd.github.io
 ### Releases
 
 ```bash
-gh release create v0.0.1.0 \
+gh release create v0.1.0 \
   --repo Imbra-Ltd/imbra-ltd.github.io \
-  --title "v0.0.1.0" \
+  --title "v0.1.0" \
   --notes "Release notes here"
 
 gh release list --repo Imbra-Ltd/imbra-ltd.github.io
