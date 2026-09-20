@@ -139,13 +139,13 @@ section { padding: 96px var(--content-inset); }
 .commitments-title { font-size: 16px; font-weight: 500; color: var(--color-dark); line-height: 1.4; margin-bottom: 8px; }
 .commitments-desc { font-size: 14px; color: var(--color-text-body); line-height: 1.65; }
 
-/* ── Publications ── */
-#publications { border-top: 1px solid var(--color-border); }
+/* ── Publications: the list lives on /about/ ── */
 .pub-list { list-style: none; border-top: 1px solid var(--color-border); }
 .pub-item { padding: 22px 0; border-bottom: 1px solid var(--color-border); }
 .pub-title { font-size: 16px; font-weight: 500; color: var(--color-dark); line-height: 1.45; text-decoration: none; display: block; max-width: 680px; }
 .pub-title:hover { color: var(--color-accent); }
 .pub-meta { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--color-text-muted); letter-spacing: 0.03em; margin-top: 8px; }
+.about-cta { display: inline-block; margin-top: 48px; }
 
 /* ── Contact ── */
 #contact { background: var(--color-dark); color: white; display: flex; flex-direction: column; padding: 72px var(--content-inset); gap: 48px; }

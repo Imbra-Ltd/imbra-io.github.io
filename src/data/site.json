@@ -7,7 +7,6 @@
     "links": [
       { "label": "Services",   "target": "services" },
       { "label": "Delivery",   "target": "process" },
-      { "label": "Research",   "target": "publications" },
       { "label": "Pricing",    "target": "pricing", "href": "/pricing/" }
     ],
     "cta": { "label": "Get in touch", "target": "contact" }
@@ -36,6 +35,7 @@
   },
   "footer": {
     "legal": [
+      { "label": "About", "href": "/about" },
       { "label": "Privacy", "href": "/privacy" },
       { "label": "Imprint", "href": "/imprint" }
     ],
