@@ -4,6 +4,7 @@ import Nav from "../components/Nav.astro";
 import ContactForm from "../components/interactive/ContactForm.tsx";
 import site from "../data/site.json";
 import pricing from "../data/pricing.json";
+import Breadcrumb from "../components/Breadcrumb.astro";
 
 const pricingLinks = [
   { label: "← Back", target: "", href: "/" },
@@ -15,6 +16,7 @@ const pricingLinks = [
 ---
 
 <Base title={`${pricing.meta.title} — ${site.meta.title}`} description={pricing.meta.description}>
+  <Breadcrumb name={pricing.meta.title} slot="head" />
   <Nav links={pricingLinks} cta={site.nav.cta} />
 
   <main class="pricing-page">

@@ -155,7 +155,7 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 | Service | Purpose | Config |
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
-| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies, no consent banner) | Script tag in `src/layouts/Base.astro` |
+| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies, no consent banner). Events: "Contact form sent", "Email click" | Script tag in `src/layouts/Base.astro` |
 
 ---
 

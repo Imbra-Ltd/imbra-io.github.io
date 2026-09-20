@@ -65,6 +65,7 @@ src/components/
 ├── Services.astro        # Static section header — mounts ServiceExpand island
 ├── Process.astro         # Static four-step how-we-work grid
 ├── Commitments.astro     # Static beliefs + commitments section
+├── Breadcrumb.astro      # BreadcrumbList structured data for a subpage (pass via slot="head")
 ├── Contact.astro         # Dark CTA section — email link + ContactForm island
 └── Footer.astro
 ```
@@ -107,7 +108,7 @@ Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned an
 | Service | Purpose | Config |
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
-| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies) | Script tag in `src/layouts/Base.astro` |
+| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies). Events: "Contact form sent", "Email click" | Script tag in `src/layouts/Base.astro`; the mailto listener sits in its inline script |
 | [Google Search Console](https://search.google.com/search-console) | Search indexing and crawl monitoring | Verification meta tag in `src/layouts/Base.astro` |
 
 ## Advice rule
