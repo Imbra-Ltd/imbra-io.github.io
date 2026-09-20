@@ -48,7 +48,7 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 | `src/data/commitments.json`  | Commitments section — what we think (beliefs) and what we commit to |
 | `src/data/publications.json` | Research publications with DOI links, shown on `/about/` |
 | `src/data/about.json`        | About page — company, founder and research sections |
-| `src/data/pricing.json`      | Pricing page — all engagement models           |
+| `src/data/pricing.json`      | Pricing page — engagement models and its in-page section index |
 
 Note: `src/content/` is intentionally avoided — Astro reserves that path for Content Collections.
 
@@ -84,7 +84,7 @@ src/components/
 | 404                             | `/404`                              | Branded not-found page                     |
 
 ## Homepage sections (in order)
-1. Nav — identical on every page: logo (links to `/`), Services and Delivery as `/#anchor` links, then About and Pricing as page links behind a hairline separator, then the `Get in touch` CTA pointing at `/#contact`. Hamburger on mobile. Subpages do not define their own nav links
+1. Nav — identical on every page: logo (links to `/`), Services and Delivery as `/#anchor` links, then About and Pricing as page links behind a hairline separator, then the `Get in touch` CTA pointing at `/#contact`. Hamburger on mobile. Every page carries it, including the legal and 404 pages, and no page defines its own nav links. The CSS targets `body > nav`, so an in-page index such as the pricing sections list stays in the flow
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the word "founder" links to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under three pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance). Each pillar is a heading and a one-line scope above its rows. There are exactly three pillars; AI is not one of them
 4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times

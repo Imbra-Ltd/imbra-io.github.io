@@ -8,6 +8,12 @@
     "heading": "Transparent by design.",
     "sub": "Three published rates, plus a custom model: hourly support and fixed-price projects for engagements from ad hoc to 12+ months. The longer you commit, the lower the published rate. No hidden fees. All prices are exclusive of VAT — EU reverse charge applies for cross-border B2B transactions."
   },
+  "sections": [
+    { "label": "Rates", "target": "rates" },
+    { "label": "Support", "target": "support" },
+    { "label": "Project", "target": "project" },
+    { "label": "Examples", "target": "scenarios" }
+  ],
   "categories": [
     {
       "id": "rates",

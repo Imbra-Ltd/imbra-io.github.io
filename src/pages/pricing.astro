@@ -17,6 +17,9 @@ import Breadcrumb from "../components/Breadcrumb.astro";
       <div class="pricing-label mono">{pricing.intro.label}</div>
       <h1 class="pricing-heading">{pricing.intro.heading}</h1>
       <p class="pricing-sub">{pricing.intro.sub}</p>
+      <nav class="page-toc" aria-label="Sections on this page">
+        {pricing.sections.map((s) => <a href={`#${s.target}`}>{s.label}</a>)}
+      </nav>
     </div>
 
     {pricing.categories.map((cat) => (
