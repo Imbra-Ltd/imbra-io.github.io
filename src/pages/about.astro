@@ -8,7 +8,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
 ---
 <Base title={`${about.meta.title} — ${site.meta.title}`} description={about.meta.description}>
   <Breadcrumb name={about.meta.title} slot="head" />
-  <Nav links={about.nav.links} cta={about.nav.cta} />
+  <Nav links={site.nav.links} cta={site.nav.cta} />
 
   <main class="legal-page">
     <div class="legal-label">{about.label}</div>

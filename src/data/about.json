@@ -3,13 +3,6 @@
     "title": "About",
     "description": "Imbra is an engineering company in Varna, Bulgaria, working on the software between the plant floor and IT. Background, experience and peer-reviewed research."
   },
-  "nav": {
-    "links": [
-      { "label": "← Back", "href": "/" },
-      { "label": "Pricing", "href": "/pricing/" }
-    ],
-    "cta": { "label": "Get in touch", "href": "/#contact" }
-  },
   "label": "About",
   "heading": "About Imbra",
   "sections": [
