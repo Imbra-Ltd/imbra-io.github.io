@@ -97,6 +97,11 @@ const ogImageURL = new URL(ogImage, Astro.site);
     obs.observe(el);
   });
 
+  // Contact intent, counted without cookies or personal data
+  document.querySelectorAll<HTMLAnchorElement>("a[href^=\"mailto:\"]").forEach(a => {
+    a.addEventListener("click", () => window.plausible?.("Email click"));
+  });
+
   // Back to top
   const btn = document.querySelector<HTMLButtonElement>(".back-to-top");
   if (btn) {

@@ -1,0 +1,15 @@
+---
+interface Props { name: string; }
+const { name } = Astro.props as Props;
+
+// Search engines show the path to a subpage; the page itself has a visible back link.
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", Astro.site).href },
+    { "@type": "ListItem", position: 2, name, item: new URL(Astro.url.pathname, Astro.site).href },
+  ],
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />

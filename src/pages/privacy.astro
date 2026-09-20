@@ -1,8 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import site from "../data/site.json";
+import Breadcrumb from "../components/Breadcrumb.astro";
 ---
-<Base title={`Privacy Policy — ${site.meta.title}`} description="Privacy policy for imbra.soft.">
+<Base title={`Privacy Policy — ${site.meta.title}`} description="How imbra.io handles contact form submissions, analytics and third-party services.">
+  <Breadcrumb name="Privacy Policy" slot="head" />
   <main class="legal-page">
     <a href="/" class="legal-back">← Back</a>
     <div class="legal-label">Legal</div>

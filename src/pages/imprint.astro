@@ -1,8 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import site from "../data/site.json";
+import Breadcrumb from "../components/Breadcrumb.astro";
 ---
-<Base title={`Imprint — ${site.meta.title}`} description="Legal information about Imbra Ltd..">
+<Base title={`Imprint — ${site.meta.title}`} description="Legal details for Imbra Ltd., registered in Varna, Bulgaria.">
+  <Breadcrumb name="Imprint" slot="head" />
   <main class="legal-page">
     <a href="/" class="legal-back">← Back</a>
     <div class="legal-label">Legal</div>
