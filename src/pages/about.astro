@@ -1,60 +1,43 @@
 ---
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
-import Breadcrumb from "../components/Breadcrumb.astro";
-import ContactForm from "../components/interactive/ContactForm.tsx";
 import site from "../data/site.json";
 import about from "../data/about.json";
 import publications from "../data/publications.json";
+import Breadcrumb from "../components/Breadcrumb.astro";
 ---
 <Base title={`${about.meta.title} — ${site.meta.title}`} description={about.meta.description}>
   <Breadcrumb name={about.meta.title} slot="head" />
-  <Nav links={about.nav} cta={site.nav.cta} />
+  <Nav links={about.nav.links} cta={about.nav.cta} />
 
-  <main class="about-page">
-    <div class="about-header">
-      <div class="about-label mono">{about.intro.label}</div>
-      <h1 class="about-heading">{about.intro.heading}</h1>
-      <p class="about-sub">{about.intro.sub}</p>
-    </div>
+  <main class="legal-page">
+    <div class="legal-label">{about.label}</div>
+    <h1 class="legal-heading">{about.heading}</h1>
 
-    {about.sections.map((section) => (
-      <section class="about-section" id={section.id}>
-        <div class="about-section-header">
-          <span class="about-index mono">{section.index}</span>
-          <div>
-            <h2 class="about-section-title">{section.title}</h2>
-            <div class="about-model mono">{section.model}</div>
+    <div class="legal-grid">
+      {about.sections.map((section) => (
+        <div class="legal-section">
+          <h2 class="legal-section-title">{section.title}</h2>
+          <div class="legal-section-body">
+            {section.paragraphs.map((p) => <p>{p}</p>)}
+            {section.links?.map((l) => (
+              <p><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></p>
+            ))}
+            {section.publications && (
+              <ul class="pub-list">
+                {publications.map((p) => (
+                  <li class="pub-item">
+                    <a class="pub-title" href={p.doi} target="_blank" rel="noopener noreferrer">{p.title}</a>
+                    <div class="pub-meta mono">{p.journal} · {p.year} · {p.vol}</div>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
+      ))}
+    </div>
 
-        {section.paragraphs.map((p) => <p class="about-desc">{p}</p>)}
-
-        {section.links && (
-          <div class="about-links">
-            {section.links.map((l) => (
-              <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
-            ))}
-          </div>
-        )}
-
-        {section.publications && (
-          <ul class="pub-list">
-            {publications.map((p) => (
-              <li class="pub-item">
-                <a class="pub-title" href={p.doi} target="_blank" rel="noopener noreferrer">{p.title}</a>
-                <div class="pub-meta mono">{p.journal} · {p.year} · {p.vol}</div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-    ))}
-
-    <section class="pricing-cta" id="contact">
-      <h2 class="pricing-cta-heading">{about.cta.heading}</h2>
-      <p class="pricing-cta-sub">{about.cta.sub}</p>
-      <ContactForm client:load endpoint={site.contact.formEndpoint} />
-    </section>
+    <a href={about.cta.href} class="btn-primary about-cta">{about.cta.label}</a>
   </main>
 </Base>

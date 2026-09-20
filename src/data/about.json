@@ -3,34 +3,25 @@
     "title": "About",
     "description": "Imbra is an engineering company in Varna, Bulgaria, working on the software between the plant floor and IT. Background, experience and peer-reviewed research."
   },
-  "nav": [
-    { "label": "← Back", "href": "/" },
-    { "label": "Company", "target": "company" },
-    { "label": "Founder", "target": "founder" },
-    { "label": "Research", "target": "research" },
-    { "label": "Pricing", "href": "/pricing/" }
-  ],
-  "intro": {
-    "label": "About",
-    "heading": "Who you work with.",
-    "sub": "One engineer, fifteen years between the plant floor and IT, and the research that came out of it."
+  "nav": {
+    "links": [
+      { "label": "← Back", "href": "/" },
+      { "label": "Pricing", "href": "/pricing/" }
+    ],
+    "cta": { "label": "Get in touch", "href": "/#contact" }
   },
+  "label": "About",
+  "heading": "About Imbra",
   "sections": [
     {
-      "id": "company",
-      "index": "1",
       "title": "The company",
-      "model": "Varna, Bulgaria · working across Europe",
       "paragraphs": [
         "Imbra is an engineering company in Varna, Bulgaria, working with clients across Europe. It builds, tests, integrates and supports the software between the plant floor and IT: protocol stacks, data flows, historians and legacy systems.",
         "The work is done by the founder, so the engineer you speak to is the engineer who delivers."
       ]
     },
     {
-      "id": "founder",
-      "index": "2",
       "title": "The founder",
-      "model": "Branimir Georgiev · automation and software engineer",
       "paragraphs": [
         "Branimir Georgiev started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants. He automated process units on Honeywell and Siemens systems, ported Honeywell control blocks to Siemens SCL, and learned what industrial software costs when it fails.",
         "At Hilscher he moved into software, building protocol device emulators, test suites and SDKs for DeviceNet, CAN, Modbus and MQTT. At Heidelberg Materials he worked on the PxTrend historian, on data integration agents feeding it, and on the architecture documentation that made the estate maintainable.",
@@ -42,18 +33,12 @@
       ]
     },
     {
-      "id": "research",
-      "index": "3",
       "title": "Research",
-      "model": "Peer-reviewed · process control and fuzzy logic",
       "paragraphs": [
-        "Published in indexed engineering journals during the plant years. The titles link to their DOI records."
+        "Peer-reviewed work on advanced process control and fuzzy logic, published in indexed engineering journals during the plant years."
       ],
       "publications": true
     }
   ],
-  "cta": {
-    "heading": "Want to put this to work?",
-    "sub": "Start with a free assessment to discuss your needs and whether we are a good fit for each other."
-  }
+  "cta": { "label": "Discuss a project →", "href": "/#contact" }
 }
