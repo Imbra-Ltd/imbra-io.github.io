@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "About",
+    "description": "Imbra is an engineering company in Varna, Bulgaria, working on the software between the plant floor and IT. Background, experience and peer-reviewed research."
+  },
+  "label": "About",
+  "heading": "About Imbra",
+  "sections": [
+    {
+      "title": "The company",
+      "paragraphs": [
+        "Imbra is an engineering company in Varna, Bulgaria, working with clients across Europe. It builds, tests, integrates and supports the software between the plant floor and IT: protocol stacks, data flows, historians and legacy systems.",
+        "The work is done by the founder, so the engineer you speak to is the engineer who delivers."
+      ]
+    },
+    {
+      "title": "The founder",
+      "paragraphs": [
+        "Branimir Georgiev started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants. He automated process units on Honeywell and Siemens systems, ported Honeywell control blocks to Siemens SCL, and learned what industrial software costs when it fails.",
+        "At Hilscher he moved into software, building protocol device emulators, test suites and SDKs for DeviceNet, CAN, Modbus and MQTT. At Heidelberg Materials he worked on the PxTrend historian, on data integration agents feeding it, and on the architecture documentation that made the estate maintainable.",
+        "Those engagements are his professional career rather than Imbra client work. Imbra was founded to do this work directly."
+      ],
+      "links": [
+        { "label": "linkedin.com/in/branimir-georgiev", "href": "https://linkedin.com/in/branimir-georgiev" },
+        { "label": "braboj.me", "href": "https://braboj.me" }
+      ]
+    },
+    {
+      "title": "Research",
+      "paragraphs": [
+        "Peer-reviewed work on advanced process control and fuzzy logic, published in indexed engineering journals during the plant years."
+      ],
+      "publications": true
+    }
+  ],
+  "cta": { "label": "Discuss a project →", "href": "/#contact" }
+}

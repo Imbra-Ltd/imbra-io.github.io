@@ -41,7 +41,8 @@ src/
 │   ├── services.json      # Services accordion, grouped into three pillars
 │   ├── process.json       # How-we-work steps
 │   ├── commitments.json   # Beliefs and commitments section
-│   ├── publications.json  # Research publications
+│   ├── publications.json  # Research publications, listed on /about/
+│   ├── about.json         # About page content
 │   └── pricing.json       # Pricing page content
 ├── components/
 │   ├── interactive/       # React islands (client-side JS)
@@ -54,6 +55,7 @@ src/
 ├── pages/
 │   ├── index.astro        # Homepage
 │   ├── pricing.astro      # Pricing page
+│   ├── about.astro        # About page — company, founder, research
 │   ├── imprint.astro      # Legal imprint
 │   └── privacy.astro      # Privacy policy
 └── styles/
