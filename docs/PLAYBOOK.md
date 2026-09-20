@@ -59,6 +59,8 @@ Release tags are `vMAJOR.MINOR.PATCH`. For this website:
 Rules:
 
 - A tag always points at a merged commit on `main` that has been reviewed in a PR.
+- Every tag is annotated (`git tag -a`), never lightweight, so it carries its own
+  message, author and date.
 - Branimir releases. Nobody tags from a branch.
 - `package.json` carries the same version as the latest release tag, without the `v`.
 - Every push to `main` deploys. Tags mark releases, they do not deploy, and no
