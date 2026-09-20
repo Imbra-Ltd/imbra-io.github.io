@@ -33,7 +33,8 @@
     {
       "title": "What to bring",
       "paragraphs": [
-        "A short description of the problem, the systems involved (protocols, controllers, historians, versions where you know them), and the outcome you want.",
+        "Your company and its website. We read up on both before the call, so the time goes on your problem rather than on context.",
+        "A short description of what is failing, the systems involved (protocols, controllers, historians, versions where you know them), and the outcome you want.",
         "Do not send logs, credentials, drawings or anything confidential before a mutual NDA is in place."
       ]
     }
