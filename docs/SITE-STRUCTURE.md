@@ -45,7 +45,7 @@ technical investigation remains separately scoped and paid.
 | Cases | `/cases/` and `/cases/<case>/` | Evidence from publishable real work | Do not expose an empty index |
 | Blog | `/blog/` and `/blog/<article>/` | Technical answers supporting solution pages | Expose when the first article is approved |
 | Pricing | `/pricing/` | Existing rate ladder and engagement rules | Preserve the existing canonical URL |
-| Book a call | `/book/` | Free-assessment explanation and scheduling link | Activate after provider details are configured |
+| Book a call | `/book/` | Free-assessment explanation and scheduling link | Built 20 September 2026. Dormant — noindex, out of the sitemap and out of the nav — until `book.json` → `booking.url` names a Cal.com link |
 | About | `/about/` | Company/founder background and full research publication list | In the nav after Delivery, and in the footer (changed 20 September 2026, once Research left the nav) |
 
 Use one canonical problem-page family. Do not duplicate the same content under

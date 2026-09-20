@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Book a call",
+    "description": "Book the free assessment: a 30-minute conversation about your problem, what you expect, and whether Imbra is a good fit."
+  },
+  "label": "Free assessment",
+  "heading": "Book a call.",
+  "sub": "Thirty minutes to describe the problem, hear how we would approach it, and decide whether we are a good fit for each other. Neither side is obliged to proceed.",
+  "booking": {
+    "url": "",
+    "label": "Choose a time →",
+    "duration": "30 minutes",
+    "availability": "Tuesday and Thursday, 14:00–17:00 (EET, UTC+2)",
+    "note": "Booking opens our scheduling provider in a new tab. Nothing is loaded into this page, so no cookies are set here."
+  },
+  "sections": [
+    {
+      "title": "What the call is",
+      "paragraphs": [
+        "A conversation about your needs and our suitability. You describe what is failing or what you want built, and we say whether we can help, how we would start, and what it would cost.",
+        "It is free and carries no obligation on either side."
+      ]
+    },
+    {
+      "title": "What it is not",
+      "paragraphs": [
+        "It is not a technical investigation. Any detailed analysis of your systems is scoped, time-limited, priced and approved before work starts. Rates are on the <a href=\"/pricing/\">pricing page</a>.",
+        "It is not a support channel and carries no response-time promise."
+      ]
+    },
+    {
+      "title": "What to bring",
+      "paragraphs": [
+        "A short description of the problem, the systems involved (protocols, controllers, historians, versions where you know them), and the outcome you want.",
+        "Do not send logs, credentials, drawings or anything confidential before a mutual NDA is in place."
+      ]
+    }
+  ],
+  "alt": {
+    "label": "Rather write first?",
+    "sub": "Send a message or email instead. We answer in the same terms, and can book a call from there.",
+    "cta": {
+      "label": "Use the contact form →",
+      "href": "/#contact"
+    }
+  }
+}

@@ -171,6 +171,7 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 | `src/data/publications.json` | Research publications with DOI links, shown on `/about/` |
 | `src/data/about.json` | About page — company, founder and research sections |
 | `src/data/pricing.json` | Pricing page — all engagement models |
+| `src/data/book.json` | Booking page — scheduling URL, call length, availability and the free-assessment explanation |
 
 ---
 
@@ -179,7 +180,8 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 | Service | Purpose | Config |
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
-| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies, no consent banner). Events: "Contact form sent", "Email click" | Script tag in `src/layouts/Base.astro` |
+| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies, no consent banner). Events: "Contact form sent", "Email click", "Booking click" | Script tag in `src/layouts/Base.astro` |
+| [Cal.com](https://cal.com) | Free-assessment scheduling, linked out from `/book/` so no third-party script loads on imbra.io | `src/data/book.json` → `booking.url` |
 
 ---
 
