@@ -1,0 +1,80 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import site from "../data/site.json";
+import book from "../data/book.json";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+// The page ships before the provider is configured. Until a booking URL is
+// set in book.json, the page keeps the contact form as the next step and asks
+// search engines to skip it, exactly as the site plan's launch rule requires.
+const bookable = book.booking.url !== "";
+---
+<Base title={`${book.meta.title} — ${site.meta.title}`} description={book.meta.description}>
+  <Breadcrumb name={book.meta.title} slot="head" />
+  {!bookable && <meta name="robots" content="noindex" slot="head" />}
+  <Nav links={site.nav.links} cta={site.nav.cta} />
+
+  <main class="legal-page">
+    <div class="legal-label">{book.label}</div>
+    <h1 class="legal-heading">{book.heading}</h1>
+    <p class="book-sub">{book.sub}</p>
+
+    <div class="book-panel">
+      <div class="book-panel-facts">
+        <div class="book-fact">
+          <span class="book-fact-label mono">Length</span>
+          <span class="book-fact-value">{book.booking.duration}</span>
+        </div>
+        <div class="book-fact">
+          <span class="book-fact-label mono">Availability</span>
+          <span class="book-fact-value">{book.booking.availability}</span>
+        </div>
+        <div class="book-fact">
+          <span class="book-fact-label mono">Price</span>
+          <span class="book-fact-value">Free, no obligation</span>
+        </div>
+      </div>
+
+      {bookable ? (
+        <div class="book-panel-action">
+          <a
+            class="btn-primary book-cta"
+            href={book.booking.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-booking
+          >{book.booking.label}</a>
+          <p class="book-panel-note">{book.booking.note}</p>
+        </div>
+      ) : (
+        <div class="book-panel-action">
+          <a class="btn-primary book-cta" href={book.alt.cta.href}>{book.alt.cta.label}</a>
+          <p class="book-panel-note">Online scheduling is not open yet. Send a message and we will agree a time by email.</p>
+        </div>
+      )}
+    </div>
+
+    <div class="legal-grid">
+      {book.sections.map((section) => (
+        <div class="legal-section">
+          <h2 class="legal-section-title">{section.title}</h2>
+          <div class="legal-section-body">
+            {section.paragraphs.map((p) => <p set:html={p} />)}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {bookable && (
+      <div class="book-alt">
+        <h2 class="book-alt-label mono">{book.alt.label}</h2>
+        <p class="book-alt-sub">{book.alt.sub}</p>
+        <p class="book-alt-links">
+          <a href={book.alt.cta.href}>{book.alt.cta.label}</a>
+          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+        </p>
+      </div>
+    )}
+  </main>
+</Base>

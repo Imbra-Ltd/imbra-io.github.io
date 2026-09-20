@@ -55,6 +55,7 @@ src/
 ├── pages/
 │   ├── index.astro        # Homepage
 │   ├── pricing.astro      # Pricing page
+│   ├── book.astro         # Book a call — free assessment and scheduling link
 │   ├── about.astro        # About page — company, founder, research
 │   ├── imprint.astro      # Legal imprint
 │   └── privacy.astro      # Privacy policy

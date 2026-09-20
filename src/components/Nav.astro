@@ -1,12 +1,18 @@
 ---
 import HamburgerMenu from "./interactive/HamburgerMenu.tsx";
 import { Image } from 'astro:assets';
+import book from "../data/book.json";
 
 interface Link { label: string; target?: string; href?: string; }
 interface Cta  { label: string; target?: string; href?: string; }
 interface Props { links: Link[]; cta: Cta; }
 
 const { links, cta } = Astro.props as Props;
+
+// Booking takes the CTA slot once a scheduling URL is configured in book.json.
+// Until then every page keeps the contact CTA, so the nav never offers a
+// booking that cannot be made.
+const navCta = book.booking.url === "" ? cta : { label: "Book a call", href: "/book/" };
 
 // Section links scroll, page links load. A hairline before the first page link
 // marks where the behaviour changes.
@@ -20,7 +26,7 @@ const firstPageLink = links.findIndex(l => (l.href ?? "").startsWith("/") && !(l
     {links.map((l: Link, i: number) => (
       <a href={l.href ?? `#${l.target}`} class={`nav-link${i === firstPageLink ? " nav-link--group-start" : ""}`}>{l.label}</a>
     ))}
-    <a href={cta.href ?? `#${cta.target}`} class="nav-cta">{cta.label}</a>
+    <a href={navCta.href ?? `#${navCta.target}`} class="nav-cta">{navCta.label}</a>
   </div>
-  <HamburgerMenu client:load links={links} cta={cta} />
+  <HamburgerMenu client:load links={links} cta={navCta} />
 </nav>

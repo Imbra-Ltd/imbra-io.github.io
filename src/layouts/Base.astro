@@ -102,6 +102,11 @@ const ogImageURL = new URL(ogImage, Astro.site);
     a.addEventListener("click", () => window.plausible?.("Email click"));
   });
 
+  // Booking intent, counted on the way out to the scheduling provider
+  document.querySelectorAll<HTMLAnchorElement>("a[data-booking]").forEach(a => {
+    a.addEventListener("click", () => window.plausible?.("Booking click"));
+  });
+
   // Back to top
   const btn = document.querySelector<HTMLButtonElement>(".back-to-top");
   if (btn) {

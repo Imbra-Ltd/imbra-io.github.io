@@ -1,8 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
 import site from "../data/site.json";
+import book from "../data/book.json";
 import Nav from "../components/Nav.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+
+// The scheduling provider is only named once booking is live, so the policy
+// never describes a service the site does not yet reach.
+const bookable = book.booking.url !== "";
 ---
 <Base title={`Privacy Policy — ${site.meta.title}`} description="How imbra.io handles contact form submissions, analytics and third-party services.">
   <Breadcrumb name="Privacy Policy" slot="head" />
@@ -43,6 +48,9 @@ import Breadcrumb from "../components/Breadcrumb.astro";
           <p><strong>GitHub Pages</strong> — This site is hosted on GitHub Pages. GitHub may collect technical data such as IP addresses as part of its hosting infrastructure. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub's Privacy Statement</a>.</p>
           <p><strong>Formspree</strong> — Contact form submissions are processed by Formspree and forwarded to our email address. Formspree may retain submission data in accordance with its own privacy policy. See <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Formspree's Privacy Policy</a>.</p>
           <p><strong>Plausible Analytics</strong> — We use Plausible to measure site traffic. Plausible does not use cookies, does not collect personal data, and is fully GDPR compliant. See <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">Plausible's Privacy Policy</a>.</p>
+          {bookable && (
+            <p><strong>{book.booking.provider}</strong> — <span set:html={book.booking.privacy} /></p>
+          )}
         </div>
       </div>
 

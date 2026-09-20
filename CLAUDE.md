@@ -49,6 +49,7 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 | `src/data/publications.json` | Research publications with DOI links, shown on `/about/` |
 | `src/data/about.json`        | About page — company, founder and research sections |
 | `src/data/pricing.json`      | Pricing page — engagement models and its in-page section index |
+| `src/data/book.json`         | Booking page — scheduling URL, call length, availability and the free-assessment explanation |
 
 Note: `src/content/` is intentionally avoided — Astro reserves that path for Content Collections.
 
@@ -78,13 +79,14 @@ src/components/
 |---------------------------------|-------------------------------------|--------------------------------------------|
 | Homepage                        | `/`                                 | All main sections                          |
 | Pricing                         | `/pricing/`                         | Rate ladder, support, projects, worked examples; linked from nav and 404 |
+| Book a call                     | `/book/`                            | Free-assessment explanation and scheduling link; dormant until a booking URL is set |
 | About                           | `/about/`                           | Company, founder and publication list; linked from the nav and the footer |
 | Privacy Policy                  | `/privacy/`                         | Legal page                                 |
 | Imprint                         | `/imprint/`                         | Legal page                                 |
 | 404                             | `/404`                              | Branded not-found page                     |
 
 ## Homepage sections (in order)
-1. Nav — identical on every page: logo (links to `/`), Services and Delivery as `/#anchor` links, then About and Pricing as page links behind a hairline separator, then the `Get in touch` CTA pointing at `/#contact`. Hamburger on mobile. Every page carries it, including the legal and 404 pages, and no page defines its own nav links. The CSS targets `body > nav`, so an in-page index such as the pricing sections list stays in the flow
+1. Nav — identical on every page: logo (links to `/`), Services and Delivery as `/#anchor` links, then About and Pricing as page links behind a hairline separator, then the `Get in touch` CTA pointing at `/#contact`. `Nav.astro` swaps that CTA for `Book a call` → `/book/` as soon as `book.json` → `booking.url` is filled in, so the nav never offers a booking that cannot be made. Hamburger on mobile. Every page carries it, including the legal and 404 pages, and no page defines its own nav links. The CSS targets `body > nav`, so an in-page index such as the pricing sections list stays in the flow
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; the word "founder" links to the founder's LinkedIn profile, the only place the founder is introduced above the footer), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
 3. Services — 6 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under three pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance). Each pillar is a heading and a one-line scope above its rows. There are exactly three pillars; AI is not one of them
 4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times
@@ -108,7 +110,8 @@ Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned an
 | Service | Purpose | Config |
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
-| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies). Events: "Contact form sent", "Email click" | Script tag in `src/layouts/Base.astro`; the mailto listener sits in its inline script |
+| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies). Events: "Contact form sent", "Email click", "Booking click" | Script tag in `src/layouts/Base.astro`; the mailto and `data-booking` listeners sit in its inline script |
+| Nextcloud (`cloud.imbra.io`) | Free-assessment scheduling, self-hosted on Hetzner Storage Share. `/book/` links out to it, so no third-party script or cookie touches imbra.io and the site still needs no consent banner. The provider name and the privacy paragraph are data, so swapping provider means editing JSON only | `src/data/book.json` → `booking.url`, `booking.provider`, `booking.privacy` |
 | [Google Search Console](https://search.google.com/search-console) | Search indexing and crawl monitoring | Verification meta tag in `src/layouts/Base.astro` |
 
 ## Advice rule
