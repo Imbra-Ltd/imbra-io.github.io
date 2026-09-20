@@ -53,7 +53,7 @@ export default function HamburgerMenu({ links, cta }: Props) {
             {l.label}
           </a>
         ))}
-        <a href={`#${cta.target}`} className="mobile-menu-cta" onClick={close}>
+        <a href={cta.href ?? `#${cta.target}`} className="mobile-menu-cta" onClick={close}>
           {cta.label}
         </a>
       </div>

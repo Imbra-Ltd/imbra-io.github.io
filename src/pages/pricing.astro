@@ -6,18 +6,11 @@ import site from "../data/site.json";
 import pricing from "../data/pricing.json";
 import Breadcrumb from "../components/Breadcrumb.astro";
 
-const pricingLinks = [
-  { label: "← Back", target: "", href: "/" },
-  { label: "Rates", target: "rates" },
-  { label: "Support", target: "support" },
-  { label: "Project", target: "project" },
-  { label: "Examples", target: "scenarios" },
-];
 ---
 
 <Base title={`${pricing.meta.title} — ${site.meta.title}`} description={pricing.meta.description}>
   <Breadcrumb name={pricing.meta.title} slot="head" />
-  <Nav links={pricingLinks} cta={site.nav.cta} />
+  <Nav links={site.nav.links} cta={site.nav.cta} />
 
   <main class="pricing-page">
     <div class="pricing-header">

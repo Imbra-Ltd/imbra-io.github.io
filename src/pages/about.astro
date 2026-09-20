@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
 import site from "../data/site.json";
 import about from "../data/about.json";
 import publications from "../data/publications.json";
@@ -7,8 +8,9 @@ import Breadcrumb from "../components/Breadcrumb.astro";
 ---
 <Base title={`${about.meta.title} — ${site.meta.title}`} description={about.meta.description}>
   <Breadcrumb name={about.meta.title} slot="head" />
+  <Nav links={site.nav.links} cta={site.nav.cta} />
+
   <main class="legal-page">
-    <a href="/" class="legal-back">← Back</a>
     <div class="legal-label">{about.label}</div>
     <h1 class="legal-heading">{about.heading}</h1>
 

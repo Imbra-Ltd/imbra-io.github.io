@@ -2,21 +2,25 @@
 import HamburgerMenu from "./interactive/HamburgerMenu.tsx";
 import { Image } from 'astro:assets';
 
-interface Link { label: string; target: string; href?: string; }
-interface Cta  { label: string; target: string; }
+interface Link { label: string; target?: string; href?: string; }
+interface Cta  { label: string; target?: string; href?: string; }
 interface Props { links: Link[]; cta: Cta; }
 
 const { links, cta } = Astro.props as Props;
+
+// Section links scroll, page links load. A hairline before the first page link
+// marks where the behaviour changes.
+const firstPageLink = links.findIndex(l => (l.href ?? "").startsWith("/") && !(l.href ?? "").startsWith("/#"));
 ---
 <nav>
   <a class="nav-logo" href="/" aria-label="Imbra — home">
     <Image src="/logos/logo-1b-web.svg" alt="Imbra" class="nav-logo-img" width={120} height={32} />
   </a>
   <div class="nav-links">
-    {links.map((l: { label: string; target: string; href?: string }) => (
-      <a href={l.href ?? `#${l.target}`} class="nav-link">{l.label}</a>
+    {links.map((l: Link, i: number) => (
+      <a href={l.href ?? `#${l.target}`} class={`nav-link${i === firstPageLink ? " nav-link--group-start" : ""}`}>{l.label}</a>
     ))}
-    <a href={`#${cta.target}`} class="nav-cta">{cta.label}</a>
+    <a href={cta.href ?? `#${cta.target}`} class="nav-cta">{cta.label}</a>
   </div>
   <HamburgerMenu client:load links={links} cta={cta} />
 </nav>
