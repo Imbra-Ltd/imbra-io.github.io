@@ -111,7 +111,7 @@ Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned an
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
 | [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies). Events: "Contact form sent", "Email click", "Booking click" | Script tag in `src/layouts/Base.astro`; the mailto and `data-booking` listeners sit in its inline script |
-| [Cal.com](https://cal.com) | Free-assessment scheduling. `/book/` links out to it, so no third-party script or cookie touches imbra.io and the site still needs no consent banner | `src/data/book.json` → `booking.url` |
+| Nextcloud (`cloud.imbra.io`) | Free-assessment scheduling, self-hosted on Hetzner Storage Share. `/book/` links out to it, so no third-party script or cookie touches imbra.io and the site still needs no consent banner. The provider name and the privacy paragraph are data, so swapping provider means editing JSON only | `src/data/book.json` → `booking.url`, `booking.provider`, `booking.privacy` |
 | [Google Search Console](https://search.google.com/search-console) | Search indexing and crawl monitoring | Verification meta tag in `src/layouts/Base.astro` |
 
 ## Advice rule

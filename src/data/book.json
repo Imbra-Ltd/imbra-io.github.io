@@ -7,11 +7,13 @@
   "heading": "Book a call.",
   "sub": "Thirty minutes to describe the problem, hear how we would approach it, and decide whether we are a good fit for each other. Neither side is obliged to proceed.",
   "booking": {
-    "url": "",
+    "url": "https://cloud.imbra.io/apps/calendar/appointment/nsR5c2TLdRYX",
     "label": "Choose a time →",
     "duration": "30 minutes",
-    "availability": "Tuesday and Thursday, 14:00–17:00 (EET, UTC+2)",
-    "note": "Booking opens our scheduling provider in a new tab. Nothing is loaded into this page, so no cookies are set here."
+    "availability": "Tuesday and Thursday, 14:00–17:00 (Europe/Sofia)",
+    "note": "Booking opens our own server at cloud.imbra.io in a new tab. Nothing is loaded into this page, so no cookies are set here.",
+    "provider": "Nextcloud",
+    "privacy": "Call scheduling runs on our own Nextcloud at <a href=\"https://cloud.imbra.io\">cloud.imbra.io</a>, hosted for us by Hetzner in Germany. This page only links to it, and loads none of its code, so nothing is set in your browser until you follow that link. What you enter there — your name, email address and what you write about your problem — reaches us directly and is not passed to any other company. See <a href=\"https://www.hetzner.com/legal/privacy-policy\" target=\"_blank\" rel=\"noopener noreferrer\">Hetzner's Privacy Policy</a>."
   },
   "sections": [
     {

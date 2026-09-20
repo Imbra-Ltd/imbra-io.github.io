@@ -49,7 +49,7 @@ const bookable = book.booking.url !== "";
           <p><strong>Formspree</strong> — Contact form submissions are processed by Formspree and forwarded to our email address. Formspree may retain submission data in accordance with its own privacy policy. See <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Formspree's Privacy Policy</a>.</p>
           <p><strong>Plausible Analytics</strong> — We use Plausible to measure site traffic. Plausible does not use cookies, does not collect personal data, and is fully GDPR compliant. See <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">Plausible's Privacy Policy</a>.</p>
           {bookable && (
-            <p><strong>Cal.com</strong> — Call scheduling is handled by Cal.com on its own website. Our booking page links out to it and loads none of its scripts, so nothing is set in your browser until you follow that link. Anything you enter there — name, email address and what you write about your problem — is processed by Cal.com and forwarded to us. See <a href="https://cal.com/privacy" target="_blank" rel="noopener noreferrer">Cal.com's Privacy Policy</a>.</p>
+            <p><strong>{book.booking.provider}</strong> — <span set:html={book.booking.privacy} /></p>
           )}
         </div>
       </div>
