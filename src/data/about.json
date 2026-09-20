@@ -16,7 +16,7 @@
     {
       "title": "The founder",
       "paragraphs": [
-        "Branimir Georgiev started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants. He automated compressors, utilities and process units on Honeywell and Siemens systems, ported Honeywell control blocks to Siemens SCL, and learned what industrial software costs when it fails.",
+        "Branimir Georgiev started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants. He automated process units on Honeywell and Siemens systems, ported Honeywell control blocks to Siemens SCL, and learned what industrial software costs when it fails.",
         "At Hilscher he moved into software, building protocol test suites, device emulators and SDK work for DeviceNet, CAN, Modbus, OPC UA and MQTT. At Heidelberg Materials he worked on the PxTrend historian, on data integration agents feeding it, and on the architecture documentation that made the estate maintainable.",
         "Those engagements are his professional career rather than Imbra client work. Imbra was founded to do this work directly."
       ],

@@ -7,7 +7,7 @@
 
 Branimir started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants. Not the kind of job where you sit in front of a screen — the kind where you bail water by hand to keep PLCs alive during a flood, climb 180-metre chimneys in wind, crawl through narrow tunnels, walk into an ammonia cloud, work on radioactive equipment on Christmas night, and witness the destructive power of a multi-tonne steam head punch through a metre-thick concrete wall.
 
-He automated compressors, utilities, and process units on both Honeywell and Siemens hardware, ported Honeywell control blocks to Siemens SCL, and cleaned up after consultants who left systems broken, endangering human life and equipment. He learned what industrial software actually costs when it fails — and what it feels like when it works. There is nothing quite like watching a unit you built from scratch come alive for the first time and run exactly as designed. That feeling never gets old.
+He automated process units on both Honeywell and Siemens hardware, ported Honeywell control blocks to Siemens SCL, and cleaned up after consultants who left systems broken, endangering human life and equipment. He learned what industrial software actually costs when it fails — and what it feels like when it works. There is nothing quite like watching a unit you built from scratch come alive for the first time and run exactly as designed. That feeling never gets old.
 
 When things went wrong, people would say: *"If Branko is here, everything will be all right."* That is the standard everything since has been built to meet.
 
