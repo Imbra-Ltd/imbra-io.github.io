@@ -46,7 +46,7 @@ technical investigation remains separately scoped and paid.
 | Blog | `/blog/` and `/blog/<article>/` | Technical answers supporting solution pages | Expose when the first article is approved |
 | Pricing | `/pricing/` | Existing rate ladder and engagement rules | Preserve the existing canonical URL |
 | Book a call | `/book/` | Free-assessment explanation and scheduling link | Activate after provider details are configured |
-| About | `/about/` | Company/founder background and full research publication list | Link from the footer, not primary navigation |
+| About | `/about/` | Company/founder background and full research publication list | In the nav after Delivery, and in the footer (changed 20 September 2026, once Research left the nav) |
 
 Use one canonical problem-page family. Do not duplicate the same content under
 `/use-cases/`, protocol-specific variants or location-specific landing pages.

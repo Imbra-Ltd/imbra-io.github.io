@@ -78,7 +78,7 @@ src/components/
 |---------------------------------|-------------------------------------|--------------------------------------------|
 | Homepage                        | `/`                                 | All main sections                          |
 | Pricing                         | `/pricing/`                         | Rate ladder, support, projects, worked examples; linked from nav and 404 |
-| About                           | `/about/`                           | Company, founder and publication list; linked from the footer, not the nav |
+| About                           | `/about/`                           | Company, founder and publication list; linked from the nav and the footer |
 | Privacy Policy                  | `/privacy/`                         | Legal page                                 |
 | Imprint                         | `/imprint/`                         | Legal page                                 |
 | 404                             | `/404`                              | Branded not-found page                     |
