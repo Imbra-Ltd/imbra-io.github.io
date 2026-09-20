@@ -100,7 +100,7 @@ Identity copy has three layers, each with one home: what Imbra is (`site.json` �
 
 The homepage is deliberately minimal: no stat strip, no expertise section. The process section names the steps; the numbers behind them live on `/pricing/`.
 
-Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned anywhere on the site. Their white paper sources remain in `docs/WHITEPAPER-*.md`; the landing pages and PDFs were removed in September 2026 and can be restored from git history when the products ship. The positioning statement lives in `site.json` → `hero.sub`; the vision line in `footer.about`.
+Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned anywhere on the site. The landing pages and PDFs were removed in September 2026, and the white paper sources followed on 20 September 2026 as outdated — all of it is in git history if a product ships. Product material does not belong in this repository, which is public. The positioning statement lives in `site.json` → `hero.sub`; the vision line in `footer.about`.
 
 ## Reveal animations
 `.reveal` → `.reveal.visible` transition handled by a single `IntersectionObserver` script in `src/layouts/Base.astro`. Do not add per-component reveal scripts.
