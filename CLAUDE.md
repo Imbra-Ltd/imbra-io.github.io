@@ -24,7 +24,7 @@ Website for Imbra (imbra.io) — a boutique software and industrial engineering 
 - Body copy is 14–16px at weight 400; weight 300 is reserved for display headings and large numbers. Mono labels are 11–12px minimum
 - Text colours: `--color-dark` for headings and primary text, `--color-text-body` for body copy, `--color-text-muted` for secondary text. All three clear WCAG AA on white; do not add paler greys
 - All CSS lives in `src/styles/global.css` — do not use inline styles except for dynamic/computed values
-- Layout: the nav spans `--page-max-width` (1440px); everything below it, on the homepage and the pricing page alike, sits in a centred `--content-max-width` column (900px, gutters included). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints
+- Layout: the nav and everything below it share one left edge — the centred `--content-max-width` column (900px, gutters included). The hero image is the single deliberate exception, running out to `--page-inset` (the 1440px `--page-max-width` grid). Full-bleed backgrounds get their horizontal padding from `--content-inset`; `--gutter` (48px) narrows at the breakpoints, below which both insets collapse to it and the two grids coincide
 - Responsive breakpoints:
   - Tablet: max-width 1024px
   - Mobile: max-width 768px (hamburger menu replaces nav links)
