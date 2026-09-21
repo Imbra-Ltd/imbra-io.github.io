@@ -1,5 +1,9 @@
 ---
 const { footer } = Astro.props;
+
+// The founder line appears once site.json gives it a target. Until then the
+// footer drops it rather than rendering a link that goes nowhere.
+const founderLink = footer.founderLink.href === "" ? null : footer.founderLink;
 ---
 <footer>
   <div class="footer-top">
@@ -37,7 +41,9 @@ const { footer } = Astro.props;
     <div>
       <div class="footer-desc-label">About</div>
       <p class="footer-desc-text">{footer.about}</p>
-      <a href={footer.founderLink.href} class="footer-founder-link" target="_blank" rel="noopener noreferrer">{footer.founderLink.label}</a>
+      {founderLink && (
+        <a href={founderLink.href} class="footer-founder-link" target="_blank" rel="noopener noreferrer">{founderLink.label}</a>
+      )}
     </div>
   </div>
   <div class="footer-bottom">
