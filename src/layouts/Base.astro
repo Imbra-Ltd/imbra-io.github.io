@@ -73,13 +73,6 @@ const ogImageURL = new URL(ogImage, Astro.site);
       "description": "Engineering-led industrial communication and OT/IT integration for plants, device manufacturers, protocol vendors and automation companies, covering testing, data integration, historians and legacy systems."
     }
     </script>
-
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-C6I_AesCmEwdstmSS5mGn.js"></script>
-    <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
-    </script>
   </head>
   <body>
     <slot />
@@ -95,16 +88,6 @@ const ogImageURL = new URL(ogImage, Astro.site);
       { threshold: 0.1 }
     );
     obs.observe(el);
-  });
-
-  // Contact intent, counted without cookies or personal data
-  document.querySelectorAll<HTMLAnchorElement>("a[href^=\"mailto:\"]").forEach(a => {
-    a.addEventListener("click", () => window.plausible?.("Email click"));
-  });
-
-  // Booking intent, counted on the way out to the scheduling provider
-  document.querySelectorAll<HTMLAnchorElement>("a[data-booking]").forEach(a => {
-    a.addEventListener("click", () => window.plausible?.("Booking click"));
   });
 
   // Back to top
