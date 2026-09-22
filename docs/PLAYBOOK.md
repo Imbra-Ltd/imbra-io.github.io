@@ -180,7 +180,6 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 | Service | Purpose | Config |
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
-| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies, no consent banner). Events: "Contact form sent", "Email click", "Booking click" | Script tag in `src/layouts/Base.astro` |
 | Nextcloud Calendar (`cloud.imbra.io`) | Free-assessment scheduling, self-hosted on Hetzner Storage Share and linked out from `/book/` so no third-party script loads on imbra.io | `src/data/book.json` → `booking.url`, `booking.provider`, `booking.privacy` |
 
 ---

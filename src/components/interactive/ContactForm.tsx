@@ -25,7 +25,6 @@ export default function ContactForm({ endpoint }: Props) {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
-        window.plausible?.("Contact form sent");
         setStatus("success");
         form.reset();
       } else {

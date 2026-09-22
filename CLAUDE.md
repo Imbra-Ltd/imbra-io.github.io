@@ -110,7 +110,6 @@ Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned an
 | Service | Purpose | Config |
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
-| [Plausible](https://plausible.io) | Privacy-friendly analytics (no cookies). Events: "Contact form sent", "Email click", "Booking click" | Script tag in `src/layouts/Base.astro`; the mailto and `data-booking` listeners sit in its inline script |
 | Nextcloud (`cloud.imbra.io`) | Free-assessment scheduling, self-hosted on Hetzner Storage Share. `/book/` links out to it, so no third-party script or cookie touches imbra.io and the site still needs no consent banner. The provider name and the privacy paragraph are data, so swapping provider means editing JSON only | `src/data/book.json` → `booking.url`, `booking.provider`, `booking.privacy` |
 | [Google Search Console](https://search.google.com/search-console) | Search indexing and crawl monitoring | Verification meta tag in `src/layouts/Base.astro` |
 
@@ -143,7 +142,7 @@ Non-negotiable standards for this project:
 
 **SEO & analytics**
 - `robots.txt`, Open Graph, and Twitter Card meta tags required
-- Privacy-friendly analytics only (no consent banner required)
+- Privacy-friendly analytics only (no consent banner required). The site runs none at present: Search Console covers discovery, and conversions arrive where they land — form submissions by email, bookings in Nextcloud
 
 **Documentation**
 - `CLAUDE.md` and `README.md` must always reflect the actual codebase
