@@ -44,4 +44,4 @@ Branimir also teaches at [codewithbranko.com](https://www.codewithbranko.com) â€
 ## Contact
 
 contact@imbra.io
-[linkedin.com/in/branimir-georgiev](https://linkedin.com/in/branimir-georgiev)
+[linkedin.com/in/branimir-georgiev](https://www.linkedin.com/in/branimir-georgiev)

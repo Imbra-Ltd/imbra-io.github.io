@@ -6,7 +6,7 @@ Website for Imbra (imbra.io) — a boutique software and industrial engineering 
 - Owner: Branimir Georgiev
 - GitHub org: https://github.com/Imbra-Ltd
 - Contact: contact@imbra.io
-- LinkedIn: https://linkedin.com/in/branimir-georgiev
+- LinkedIn: https://www.linkedin.com/in/branimir-georgiev
 - Deployed to GitHub Pages at https://imbra.io via GitHub Actions on push to `main`
 
 ## Stack
