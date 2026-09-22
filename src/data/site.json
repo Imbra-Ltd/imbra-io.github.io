@@ -36,9 +36,9 @@
   },
   "footer": {
     "legal": [
-      { "label": "About", "href": "/about" },
-      { "label": "Privacy", "href": "/privacy" },
-      { "label": "Imprint", "href": "/imprint" }
+      { "label": "About", "href": "/about/" },
+      { "label": "Privacy", "href": "/privacy/" },
+      { "label": "Imprint", "href": "/imprint/" }
     ],
     "social": [
       {
