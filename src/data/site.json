@@ -16,7 +16,7 @@
     "eyebrow": "Software & Industrial Engineering",
     "headline": "Complex inside.",
     "headlineStrong": "Simple outside.",
-    "sub": "Imbra is an engineering-led company helping industrial plants, device manufacturers, protocol vendors and automation teams solve the software between the plant floor and IT. We build, test, integrate, and support protocol stacks, data flows, historians, and legacy systems — with direct access to the <a href=\"https://linkedin.com/in/branimir-georgiev\" target=\"_blank\" rel=\"noopener noreferrer\">founder</a>.",
+    "sub": "Imbra is an engineering-led company helping industrial plants, device manufacturers, protocol vendors and automation teams solve the software between the plant floor and IT. We build, test, integrate, and support protocol stacks, data flows, historians, and legacy systems — with direct access to the <a href=\"https://www.linkedin.com/in/branimir-georgiev\" target=\"_blank\" rel=\"noopener noreferrer\">founder</a>.",
     "cta": { "label": "Discuss a project →", "target": "contact" }
   },
   "services": {
@@ -44,7 +44,7 @@
       {
         "name": "LinkedIn",
         "class": "linkedin",
-        "href": "https://linkedin.com/company/imbra-ltd/"
+        "href": "https://www.linkedin.com/company/imbra-ltd/"
       },
       {
         "name": "GitHub",
