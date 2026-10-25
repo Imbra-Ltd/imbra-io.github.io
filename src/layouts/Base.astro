@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import site from "../data/site.json";
 
 const {
   title,
@@ -9,6 +10,7 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
+const { analytics } = site;
 ---
 <!doctype html>
 <html lang="en">
@@ -38,6 +40,11 @@ const ogImageURL = new URL(ogImage, Astro.site);
 
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="NLAJ2Ho9eJZkSFjWyPd1Un_sAmcOhfsQZagKnDLEc2s" />
+
+    <!-- Self-hosted Umami analytics: no cookies; off when analytics.src is empty -->
+    {analytics.src && (
+      <script is:inline defer src={analytics.src} data-website-id={analytics.websiteId} data-domains={analytics.domains}></script>
+    )}
 
     <!-- Preload critical above-the-fold assets -->
     <link rel="preload" href="/logos/logo-1b-web.svg" as="image" type="image/svg+xml" />
