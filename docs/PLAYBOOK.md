@@ -164,7 +164,7 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 
 | File | Controls |
 |------|----------|
-| `src/data/site.json` | Nav links, hero, contact section (incl. Formspree endpoint), footer |
+| `src/data/site.json` | Analytics tag and its privacy paragraph, nav links, hero, contact section (incl. Formspree endpoint), footer |
 | `src/data/services.json` | Services accordion — three pillars, each holding its service items |
 | `src/data/process.json` | How-we-work section — the four engagement steps |
 | `src/data/commitments.json` | Commitments section — what we think (beliefs) and what we commit to |
@@ -181,6 +181,8 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 |---------|---------|--------|
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
 | Nextcloud Calendar (`cloud.imbra.io`) | Free-assessment scheduling, self-hosted on Hetzner Storage Share and linked out from `/book/` so no third-party script loads on imbra.io | `src/data/book.json` → `booking.url`, `booking.provider`, `booking.privacy` |
+| Umami (`stats.imbra.io`) | Cookie-free page-view analytics, self-hosted. Set `analytics.src` to `""` to switch the tag and its privacy paragraphs off | `src/data/site.json` → `analytics.*` |
+| Cloudflare | DNS for imbra.io; tunnel to `stats.imbra.io` (only `/script.js` and `/api/send` are public) | Cloudflare dashboard; tunnel config on the analytics server |
 
 ---
 

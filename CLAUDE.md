@@ -42,7 +42,7 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 
 | File                         | Controls                                       |
 |------------------------------|------------------------------------------------|
-| `src/data/site.json`         | Nav links, hero, contact section (incl. Formspree endpoint), footer |
+| `src/data/site.json`         | Analytics tag and its privacy paragraph, nav links, hero, contact section (incl. Formspree endpoint), footer |
 | `src/data/services.json`     | Services accordion — three pillars, each holding its service items |
 | `src/data/process.json`      | How-we-work section — the four engagement steps |
 | `src/data/commitments.json`  | Commitments section — what we think (beliefs) and what we commit to |
@@ -112,6 +112,8 @@ Products (ImBrain, Imbra Connect, Honeywell Control Blocks) are not mentioned an
 | [Formspree](https://formspree.io) | Contact form → `contact@imbra.io` | `src/data/site.json` → `contact.formEndpoint` |
 | Nextcloud (`cloud.imbra.io`) | Free-assessment scheduling, self-hosted on Hetzner Storage Share. `/book/` links out to it, so no third-party script or cookie touches imbra.io and the site still needs no consent banner. The provider name and the privacy paragraph are data, so swapping provider means editing JSON only | `src/data/book.json` → `booking.url`, `booking.provider`, `booking.privacy` |
 | [Google Search Console](https://search.google.com/search-console) | Search indexing and crawl monitoring | Verification meta tag in `src/layouts/Base.astro` |
+| [Umami](https://umami.is) (`stats.imbra.io`) | Page-view analytics, self-hosted on Imbra's own server. No cookies, no stored IP addresses, so no consent banner. `Base.astro` renders the tag only while `analytics.src` is set, and `/privacy/` shows the Umami and Cloudflare paragraphs only then. `data-domains` keeps local and preview builds out of the counts | `src/data/site.json` → `analytics.src`, `analytics.websiteId`, `analytics.domains`, `analytics.privacy` |
+| [Cloudflare](https://www.cloudflare.com) | DNS for imbra.io; tunnel to `stats.imbra.io` that exposes only `/script.js` and `/api/send` | Cloudflare dashboard; tunnel config on the analytics server, not in this repository |
 
 ## Advice rule
 
@@ -142,7 +144,7 @@ Non-negotiable standards for this project:
 
 **SEO & analytics**
 - `robots.txt`, Open Graph, and Twitter Card meta tags required
-- Privacy-friendly analytics only (no consent banner required). The site runs none at present: Search Console covers discovery, and conversions arrive where they land — form submissions by email, bookings in Nextcloud
+- Privacy-friendly analytics only (no consent banner required). The site runs self-hosted Umami for page views; Search Console covers discovery, and conversions arrive where they land — form submissions by email, bookings in Nextcloud
 
 **Documentation**
 - `CLAUDE.md` and `README.md` must always reflect the actual codebase

@@ -6,8 +6,10 @@ import Nav from "../components/Nav.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 
 // The scheduling provider is only named once booking is live, so the policy
-// never describes a service the site does not yet reach.
+// never describes a service the site does not yet reach. Analytics follows the
+// same rule: the paragraphs appear only while the tracker is switched on.
 const bookable = book.booking.url !== "";
+const tracked = site.analytics.src !== "";
 ---
 <Base title={`Privacy Policy — ${site.meta.title}`} description="How imbra.io handles contact form submissions and third-party services.">
   <Breadcrumb name="Privacy Policy" slot="head" />
@@ -21,7 +23,7 @@ const bookable = book.booking.url !== "";
       <div class="legal-section">
         <h2 class="legal-section-title">Last updated</h2>
         <div class="legal-section-body">
-          <p>September 2026</p>
+          <p>October 2026</p>
         </div>
       </div>
 
@@ -36,7 +38,8 @@ const bookable = book.booking.url !== "";
       <div class="legal-section">
         <h2 class="legal-section-title">Data collected</h2>
         <div class="legal-section-body">
-          <p>This website collects data only when you submit the contact form. The information you provide (name, email address, and message) is transmitted to Formspree and forwarded to our email address. We do not store this data ourselves.</p>
+          <p>This website collects data you enter only when you submit the contact form. The information you provide (name, email address, and message) is transmitted to Formspree and forwarded to our email address. We do not store this data ourselves.</p>
+          {tracked && <p set:html={site.analytics.privacy} />}
           <p>No user accounts, cookies, or tracking pixels are used.</p>
         </div>
       </div>
@@ -49,6 +52,9 @@ const bookable = book.booking.url !== "";
           <p><strong>Formspree</strong> — Contact form submissions are processed by Formspree and forwarded to our email address. Formspree may retain submission data in accordance with its own privacy policy. See <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Formspree's Privacy Policy</a>.</p>
           {bookable && (
             <p><strong>{book.booking.provider}</strong> — <span set:html={book.booking.privacy} /></p>
+          )}
+          {tracked && (
+            <p><strong>Cloudflare</strong> — Requests to our analytics server (stats.imbra.io) pass through Cloudflare's network, which may log technical data such as IP addresses. Cloudflare also answers DNS queries for imbra.io. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's Privacy Policy</a>.</p>
           )}
         </div>
       </div>

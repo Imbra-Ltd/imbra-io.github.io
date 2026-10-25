@@ -37,7 +37,7 @@ npm run preview   # verify — preview the production build locally
 ```
 src/
 ├── data/                  # All editable content as JSON
-│   ├── site.json          # Nav, hero, contact, footer
+│   ├── site.json          # Analytics, nav, hero, contact, footer
 │   ├── services.json      # Services accordion, grouped into three pillars
 │   ├── process.json       # How-we-work steps
 │   ├── commitments.json   # Beliefs and commitments section
@@ -51,7 +51,7 @@ src/
 │   │   └── ContactForm.tsx
 │   └── *.astro            # Static section components
 ├── layouts/
-│   └── Base.astro         # HTML shell, global CSS, reveal script
+│   └── Base.astro         # HTML shell, global CSS, analytics tag, reveal script
 ├── pages/
 │   ├── index.astro        # Homepage
 │   ├── pricing.astro      # Pricing page

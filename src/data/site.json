@@ -3,6 +3,12 @@
     "title": "Imbra — Software & Industrial Engineering",
     "description": "Industrial communication and OT/IT integration software for plants, device manufacturers, protocol vendors and automation teams."
   },
+  "analytics": {
+    "src": "https://stats.imbra.io/script.js",
+    "websiteId": "c7c2623e-753f-47c7-8eb8-44cdf2d92afa",
+    "domains": "imbra.io",
+    "privacy": "We count page views with <strong>Umami</strong>, an open-source analytics tool we host ourselves on our own server in Bulgaria and reach at stats.imbra.io. It records the page address, the referring site, browser, operating system, device type, screen size, language and approximate location (country, region, city). It sets no cookies and stores nothing on your device. Your IP address is used only while the request is processed, to derive that location and an anonymous visit identifier, and is not stored. We do not share the stored data with anyone."
+  },
   "nav": {
     "links": [
       { "label": "Services",   "href": "/#services" },
