@@ -46,8 +46,8 @@ All editable content lives in `src/data/` as JSON. Never hardcode content that a
 | `src/data/services.json`     | Services accordion — three pillars, each holding its service items |
 | `src/data/process.json`      | How-we-work section — the four engagement steps |
 | `src/data/commitments.json`  | Commitments section — what we think (beliefs) and what we commit to |
-| `src/data/publications.json` | Research publications with DOI links, shown on `/about/` |
-| `src/data/about.json`        | About page — company, founders and research sections |
+| `src/data/team.json`         | Team page and per-member profiles — founders, bios, LinkedIn and each person's publications |
+| `src/data/about.json`        | About page — company section and a pointer to the team page |
 | `src/data/pricing.json`      | Pricing page — engagement models and its in-page section index |
 | `src/data/book.json`         | Booking page — scheduling URL, call length, availability and the free-assessment explanation |
 
@@ -80,13 +80,15 @@ src/components/
 | Homepage                        | `/`                                 | All main sections                          |
 | Pricing                         | `/pricing/`                         | Rate ladder, support, projects, worked examples; linked from nav and 404 |
 | Book a call                     | `/book/`                            | Free-assessment explanation and scheduling link; dormant until a booking URL is set |
-| About                           | `/about/`                           | Company, founders and publication list; linked from the nav and the footer |
+| About                           | `/about/`                           | Company section and a pointer to the team page; linked from the nav and the footer |
+| Team                            | `/team/`                            | Founder cards (no images), each linking to a profile; linked from the nav |
+| Team member                     | `/team/[slug]/`                     | Per-founder profile — bio, LinkedIn, that person's publications; generated from `team.json` via `getStaticPaths` |
 | Privacy Policy                  | `/privacy/`                         | Legal page                                 |
 | Imprint                         | `/imprint/`                         | Legal page                                 |
 | 404                             | `/404`                              | Branded not-found page                     |
 
 ## Homepage sections (in order)
-1. Nav — identical on every page: logo (links to `/`), Services and Delivery as `/#anchor` links, then About and Pricing as page links behind a hairline separator, then the `Get in touch` CTA pointing at `/#contact`. `Nav.astro` swaps that CTA for `Book a call` → `/book/` as soon as `book.json` → `booking.url` is filled in, so the nav never offers a booking that cannot be made. Hamburger on mobile. Every page carries it, including the legal and 404 pages, and no page defines its own nav links. The CSS targets `body > nav`, so an in-page index such as the pricing sections list stays in the flow
+1. Nav — identical on every page: logo (links to `/`), Services and Delivery as `/#anchor` links, then About, Team and Pricing as page links behind a hairline separator, then the `Get in touch` CTA pointing at `/#contact`. `Nav.astro` swaps that CTA for `Book a call` → `/book/` as soon as `book.json` → `booking.url` is filled in, so the nav never offers a booking that cannot be made. Hamburger on mobile. Every page carries it, including the legal and 404 pages, and no page defines its own nav links. The CSS targets `body > nav`, so an in-page index such as the pricing sections list stays in the flow
 2. Hero — eyebrow, headline, positioning text (rendered with `set:html`; "two founders" links to the `/about/` page, where both founders are introduced — the hero no longer names either founder directly), one CTA button, image. The text column is 460px wide and aligned to the content column; the image takes the remaining width out to `--page-inset`, so it is the one element that extends past the column. The SVG's viewBox is trimmed to the drawing (re-measure if the file is replaced)
 3. Services — 8 full-width expandable rows (number, title, one-sentence problem; the whole heading row toggles the detail, the title button carries `aria-expanded`); detail order: what we do, projects, technology tags. The rows sit under four pillars, two each: Industrial Communication & Testing (Software & SDKs, Testing & QA), OT/IT Integration (Data Integration, Control Logic & PLC), Historization & Data Infrastructure (Refactoring, Maintenance), Process & Laboratory Engineering (Process Optimisation & APC, Analysers & Laboratory QC). Each pillar is a heading and a one-line scope above its rows. There are four pillars; AI is not one of them — the fourth is the process and laboratory engineering discipline of the second founder
 4. Process (How we work) — four steps in a hairline grid (Assess, Agree, Deliver, Support), one sentence each; 4 columns, 2 on tablet, stacked rows on mobile. The steps mirror the flow on `/pricing/`: free mutual-fit assessment, separately agreed paid technical investigation where needed, Statement of Work, delivery and support. They carry no rates or response times

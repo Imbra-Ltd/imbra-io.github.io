@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Team",
+    "description": "The two founders of Imbra — OT/IT and industrial software, and process engineering, analysers and laboratory."
+  },
+  "label": "Team",
+  "heading": "The team",
+  "intro": "Imbra is run by its two founders. Both ends of the plant — the software between the floor and IT, and the process and laboratory engineering that measures what the plant is doing — are held by the same small team.",
+  "members": [
+    {
+      "slug": "branimir-georgiev",
+      "name": "Branimir Georgiev",
+      "role": "Founder — OT/IT & Industrial Software",
+      "discipline": "Protocol stacks, OT/IT integration, historians and legacy systems.",
+      "bio": [
+        "Branimir started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants, automating process units on Honeywell and Siemens systems and porting Honeywell control blocks to Siemens SCL.",
+        "At Hilscher he moved into software, building protocol device emulators, test suites and SDKs for DeviceNet, CAN, Modbus and MQTT. At Heidelberg Materials he worked on the PxTrend historian, the data integration agents feeding it, and the architecture documentation that made the estate maintainable.",
+        "He holds a Dipl.-Ing. from the Karlsruhe Institute of Technology. The engagements above are his professional career rather than Imbra client work — Imbra was founded to do this work directly."
+      ],
+      "linkedin": "https://www.linkedin.com/in/branimir-georgiev",
+      "publications": [
+        {
+          "journal": "Engineering Science and Technology",
+          "year": "2019",
+          "title": "Design and industrial implementation of fuzzy logic control of level in soda production",
+          "vol": "Vol 23, Issue 3, pp. 691–699",
+          "doi": "https://doi.org/10.1016/j.jestch.2019.08.005"
+        },
+        {
+          "journal": "Control Engineering Practice",
+          "year": "2017",
+          "title": "Parallel distributed compensation for improvement of level control in carbonization column",
+          "vol": "Vol 71, pp. 53–60",
+          "doi": "https://doi.org/10.1016/j.conengprac.2017.10.003"
+        },
+        {
+          "journal": "Automatic Control and Computer Sciences",
+          "year": "2020",
+          "title": "Optimization of Parallel Distributed Compensation for Real Time Control of Level",
+          "vol": "Vol 54, pp. 379–390",
+          "doi": "https://doi.org/10.3103/S0146411620050107"
+        }
+      ]
+    },
+    {
+      "slug": "eman-ali",
+      "name": "Eman Ali",
+      "role": "Founder — Process, Analysers & Laboratory",
+      "discipline": "Process optimisation, advanced process control, analysers and laboratory QC.",
+      "bio": [
+        "Eman ran process and laboratory work in soda ash production for over a decade. At Solvay Sodi she delivered advanced process control projects with automation engineering, Aspen process simulation, and mass balances across five capital projects.",
+        "At Solvay Alexandria Sodium Carbonate she worked on process improvement — yield and downtime — and earlier as a laboratory scientist on physical and chemical analysis of raw materials and soda ash, analyser operation and laboratory procedures under ISO quality and environmental systems.",
+        "Her research is in materials science — corrosion inhibition and polymer composites — alongside the process-control work the plant years produced."
+      ],
+      "linkedin": "https://www.linkedin.com/in/eman-ali-3bbb5578/",
+      "publications": [
+        {
+          "journal": "Journal of Composite Materials",
+          "year": "2018",
+          "title": "Influence of different clays on the mechanical, thermal, and water absorption properties of recycled high-density polyethylene/wood flour hybrid composites",
+          "vol": "",
+          "doi": "https://doi.org/10.1177/0021998317723180"
+        },
+        {
+          "journal": "Computational Materials Science",
+          "year": "2026",
+          "title": "Computational Simulation of Corrosion Inhibition of Steel in 1M Hydrochloric Acid Using Eco-friendly Herbal Extract",
+          "vol": "",
+          "doi": "https://doi.org/10.5281/zenodo.22126467"
+        }
+      ]
+    }
+  ]
+}

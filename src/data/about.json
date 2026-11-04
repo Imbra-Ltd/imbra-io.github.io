@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "About",
-    "description": "Engineering company in Varna, Bulgaria, working on the software, process and laboratory engineering between the plant floor and IT. Founders' background and peer-reviewed research."
+    "description": "Engineering company in Varna, Bulgaria, working on the software, process and laboratory engineering between the plant floor and IT."
   },
   "label": "About",
   "heading": "About Imbra",
@@ -14,23 +14,13 @@
       ]
     },
     {
-      "title": "The founders",
+      "title": "The people",
       "paragraphs": [
-        "Branimir Georgiev — OT/IT and industrial software. He started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants, automating process units on Honeywell and Siemens systems and porting Honeywell control blocks to Siemens SCL. At Hilscher he moved into software, building protocol device emulators, test suites and SDKs for DeviceNet, CAN, Modbus and MQTT. At Heidelberg Materials he worked on the PxTrend historian, the data integration agents feeding it, and the architecture documentation that made the estate maintainable.",
-        "Eman Ali — process engineering, advanced process control, analysers and laboratory. She ran process and laboratory work in soda ash production for over a decade: APC projects with automation engineering, Aspen process simulation and mass balances across five capital projects at Solvay Sodi, and process improvement, analyser operation and laboratory QC under ISO quality and environmental systems at Solvay Alexandria.",
-        "Those engagements are their professional careers rather than Imbra client work. Imbra was founded to do this work directly."
+        "Imbra is run by its two founders — one covering OT/IT and industrial software, the other process engineering, analysers and the laboratory. Their backgrounds, the disciplines they cover and their published research are on the team page."
       ],
       "links": [
-        { "label": "linkedin.com/in/branimir-georgiev", "href": "https://www.linkedin.com/in/branimir-georgiev" },
-        { "label": "linkedin.com/in/eman-ali", "href": "https://www.linkedin.com/in/eman-ali-3bbb5578/" }
+        { "label": "Meet the team →", "href": "/team/" }
       ]
-    },
-    {
-      "title": "Research",
-      "paragraphs": [
-        "Peer-reviewed work on advanced process control and fuzzy logic, published in indexed engineering journals during the plant years."
-      ],
-      "publications": true
     }
   ],
   "cta": { "label": "Discuss a project →", "href": "/#contact" }
