@@ -140,13 +140,26 @@ section { padding: 96px var(--content-inset); }
 .commitments-title { font-size: 16px; font-weight: 500; color: var(--color-dark); line-height: 1.4; margin-bottom: 8px; }
 .commitments-desc { font-size: 14px; color: var(--color-text-body); line-height: 1.65; }
 
-/* ── Publications: the list lives on /about/ ── */
+/* ── Publications: the list lives on each /team/[slug]/ profile ── */
 .pub-list { list-style: none; border-top: 1px solid var(--color-border); }
 .pub-item { padding: 22px 0; border-bottom: 1px solid var(--color-border); }
 .pub-title { font-size: 16px; font-weight: 500; color: var(--color-dark); line-height: 1.45; text-decoration: none; display: block; max-width: 680px; }
 .pub-title:hover { color: var(--color-accent); }
 .pub-meta { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--color-text-muted); letter-spacing: 0.03em; margin-top: 8px; }
 .about-cta { display: inline-block; margin-top: 48px; }
+
+/* ── Team: index cards and per-member profile ── */
+.team-intro { font-size: 16px; color: var(--color-text-body); line-height: 1.6; max-width: 680px; margin-bottom: 48px; }
+.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); }
+.team-card { display: flex; flex-direction: column; gap: 10px; padding: 32px; background: var(--color-white); text-decoration: none; transition: background 0.15s ease; }
+.team-card:hover { background: var(--color-accent-light); }
+.team-card-name { font-size: 20px; font-weight: 500; color: var(--color-dark); }
+.team-card-role { font-size: 11px; font-weight: 500; color: var(--color-accent); letter-spacing: 0.1em; text-transform: uppercase; }
+.team-card-discipline { font-size: 15px; color: var(--color-text-body); line-height: 1.55; margin: 4px 0 0; }
+.team-card-link { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--color-accent); margin-top: auto; padding-top: 12px; }
+.team-back { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--color-text-muted); text-decoration: none; display: inline-block; margin-bottom: 24px; }
+.team-back:hover { color: var(--color-accent); }
+@media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } }
 
 /* ── Contact ── */
 #contact { background: var(--color-dark); color: white; display: flex; flex-direction: column; padding: 72px var(--content-inset); gap: 48px; }

@@ -1,0 +1,28 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import site from "../../data/site.json";
+import team from "../../data/team.json";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+---
+<Base title={`${team.meta.title} — ${site.meta.title}`} description={team.meta.description}>
+  <Breadcrumb name={team.meta.title} slot="head" />
+  <Nav links={site.nav.links} cta={site.nav.cta} />
+
+  <main class="legal-page">
+    <div class="legal-label">{team.label}</div>
+    <h1 class="legal-heading">{team.heading}</h1>
+    <p class="team-intro">{team.intro}</p>
+
+    <div class="team-grid">
+      {team.members.map((m) => (
+        <a class="team-card" href={`/team/${m.slug}/`}>
+          <div class="team-card-name">{m.name}</div>
+          <div class="team-card-role mono">{m.role}</div>
+          <p class="team-card-discipline">{m.discipline}</p>
+          <span class="team-card-link">{team.cardLink}</span>
+        </a>
+      ))}
+    </div>
+  </main>
+</Base>
