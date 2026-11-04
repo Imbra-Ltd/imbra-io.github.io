@@ -165,11 +165,11 @@ All site content lives in `src/data/` as JSON. No component knowledge required.
 | File | Controls |
 |------|----------|
 | `src/data/site.json` | Analytics tag and its privacy paragraph, nav links, hero, contact section (incl. Formspree endpoint), footer |
-| `src/data/services.json` | Services accordion — three pillars, each holding its service items |
+| `src/data/services.json` | Services accordion — four pillars, each holding its service items |
 | `src/data/process.json` | How-we-work section — the four engagement steps |
 | `src/data/commitments.json` | Commitments section — what we think (beliefs) and what we commit to |
-| `src/data/publications.json` | Research publications with DOI links, shown on `/about/` |
-| `src/data/about.json` | About page — company, founder and research sections |
+| `src/data/team.json` | Team page and per-founder profiles — bios, LinkedIn, each person's publications |
+| `src/data/about.json` | About page — company section and a pointer to the team page |
 | `src/data/pricing.json` | Pricing page — all engagement models |
 | `src/data/book.json` | Booking page — scheduling URL, call length, availability and the free-assessment explanation |
 

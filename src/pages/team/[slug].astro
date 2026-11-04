@@ -16,7 +16,7 @@ const { member } = Astro.props;
   <Nav links={site.nav.links} cta={site.nav.cta} />
 
   <main class="legal-page">
-    <a class="team-back" href="/team/">← Team</a>
+    <a class="team-back" href="/team/">{team.backLabel}</a>
     <div class="legal-label mono">{member.role}</div>
     <h1 class="legal-heading">{member.name}</h1>
 
@@ -46,6 +46,6 @@ const { member } = Astro.props;
       )}
     </div>
 
-    <a href="/#contact" class="btn-primary about-cta">Discuss a project →</a>
+    <a href={team.profileCta.href} class="btn-primary about-cta">{team.profileCta.label}</a>
   </main>
 </Base>

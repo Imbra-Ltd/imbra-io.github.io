@@ -6,6 +6,9 @@
   "label": "Team",
   "heading": "The team",
   "intro": "Imbra is run by its two founders. Both ends of the plant — the software between the floor and IT, and the process and laboratory engineering that measures what the plant is doing — are held by the same small team.",
+  "cardLink": "View profile →",
+  "backLabel": "← Team",
+  "profileCta": { "label": "Discuss a project →", "href": "/#contact" },
   "members": [
     {
       "slug": "branimir-georgiev",
