@@ -144,5 +144,51 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Process & Laboratory Engineering",
+    "desc": "Process optimisation, advanced process control, and the online and laboratory analysers that measure what the plant is doing.",
+    "services": [
+      {
+        "num": "07",
+        "title": "Process Optimisation & Advanced Process Control",
+        "desc": "A unit runs, but not well: yield drifts, energy is high, a loop that should be automatic is left on manual because nobody trusts it. You need the process understood before anyone touches the control system.",
+        "detail": "Poor control is usually a process problem wearing an automation costume. A loop oscillates because the measurement lags, a setpoint is wrong because the mass balance was never closed, a unit underperforms because the operating window was set by habit. Reaching for a tuning tool first treats the symptom.\n\nWe start from the process. Mass and energy balances to find where yield and energy are actually lost, process simulation to test an operating change before it reaches the plant, and advanced process control designed with the automation engineers who will own it, so a strategy is handed over rather than imposed. Root cause analysis when a unit misbehaves and the cause is not obvious.\n\nBefore building we agree the unit, the data available and the target. You receive the analysis, the recommended operating changes or control strategy, and the evidence behind them. We do the process and control-design side; commissioning on the live plant stays with your team.\n\nTwelve years of this in soda ash production — APC projects delivered with automation engineering, Aspen process simulation, and mass balances across five capital projects — at Solvay Sodi and Solvay Alexandria.",
+        "tech": [
+          "Aspen HYSYS",
+          "Process Simulation",
+          "APC",
+          "Mass & Energy Balance",
+          "Root Cause Analysis",
+          "SPC"
+        ],
+        "projects": [
+          "APC Projects with Automation Engineering · Solvay Sodi",
+          "Mass Balances — 5 Capital Projects · Solvay Sodi",
+          "Process Simulation (Aspen) · Solvay Sodi",
+          "Process Improvement — Yield & Downtime · Solvay Alexandria"
+        ]
+      },
+      {
+        "num": "08",
+        "title": "Analysers & Laboratory QC",
+        "desc": "Your online analysers disagree with the lab, calibrations drift, and decisions get made on numbers no one fully trusts. The measurement chain needs an engineer who has run both ends of it.",
+        "detail": "An analyser is only as good as its calibration, its sampling, and the laboratory that validates it. When those fall out of step, the plant optimises against noise. The fix is rarely a new instrument; it is the measurement chain, from the sample point to the reported result, made consistent again.\n\nWe design, calibrate and maintain online and at-line analysers, define the sampling and validation against laboratory reference methods, and set up the laboratory QC and procedures that keep the two agreeing — physical and chemical analysis of raw materials and product, method control, and operating under ISO 9001, 14001 and 45001 quality and safety systems. Operator training on the analysers where the handover needs it.\n\nBefore starting we agree the measurements, the reference methods and what 'in agreement' means. You receive the calibration and maintenance procedures, the validation evidence and the laboratory documentation.\n\nBuilt on a laboratory and process career in soda ash — analyser operation and calibration, physical and chemical analysis, and lab procedures under ISO quality and environmental systems — at Solvay Alexandria and Solvay Sodi.",
+        "tech": [
+          "Online & At-line Analysers",
+          "Calibration",
+          "Laboratory QC",
+          "Metrohm",
+          "ISO 9001 / 14001 / 45001",
+          "Six Sigma"
+        ],
+        "projects": [
+          "Online & At-line Analyser Projects · Solvay Sodi",
+          "Operator Training on Analysers · Solvay Sodi",
+          "Raw Material & Soda Ash Analysis · Solvay Alexandria",
+          "Laboratory QC under ISO 9000 / 14001 / 18001 · Solvay Alexandria"
+        ]
+      }
+    ]
   }
 ]

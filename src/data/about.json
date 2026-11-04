@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "About",
-    "description": "Engineering company in Varna, Bulgaria, working on the software between the plant floor and IT. Founder background and peer-reviewed research."
+    "description": "Engineering company in Varna, Bulgaria, working on the software, process and laboratory engineering between the plant floor and IT. Founders' background and peer-reviewed research."
   },
   "label": "About",
   "heading": "About Imbra",
@@ -9,16 +9,16 @@
     {
       "title": "The company",
       "paragraphs": [
-        "Imbra is an engineering company in Varna, Bulgaria, working with clients across Europe. It builds, tests, integrates and supports the software between the plant floor and IT: protocol stacks, data flows, historians and legacy systems.",
-        "The work is done by the founder, so the engineer you speak to is the engineer who delivers."
+        "Imbra is an engineering company in Varna, Bulgaria, working with clients across Europe. It builds, tests, integrates and supports the software between the plant floor and IT — protocol stacks, data flows, historians and legacy systems — and the process and laboratory engineering that measures what the plant is doing.",
+        "The work is done by the two founders. One covers OT/IT and industrial software; the other covers process engineering, analysers and the laboratory. Both ends of the plant are held by the same small team, so there is no hand-off between process, automation and IT — and the engineer you speak to is the engineer who delivers."
       ]
     },
     {
-      "title": "The founder",
+      "title": "The founders",
       "paragraphs": [
-        "Branimir Georgiev started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants. He automated process units on Honeywell and Siemens systems, ported Honeywell control blocks to Siemens SCL, and learned what industrial software costs when it fails.",
-        "At Hilscher he moved into software, building protocol device emulators, test suites and SDKs for DeviceNet, CAN, Modbus and MQTT. At Heidelberg Materials he worked on the PxTrend historian, on data integration agents feeding it, and on the architecture documentation that made the estate maintainable.",
-        "Those engagements are his professional career rather than Imbra client work. Imbra was founded to do this work directly."
+        "Branimir Georgiev — OT/IT and industrial software. He started as an automation engineer at Solvay Sodi, one of Bulgaria's largest chemical plants, automating process units on Honeywell and Siemens systems and porting Honeywell control blocks to Siemens SCL. At Hilscher he moved into software, building protocol device emulators, test suites and SDKs for DeviceNet, CAN, Modbus and MQTT. At Heidelberg Materials he worked on the PxTrend historian, the data integration agents feeding it, and the architecture documentation that made the estate maintainable.",
+        "Eman Ali — process engineering, advanced process control, analysers and laboratory. She ran process and laboratory work in soda ash production for over a decade: APC projects with automation engineering, Aspen process simulation and mass balances across five capital projects at Solvay Sodi, and process improvement, analyser operation and laboratory QC under ISO quality and environmental systems at Solvay Alexandria.",
+        "Those engagements are their professional careers rather than Imbra client work. Imbra was founded to do this work directly."
       ],
       "links": [
         { "label": "linkedin.com/in/branimir-georgiev", "href": "https://www.linkedin.com/in/branimir-georgiev" }
