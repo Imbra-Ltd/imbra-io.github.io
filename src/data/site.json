@@ -23,8 +23,9 @@
     "eyebrow": "Software & Industrial Engineering",
     "headline": "Complex inside.",
     "headlineStrong": "Simple outside.",
-    "sub": "Imbra is an engineering-led company helping industrial plants, device manufacturers, protocol vendors and automation teams solve the software between the plant floor and IT. We build, test, integrate and support protocol stacks, data flows, historians and legacy systems, and cover the process and laboratory engineering around them — with direct access to the <a href=\"/about/\">two founders</a> who do the work.",
-    "cta": { "label": "Discuss a project →", "target": "contact" }
+    "sub": "We fix the software and data paths between industrial equipment and IT, with tested delivery and a documented handover. We cover the process and laboratory engineering around them too, with direct access to the <a href=\"/about/\">two founders</a> who do the work.",
+    "routes": ["Plant data", "Protocol software and testing", "Control software and handover"],
+    "cta": { "label": "Discuss a plant-data or protocol problem →", "target": "contact" }
   },
   "services": {
     "label": "01 — Services",

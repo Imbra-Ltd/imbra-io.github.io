@@ -10,6 +10,9 @@ const { hero } = Astro.props;
         {hero.headline}<br /><strong>{hero.headlineStrong}</strong>
       </h1>
       <p class="hero-sub" set:html={hero.sub} />
+      <ul class="hero-routes" aria-label="What we work on">
+        {hero.routes.map((route: string) => <li>{route}</li>)}
+      </ul>
       <div class="hero-actions">
         <a href={`#${hero.cta.target}`} class="btn-primary">{hero.cta.label}</a>
       </div>
