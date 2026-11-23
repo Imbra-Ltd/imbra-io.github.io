@@ -62,6 +62,10 @@ export default function ContactForm({ endpoint }: Props) {
         <label htmlFor="cf-message">Message</label>
         <textarea id="cf-message" name="message" rows={4} required />
       </div>
+      <div className="contact-form-field">
+        <label htmlFor="cf-source">How did you first hear about us? (optional)</label>
+        <input id="cf-source" name="source" type="text" autoComplete="off" />
+      </div>
       <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
       {status === "error" && (
         <p className="contact-form-error">{errorMsg}</p>
